@@ -3,7 +3,7 @@ const { MessageEmbed } = require('discord.js')
 module.exports = {
     name: 'echo',
     aliases: ['owner'],
-
+description: 'Owner info',
     run: async (client, message, args) => {
         if (message.author.id !== '673846605920600068') return message.channel.send('**This command can be only used by my owner**')
 

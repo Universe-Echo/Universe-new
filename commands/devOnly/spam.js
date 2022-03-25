@@ -1,7 +1,8 @@
 
 module.exports = {
-    name: 'spam',
+    name: 'pam',
     cooldown: 5,
+    description: 'even idk',
 
 
 run: async (client, message, args) => {

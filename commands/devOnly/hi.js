@@ -2,11 +2,11 @@ const Discord = require('discord.js');
 const superagent = require('superagent')
 
 module.exports = {
-    name: 'ppussy',
+    name: 'hello1',
     aliases: ['ppussy'],
     category: 'Nsfw 🔞',
     utilisation: '{prefix}ppussy',
-
+description: 'some random devOnly command',
 
   run: async (client, message, args) => { 
     if (message.author.id !== '673846605920600068') return message.channel.send('**This command can be only used by my owner**')
