@@ -2,8 +2,8 @@ const { MessageEmbed } = require('discord.js')
 
 module.exports = {
 
-    name: 'info',
-    aliases: ['cmd-help', "commandhelp", "command-help", "cmdhelp", "commandinfo", "command-info", "cmd-info"], 
+    name: 'cmd-help',
+    aliases: ["commandhelp", "command-help", "cmdhelp", "commandinfo", "command-info", "cmd-info"], 
     description: "gives information on a command",
     userPermissions: "SEND_MESSAGES",
     botPermissions: "SEND_MESSAGES",
