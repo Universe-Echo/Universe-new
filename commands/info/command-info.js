@@ -12,18 +12,7 @@ module.exports = {
     run: async(client, message, args) => {
 const p = '>'
 
-        const fs = require('fs')
-        const directories = []
-        fs.readdirSync('../commands').forEach(dir => { // if u know JS or just basic knowledge at the very least you know how to fix simple path fix
-          directories.push(dir)
-      })
-      directories.forEach(dir => {
-        fs.readdirSync(`../commands/${dir}`)
-        .filter(file => file.endsWith('.js'))
-        /**
-         * @type {Command[]}
-         */
-                    })
+      
       
                     const cmd = client.commands.find(cmd => cmd.name == args[0].toLowerCase()) || client.commands.find(a => a.aliases && a.aliases.includes(args[0].toLowerCase()))
                     if(!cmd) return message.reply(`There is no such command!`)

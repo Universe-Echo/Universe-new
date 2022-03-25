@@ -3,7 +3,7 @@ const backup = require('discord.js');
 
 module.exports = {
     name: 'backup-list',
-
+    description: 'list server backups',
     run: async(client, message, args) => {
         const backup = require("discord-backup");
 backup.list().then((backups) => {
