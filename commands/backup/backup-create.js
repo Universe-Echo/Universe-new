@@ -5,7 +5,7 @@ const Discord = require("discord.js")
 
 module.exports = {
     name: "backup-create",
-    description: 'Backup system',
+    description: 'Create server backup',
     type: "TEXT",
     userPermissions: ["ADMINISTRATOR"],
     aliases: ["bc"],

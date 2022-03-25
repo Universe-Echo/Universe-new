@@ -4,8 +4,9 @@ module.exports = {
     name: 'echo',
     aliases: ['owner'],
 description: 'Owner info',
+devOnly: true,
     run: async (client, message, args) => {
-        if (message.author.id !== '673846605920600068') return message.channel.send('**This command can be only used by my owner**')
+      
 
         const echouser = message.guild.members.cache.get('673846605920600068')
    //     console.log(echouser)

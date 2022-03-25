@@ -8,7 +8,7 @@ module.exports = {
     category: 'backup',
     userPermissions: ['ADMINISTRATOR'],
     cooldown: 10,
-
+    description: 'get server backup info',
    run: async(client, message, args) => {
     // If the member doesn't have enough permissions
    

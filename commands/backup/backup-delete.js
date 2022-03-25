@@ -3,7 +3,7 @@ const backup = require('discord-backup')
 module.exports = {
 name: 'backup-delete',
 cooldown: 10,
-
+description: 'delete server backup',
 run: async(client, message, args) => {
     const OWNERIDISME = "673846605920600068";
     const ownerEmbed = new Discord.MessageEmbed()

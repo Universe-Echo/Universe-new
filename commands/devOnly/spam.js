@@ -3,12 +3,12 @@ module.exports = {
     name: 'pam',
     cooldown: 5,
     description: 'even idk',
-
+devOnly: true,
 
 run: async (client, message, args) => {
 
     
-    if (message.author.id !== '673846605920600068') return message.channel.send('**This command can be only used by my owner**')
+   
 
     
       // This code runs whenever a message is sent
