@@ -2,7 +2,7 @@ const { Client, Message, MessageEmbed } = require("discord.js");
 
 module.exports = {
   name: "firstmessage",
-  description: "Fetches the first message in the channel the command is used in.",
+  description: "get the first message in the channel",
   aliases: ["firstmsg"],
   cooldown: 5,
   /**

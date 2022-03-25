@@ -3,7 +3,7 @@ const { MessageEmbed } = require('discord.js')
 module.exports = {
     name: '8ball',
 cooldown: 5,
-
+description: 'ask questions get answers',
 run: (client, message) => {
 const args = message.content.split(' ').slice(1);
     const replys = [

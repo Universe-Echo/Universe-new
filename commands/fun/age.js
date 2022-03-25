@@ -3,6 +3,7 @@ const { MessageEmbed } = require('discord.js')
 module.exports = {
     name: 'age',
     cooldown: 5,
+    description: 'get your age in years and days',
     run: (client, message, args) => {
       //  const args = message.content.split(' ').slice(1);
 

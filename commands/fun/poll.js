@@ -3,6 +3,7 @@ const Discord = require('discord.js')
 module.exports = {
     name: 'poll',
     cooldown: 5,
+    description: 'poll a message in a specific channel',
    run: async (client, message, args) => {
         const pollchannel = message.mentions.channels.first()
         const syntaxErr = new Discord.MessageEmbed()

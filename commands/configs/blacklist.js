@@ -7,6 +7,7 @@ const { blacklistedwords, filter } = require('../../collections')
 
 module.exports = {
     name: 'blacklist',
+    description: 'add words to blacklist',
     aliases: ['bl'],
 userPermissions: ['ADMINISTRATOR'],
 

@@ -4,6 +4,7 @@ module.exports = {
     name: 'avatar',
     cooldown: 5,
     aliases: ['av', 'icon', 'pfp'],
+    description: 'get avatar of user',
     run: (client, message, args) => {
         const member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.member;
        

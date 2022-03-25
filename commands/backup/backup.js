@@ -3,7 +3,7 @@ const Discord = require('discord.js')
 module.exports = {
     name: 'backup',
     cooldown: 10,
-
+    description: 'backup help menu',
    run: async(client, message, args) => {
         
         

@@ -3,6 +3,7 @@ const Schema = require('../../models/autorole')
 module.exports = {
     name: 'autorole-check',
     cooldown: 5,
+    description: 'check autorole of the server',
 userPermissions: ['MANAGE_ROLES'],
 botPermissions: ['ADMINISTRATOR'],
    run: async (client, message, args) => {

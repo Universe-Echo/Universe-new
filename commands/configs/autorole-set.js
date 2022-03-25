@@ -2,6 +2,7 @@ const { Client, MessageEmbed, Message } = require('discord.js')
 const Schema = require('../../models/autorole')
 module.exports = {
     name: 'autorole-set',
+    description: 'set autorole',
     aliases: ['autorole-add', 'set-autorole'],
     cooldown: 5,
 userPermissions: ['MANAGE_ROLES'],

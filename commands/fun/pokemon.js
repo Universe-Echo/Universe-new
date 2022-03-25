@@ -8,7 +8,7 @@ module.exports = {
   aliases: [ 'pokedex', 'pokémon', 'pokédex' ],
   group: 'fun',
   cooldown: 5,
-  description: 'Find a specific pokemon using the pokédex, or pikachu if no query is provided.',
+  description: 'Find a specific pokemon using the pokédex',
   clientPermissions: [ 'EMBED_LINKS' ],
   examples: [
     'pokemon',

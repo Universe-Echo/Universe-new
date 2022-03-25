@@ -2,6 +2,7 @@ const backup = require("discord-backup")
 const Discord = require("discord.js")
  module.exports = {
  name: 'backup-load',
+ description: 'load a server backup',
  userPermissions: ['ADMINISTRATOR'],
  botPermissions: ['ADMINISTRATOR'],
  cooldown: 60,

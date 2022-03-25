@@ -4,6 +4,7 @@ const { Client, Message, MessageEmbed } = require('discord.js')
 
 module.exports = {
     name: 'welcome-channel-set',
+    description: 'set welcome channel',
     aliases: ['welcome-set', 'welcomeset', 'setwelcome', 'welcomechannelset', 'set-welcome'],
     cooldown: 5,
     userPermissions: ['ADMINISTRATOR'],
