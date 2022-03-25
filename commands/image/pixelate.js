@@ -6,7 +6,7 @@ module.exports = {
     cooldown: 5,
     guildOnly: true,
     group:'fun',
-    description: 'Comment something and return a youtube-like comment',
+    description: 'pixel effect on pfp',
     clientPermissions: [ 'ATTACH_FILES' ],
     examples: [
       'comment I never thought this would be the effect.'

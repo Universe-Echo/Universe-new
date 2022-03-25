@@ -5,7 +5,7 @@ const ms = require('ms');
 module.exports = {
     name: 'countdown',
     aliases: ['count', 'timer', 'cd'],
-    description: 'Setting a countdown/timer',
+    description: 'Set a countdown/timer',
   
     run: async(client, message, args) => {
         const user = client.users.cache.get(message.author.id)

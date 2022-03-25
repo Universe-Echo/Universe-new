@@ -3,7 +3,7 @@ const Discord = require('discord.js')
 
 module.exports = {
     name: "msglb",
-    description: "message leaderboard",
+    description: "Message leaderboard",
     userPermissions: "ADMINISTRATOR",
 cooldown: 120,
     run: async (client, message, args) => {

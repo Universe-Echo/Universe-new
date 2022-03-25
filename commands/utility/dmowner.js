@@ -3,6 +3,7 @@ const { Client, Message, MessageEmbed } = require("discord.js");
 module.exports = {
   name: "dmowner",
   aliases: ['mailowner', 'mail-owner', 'dm-owner', 'report'],
+  description: 'dm owner for suggestion or bug report',
   cooldown: 10,
   /**
    * @param {Client} client

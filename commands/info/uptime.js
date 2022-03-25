@@ -8,6 +8,7 @@ const { MessageEmbed } = require('discord.js')
 module.exports = {
     name:'uptime',
     cooldown: 5,
+    description: "get bot's uptime",
     run: async (client, message, args) => {
         let totalSeconds = (client.uptime / 1000);
         let days = Math.floor(totalSeconds / 86400);

@@ -3,7 +3,7 @@ module.exports = {
     aliases: [],
     cooldown: 5,
     group: 'fun',
-    description: 'Reverses the supplied text',
+    description: 'Reverse the text',
     examples: [
       'reverse This text will be reversed.'
     ],

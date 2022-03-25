@@ -3,7 +3,7 @@
   const moment = require('moment');
   module.exports = {
     name: 'oldest',
-    description: 'Diplays the oldest account in the server',
+    description: 'Shows the oldest account in the server',
     cooldown: 5,
   
     /**

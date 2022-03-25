@@ -2,7 +2,7 @@ const { Client, message, MessageActionRow, MessageButton, ButtonInteraction, Mes
 
 module.exports = {
     name: 'kick',
-    description: 'kicks a member',
+    description: 'KICK a member',
     cooldown: 5,
     userPermissions: ['KICK_MEMBERS'],
     botPermissions: ['KICK_MEMBERS'],

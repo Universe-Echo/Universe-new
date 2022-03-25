@@ -3,7 +3,7 @@ const prettyMs = require('pretty-ms')
 module.exports = {
     name: 'fetch',
     cooldown: 5,
-
+    description: 'Fetch a user using id',
     run: async (client, message, args) => {
         const id = args[0];
 

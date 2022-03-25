@@ -3,6 +3,7 @@ const { Client, Message, MessageEmbed } = require('discord.js');
 module.exports = {
     name: 'invite(old)',
     cooldown: 10,
+    description: 'Invite bot in your server!',
     /** 
      * @param {Client} client 
      * @param {Message} message 

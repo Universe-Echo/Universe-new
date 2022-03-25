@@ -10,7 +10,7 @@ module.exports = {
     name: "bot",
     category: "utility",
     cooldown: 5,
-  description: "Sends detailed info about the client",
+  description: "get info of the bot",
   usage: "[command]",
   run: async (client, message, args) => {
   

@@ -3,6 +3,7 @@ const { Client, Message, MessageEmbed } = require("discord.js");
 module.exports = {
   name: "bug",
   aliases: ['suggest', 'error'],
+  description: 'report a bug',
   cooldown: 10,
   /**
    * @param {Client} client

@@ -3,6 +3,7 @@ const fetch = require('node-fetch')
 module.exports = {
     name: 'pat',
     cooldown: 5,
+    description: 'pat someone',
    run: async(client, message, args) => {
        
       if (cooldown.has(message.author.id)) {

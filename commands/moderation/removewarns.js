@@ -8,6 +8,7 @@ module.exports = {
     cooldown: 5,
     aliases: ['clearwarn', 'clearwarns', 'removewarns', 'remove-warn', 'remove-warns'],
 userPermissions: ['BAN_MEMBERS'],
+description: 'remove warns of a user',
 
     run: async (client, message, args) => {
   

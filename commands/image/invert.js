@@ -3,7 +3,7 @@ const Discord = require('discord.js')
 
 module.exports = {
   name: 'invert',
-  description: "Color inverts your's or the mentioned user's profile picture.",
+  description: "invert effect on pfp",
   cooldown: 5,
    run: async (client, message, args) => {
 

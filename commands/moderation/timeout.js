@@ -4,7 +4,7 @@ module.exports = {
     name: "mute",
     aliases: ['to', 'timeout'],
     cooldown: 5,
-    description: "Timeout a member from the message.guild!",
+    description: "Timeout (mute) a member",
     userPermissions: ['MANAGE_MESSAGES'],
     botPermissions: ['MANAGE_MESSAGES'],
     /**

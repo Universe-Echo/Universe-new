@@ -4,13 +4,15 @@ const glob = require("glob");
 module.exports = {
 name: "reload",
 cooldown: 5,
+description: 'reload all commands',
+devOnly: true,
 /** 
 * @param {Client} client
 * @param {Message} message
 * @param {String[]} args
 */
 run: async (client , message, args) => {
-if (message.author.id !== "673846605920600068") return message.channel.send('**This command can be only used by my owner!**')
+
 client.commands.sweep(() => true)
 glob(`${__dirname}/../**/*.js` , async (err, filePaths) => {
    if (err) return console.log(err);

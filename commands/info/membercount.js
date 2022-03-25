@@ -2,7 +2,7 @@ const { MessageEmbed } = require('discord.js');
 
 module.exports = {
     name: 'membercount',
-    description: 'Count the number of members & bot in this server.',
+    description: 'get member count',
     aliases: ['mc', 'memberscount'],
     cooldown: 5,
     run: async (client, message, args) => {

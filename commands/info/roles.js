@@ -3,6 +3,7 @@ const { MessageEmbed } = require('discord.js')
 module.exports = {
     name: 'roles',
     cooldown: 5,
+    description: 'get roles list of the server',
     run: async (client, message, args) => {
         const roles = message.guild.roles.cache.sort((a, b) => b.position - a.position).map(role => role.toString());
 

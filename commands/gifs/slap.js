@@ -5,6 +5,7 @@ const cooldown = new Set()
 module.exports = {
     name: 'slap',
     cooldown: 5,
+    description: 'slap someone',
    run: async(client, message, args) => {
 
       //  const gifs = ["https://tenor.com/view/hug-anime-gif-15793126",

@@ -3,7 +3,7 @@ const { MessageEmbed } = require('discord.js')
 const moment = require('moment')
 module.exports = {
   name: 'youngest',
-  description: 'Diplays the youngest account in the server',
+  description: 'get the youngest account in the server',
   cooldown: 5,
 
   /**

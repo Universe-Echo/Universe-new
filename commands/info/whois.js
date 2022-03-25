@@ -13,6 +13,7 @@ module.exports = {
    name: 'whois',
    aliases: ['userinfo', 'ui', 'ws'],
    cooldown: 5,
+   description: 'get info of a user',
      run: async (client, message, args) => {
        
       

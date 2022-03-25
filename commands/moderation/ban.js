@@ -1,7 +1,7 @@
 const { Client, message, MessageActionRow, MessageButton, ButtonInteraction, MessageEmbed, Message } = require('discord.js')
 module.exports = {
     name: 'ban',
-    description: 'BANS a member',
+    description: 'BAN a member',
     cooldown: 5,
     userPermissions: ['BAN_MEMBERS'],
     botPermissions: ['BAN_MEMBERS'],

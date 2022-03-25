@@ -3,7 +3,8 @@
 module.exports = {
     name: 'gn',
     cooldown: 5,
+    description: 'gn gif',
    run: async(client, message, args) => {
-        message.channel.send('Hn sojaoo...')
+        message.channel.send('https://tenor.com/view/sleep-good-night-cat-gif-24504919')
     }
 }

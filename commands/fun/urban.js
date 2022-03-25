@@ -6,7 +6,7 @@ module.exports = {
     name: 'urban',
     aliases: ['urb'],
     cooldown: 5,
-    description: 'Get a random word from urban or search something from urban!',
+    description: 'search something from urban dictionary!',
     usage: '',
     category: 'fun',
     /** 

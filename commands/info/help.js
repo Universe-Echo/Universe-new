@@ -5,6 +5,7 @@ module.exports = {
   name: "help",
   aliases: [''],
   cooldown: 60,
+  description: 'help! help!',
   /**
    * @param {Client} client
    * @param {Message} message

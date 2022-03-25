@@ -6,7 +6,7 @@ module.exports = {
     cooldown: 5,
     guildOnly: true,
     group:'fun',
-    description: 'Comment something and return a youtube-like comment',
+    description: 'get a fake tweet',
     clientPermissions: [ 'ATTACH_FILES' ],
     examples: [
       'comment I never thought this would be the effect.'
@@ -19,7 +19,7 @@ module.exports = {
           'https://some-random-api.ml/canvas/tweet?avatar=',
           message.author.displayAvatarURL({format: 'png', size:1024}),
           `&displayname=${message.member.displayName}`,
-          `&username=${message.member.username}`,
+          
           `&comment=${args.join(' ')}`,
           
         ].join('')

@@ -3,6 +3,7 @@ const cooldown = new Set();
 module.exports = {
     name: 'gm',
     cooldown: 5,
+    description: 'gm gif',
    run: async(client, message, args) => {
        
         

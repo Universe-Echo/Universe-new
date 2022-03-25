@@ -4,7 +4,7 @@ module.exports = {
     name: "unmute",
     aliases: ['uto', 'untimeout'],
     cooldown: 5,
-    description: "Untimeout a member from the server!",
+    description: "Untimeout (unmute) a member",
     userPermissions: ['MANAGE_MESSAGES'],
     botPermissions: ['MANAGE_MESSAGES'],
     /**

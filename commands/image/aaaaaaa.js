@@ -6,6 +6,7 @@ module.exports = {
     description: "Trigger yourself or the mentioned user",
     cooldown: 5,
     usage: "<member>",
+    description: 'trigger effect on pfp',
     run: async (client, message, args) => {
 
             const { member, mentions } = message

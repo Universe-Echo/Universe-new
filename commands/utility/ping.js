@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 module.exports = {
     name: 'ping',
     cooldown: 10,
-    
+    description: "Shows bot's latency",
   run: (client, message) => {
         var states = "🟢 Excellent";
         var states2 = "🟢 Excellent";

@@ -7,7 +7,7 @@ module.exports = {
     name : 'ytstats',
     aliases: ['yt', 'ytinfo'], 
     timeout: 5,
-    description: "Shows information about the specified channel.",
+    description: "get information of a specific yt channel.",
     usage: "<channel name>",
     run: async(client, message, args) => { 
 

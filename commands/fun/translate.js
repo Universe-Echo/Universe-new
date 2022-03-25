@@ -8,7 +8,7 @@ module.exports = {
   category: 'translate',
   cooldown: 5,
   usage: 'translate <language> <text>',
-  description: 'Google translate',
+  description: 'translate something',
   run: async(client, message, args) =>  {
     const query = args.slice(1).join(" ")
     const syntaxErr = new MessageEmbed()
