@@ -1,7 +1,7 @@
 const db = require('../../models/warns')
 
 const { Message, MessageEmbed } = require('discord.js')
-const { execute } = require('../info/bot')
+
 
 module.exports = {
     name: 'removewarn',
