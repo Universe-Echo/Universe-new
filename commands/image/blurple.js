@@ -2,7 +2,7 @@
 
 module.exports = {
     name: 'blurple',
-    aliases:[],
+    
     cooldown: 5,
     guildOnly: true,
     group:'fun',

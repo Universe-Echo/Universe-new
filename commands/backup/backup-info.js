@@ -4,7 +4,7 @@ backup.setStorageFolder(__dirname + "/backups/")
 
 module.exports = {
     name: 'backup-info',
-    aliases: [],
+    
     category: 'backup',
     userPermissions: ['ADMINISTRATOR'],
     cooldown: 10,

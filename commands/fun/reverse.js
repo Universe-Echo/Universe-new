@@ -1,6 +1,6 @@
 module.exports = {
     name: 'reverse',
-    aliases: [],
+    
     cooldown: 5,
     group: 'fun',
     description: 'Reverse the text',

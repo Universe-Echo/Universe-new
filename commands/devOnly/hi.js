@@ -3,7 +3,7 @@ const superagent = require('superagent')
 
 module.exports = {
     name: 'hello1',
-    aliases: ['ppussy'],
+    aliases: ['hi1'],
     category: 'Nsfw 🔞',
     utilisation: '{prefix}ppussy',
 description: 'some random devOnly command',

@@ -2,7 +2,7 @@
 
 module.exports = {
     name: 'tweet',
-    aliases:[],
+   
     cooldown: 5,
     guildOnly: true,
     group:'fun',

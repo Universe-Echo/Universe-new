@@ -3,7 +3,7 @@ const { Client, message, MessageActionRow, MessageButton, ButtonInteraction, Mes
 
 module.exports = {
   name: "help",
-  aliases: [''],
+  
   cooldown: 60,
   description: 'help! help!',
   /**

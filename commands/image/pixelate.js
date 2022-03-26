@@ -2,7 +2,7 @@
 
 module.exports = {
     name: 'pixelate',
-    aliases:[],
+    
     cooldown: 5,
     guildOnly: true,
     group:'fun',
