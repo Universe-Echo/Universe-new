@@ -9,7 +9,7 @@ module.exports = {
     cooldown: 10,
     userPermissions: ['BAN_MEMBERS'],
     botPermissions: ['ADMINISTRATOR'],
-
+usage: 'list-bans',
 
 run: async(client, message, args) => {
         

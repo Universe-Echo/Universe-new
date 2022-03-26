@@ -5,6 +5,7 @@ module.exports = {
     aliases: ['owner'],
 description: 'Owner info',
 devOnly: true,
+usage: 'echo',
     run: async (client, message, args) => {
       
 

@@ -12,7 +12,7 @@ module.exports = {
   description: "Check the info of the bot",
   category: "Information",
   type: "CHAT_INPUT",
-
+usage: 'botinfo',
 
   run: async (client, message, args) => {
     let totalSeconds = (client.uptime / 1000);

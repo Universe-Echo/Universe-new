@@ -2,11 +2,11 @@ const { MessageEmbed, Permissions } = require('discord.js');
 const Schema = require('../../models/logs');
 
 module.exports = {
-    name: 'set-logs',
+    name: 'set-messageLogs',
     description: 'set message logs',
     aliases: ['setlog', 'setlogs', 'logsset', 'log-set', 'logs-set', 'set-log'],
     cooldown: 5,
-    
+    usage: 'set-messageLogs <channel>',
 userPermissions: ['ADMINISTRATOR'],
    run: async (client, message, args) => {
       if (!message.member.permissions.has('MANAGE_MESSAGES')) return message.channel.send({content: 'You cant use this command'})

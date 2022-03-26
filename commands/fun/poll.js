@@ -4,6 +4,7 @@ module.exports = {
     name: 'poll',
     cooldown: 5,
     description: 'poll a message in a specific channel',
+    usage: 'poll <channel> <message>',
    run: async (client, message, args) => {
         const pollchannel = message.mentions.channels.first()
         const syntaxErr = new Discord.MessageEmbed()

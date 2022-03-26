@@ -8,6 +8,7 @@ module.exports = {
     userPermissions: ['MANAGE_NICKNAMES'],
     botPermissions: ['MANAGE_NICKNAMES'],
     description: 'Change nick of a user',
+    usage: 'nickname <user> <text>',
     run: async (client, message, args) => {
 
         const member = message.mentions.members.first() || await message.guild.members.fetch(args[0]);

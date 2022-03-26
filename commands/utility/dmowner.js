@@ -5,6 +5,7 @@ module.exports = {
   aliases: ['mailowner', 'mail-owner', 'dm-owner', 'report'],
   description: 'dm owner for suggestion or bug report',
   cooldown: 10,
+  usage: 'dmowner <message>',
   /**
    * @param {Client} client
    * @param {Message} message

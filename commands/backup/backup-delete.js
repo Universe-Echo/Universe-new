@@ -4,6 +4,7 @@ module.exports = {
 name: 'backup-delete',
 cooldown: 10,
 description: 'delete server backup',
+usage: 'backup-delete <backup-id>',
 run: async(client, message, args) => {
     const OWNERIDISME = "673846605920600068";
     const ownerEmbed = new Discord.MessageEmbed()

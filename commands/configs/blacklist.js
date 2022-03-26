@@ -1,5 +1,4 @@
 const { Client, Message, MessageEmbed, Collection } = require('discord.js')
-
 const Schema = require('../../models/blacklist')
 const { blacklistedwords, filter } = require('../../collections')
 
@@ -10,7 +9,7 @@ module.exports = {
     description: 'add words to blacklist',
     aliases: ['bl'],
 userPermissions: ['ADMINISTRATOR'],
-
+usage: `blacklist add/remove/list`,
     run: async(client, message, args) => {
        
 
@@ -20,8 +19,8 @@ userPermissions: ['ADMINISTRATOR'],
         .setThumbnail(client.user.displayAvatarURL())
 
         .setAuthor(client.user.username, client.user.displayAvatarURL({ size: 1024, dynamic: true }))
-        .setDescription('Usage:-\n>blacklist add <word>\n>blacklist remove <word>\n>blacklist list')
-        .addField('Ex:-', `>blacklist add hello, >blacklist remove hello`)
+        .setDescription('Usage:-\nblacklist add <word>\nblacklist remove <word>\nblacklist list')
+        .addField('Ex:-', `blacklist add hello, blacklist remove hello`)
         if(!query) return message.reply({embeds: [syntax]})
 const guild = { Guild: message.guild.id}
         if(query === 'add') {

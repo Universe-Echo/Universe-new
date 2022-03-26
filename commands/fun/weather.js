@@ -6,7 +6,7 @@ module.exports = {
   description: "Get the weather of anywhere",
   cooldown: 5,
   category: "fun",
-  usage: "weather <>",
+  usage: "weather <location>",
 
 
   run: async(client, message, args) => {

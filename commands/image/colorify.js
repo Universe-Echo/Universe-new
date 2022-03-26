@@ -4,6 +4,7 @@ const { MessageEmbed } = require("discord.js")
         name: "colorify",
         cooldown: 5,
         description: 'colorify pfp',
+        usage: 'colorify, colorify <user>',
         run: async (client, message, args) => {
             if(!args.length) return message.channel.send("Usage: `>colorify @user color` or `>colorify color`")
             const user = message.mentions.users.first()

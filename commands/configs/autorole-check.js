@@ -6,6 +6,7 @@ module.exports = {
     description: 'check autorole of the server',
 userPermissions: ['MANAGE_ROLES'],
 botPermissions: ['ADMINISTRATOR'],
+usage: 'autorole-check',
    run: async (client, message, args) => {
         if (!message.member.guild.me.permissions.has('ADMINISTRATOR')) {
             return message.channel.send('**I dont have the perms to do this!**')

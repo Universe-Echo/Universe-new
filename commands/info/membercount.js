@@ -5,6 +5,7 @@ module.exports = {
     description: 'get member count',
     aliases: ['mc', 'memberscount'],
     cooldown: 5,
+    usage: 'membercount',
     run: async (client, message, args) => {
         let embed = new MessageEmbed()
         .setTitle(`${message.guild.name}`)

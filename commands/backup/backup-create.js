@@ -10,6 +10,7 @@ module.exports = {
     userPermissions: ["ADMINISTRATOR"],
     aliases: ["bc"],
     cooldown: 10,
+    usage: 'backup-create',
   
     run: async(client, message, args) => {
   

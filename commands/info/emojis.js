@@ -5,6 +5,7 @@ module.exports = {
   description: "View all emojis in the guild",
   category: "utility",
   cooldown: 5,
+  usage: 'emojis',
   run: async (client, message, args) => {
     let Emojis = "";
     let EmojisAnimated = "";

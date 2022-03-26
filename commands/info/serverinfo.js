@@ -5,6 +5,7 @@ module.exports = {
     aliases: ['si', 's', 'server-info'],
     cooldown: 5,
     description: "Get server's info",
+    usage: 'serverinfo',
     run: async (client, message, args) => {
         const { guild } = message
         

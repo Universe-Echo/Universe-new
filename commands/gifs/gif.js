@@ -7,6 +7,7 @@ module.exports = {
     aliases: ['g', 'gifs'],
     cooldown: 15,
     description: 'get a gif',
+    usage: 'gif <query>',
     run: async(client, message, args) => {
 
    

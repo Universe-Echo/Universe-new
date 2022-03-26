@@ -6,6 +6,7 @@ module.exports = {
     aliases: ['hi1'],
     category: 'Nsfw 🔞',
     utilisation: '{prefix}ppussy',
+    usage: 'hello1',
 description: 'some random devOnly command',
 
   run: async (client, message, args) => { 

@@ -6,6 +6,7 @@ name: "reload",
 cooldown: 5,
 description: 'reload all commands',
 devOnly: true,
+usage: 'reload',
 /** 
 * @param {Client} client
 * @param {Message} message

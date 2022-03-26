@@ -8,7 +8,7 @@ module.exports = {
     userPermissions: "SEND_MESSAGES",
     botPermissions: "SEND_MESSAGES",
     cooldown: 5,
-
+usage: 'cmd-help <command-name>',
     run: async(client, message, args) => {
 const p = '>'
 

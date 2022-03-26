@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 module.exports = {
     name: 'emojify',
     description: 'Emojify a specific text',
-    usage: "<text>",
+    usage: "emojify <text>",
     timeout: 5,
     run: (client, message, args) => {
 

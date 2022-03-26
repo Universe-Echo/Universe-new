@@ -5,7 +5,7 @@ module.exports = {
   name: 'youngest',
   description: 'Shows the youngest account in the server',
   cooldown: 5,
-
+usage: 'youngest',
   /**
    * @param {Client} client
    * @param {Message} message

@@ -4,6 +4,7 @@ module.exports = {
     name: '8ball',
 cooldown: 5,
 description: 'ask questions get answers',
+usage: '8ball <query>',
 run: (client, message) => {
 const args = message.content.split(' ').slice(1);
     const replys = [

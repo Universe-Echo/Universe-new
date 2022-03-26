@@ -6,6 +6,7 @@ module.exports = {
    cooldown: 5,
    description: 'Enlarge an emoji!',
    category: "assets",
+   usage: 'emoji <emoji>',
    /**
    *
    * @param {Client} client

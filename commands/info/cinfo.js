@@ -6,6 +6,7 @@ module.exports = {
     aliases: ['channelinfo', 'channel'],
     cooldown: 5,
     description: "Shows information about mentioned channel",
+    usage: 'cinfo <channel>',
     run: async (client, message, args) => {
         let channel = message.mentions.channels.first() || client.guilds.cache.get(message.guild.id).channels.cache.get(args[0]) || message.guild.channels.cache.find(r => r.name.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.channel;
         const syntaxErr = new MessageEmbed()

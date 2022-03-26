@@ -4,6 +4,7 @@ module.exports = {
     name: 'age',
     cooldown: 5,
     description: 'get your age in years and days',
+    usage: 'age mm/dd/yy',
     run: (client, message, args) => {
       //  const args = message.content.split(' ').slice(1);
 

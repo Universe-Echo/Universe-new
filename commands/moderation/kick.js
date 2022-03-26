@@ -6,6 +6,7 @@ module.exports = {
     cooldown: 5,
     userPermissions: ['KICK_MEMBERS'],
     botPermissions: ['KICK_MEMBERS'],
+    usage: 'kick <user>',
     run: async (client, message, args) =>{
       
         try {

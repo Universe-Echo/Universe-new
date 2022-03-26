@@ -7,6 +7,7 @@ module.exports = {
     description: "Timeout (mute) a member",
     userPermissions: ['MANAGE_MESSAGES'],
     botPermissions: ['MANAGE_MESSAGES'],
+    usage: 'mute <user> <duration> <reason>',
     /**
      *
      * @param {Client} client

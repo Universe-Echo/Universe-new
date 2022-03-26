@@ -5,6 +5,8 @@ module.exports = {
     name: "youtube",
     description: "Search for a video on youtube!",
     category: "Utils",
+    usage: 'youtube <video-name>',
+    cooldown: 10,
     /**
      * @param {Client} client
      * @param {Message} message 

@@ -5,6 +5,7 @@ module.exports = {
   aliases: ['suggest', 'error'],
   description: 'report a bug',
   cooldown: 10,
+  usage: 'bug',
   /**
    * @param {Client} client
    * @param {Message} message

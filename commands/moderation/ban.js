@@ -5,6 +5,7 @@ module.exports = {
     cooldown: 5,
     userPermissions: ['BAN_MEMBERS'],
     botPermissions: ['BAN_MEMBERS'],
+    usage: 'ban <user>',
     run: async (client, message, args) => {
       
         try {

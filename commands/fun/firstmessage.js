@@ -5,6 +5,7 @@ module.exports = {
   description: "get the first message in the channel",
   aliases: ["firstmsg"],
   cooldown: 5,
+  usage: 'firstmessage',
   /**
    * @param {Client} client
    * @param {Message} message

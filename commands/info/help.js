@@ -23,6 +23,7 @@ module.exports = {
   
   cooldown: 60,
   description: 'help! help!',
+  usage: 'help',
   /**
    * @param {Client} client
    * @param {Message} message

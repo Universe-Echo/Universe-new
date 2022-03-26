@@ -10,7 +10,7 @@ module.exports = {
 
   cooldown: 5,
   description: "Ascii Art!",
-  usage: "Ascii <Text>",
+  usage: "ascii <text>",
   run: async (client, message, args) => {
    
 

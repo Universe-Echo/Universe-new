@@ -8,6 +8,7 @@ module.exports = {
     cooldown: 5,
     userPermissions: ['BAN_MEMBERS'],
     description: 'warn a member',
+    usage: 'warn <user> <reason>',
    run: async (client, message, args) => {
 
 

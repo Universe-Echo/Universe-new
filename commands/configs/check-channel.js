@@ -3,11 +3,12 @@ const Schema = require('../../models/welcomeChannel')
 const { Client, Message, MessageEmbed } = require('discord.js')
 
 module.exports = {
-    name: 'check-channel',
+    name: 'check-welcomeChannel',
     description: 'check welcome channel',
     aliases: ['checkchannel', 'welcome-channel', 'welcomechannel', 'welcome-channel-check'],
     cooldown: 5,
     userPermissions: ['ADMINISTRATOR'],
+    usage: 'check-welcomeChannel',
     run: async (client, message, args) => {
      
 

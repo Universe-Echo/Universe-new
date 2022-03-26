@@ -4,6 +4,7 @@ module.exports = {
     name: 'fetch',
     cooldown: 5,
     description: 'Fetch a user using id',
+    usage: 'fetch <user-id>',
     run: async (client, message, args) => {
         const id = args[0];
 

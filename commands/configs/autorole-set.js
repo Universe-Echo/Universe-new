@@ -7,6 +7,7 @@ module.exports = {
     cooldown: 5,
 userPermissions: ['MANAGE_ROLES'],
 botPermissions: ['ADMINISTRATOR'],
+usage: 'autorole-set <role>',
     run: async (client, message, args) => {
      
 

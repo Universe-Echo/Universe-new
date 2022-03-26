@@ -5,7 +5,7 @@ module.exports = {
 name: "imdb",
   description: "Get the information about a series or movie",
   category: "info",
-  usage: "imdb <name>",
+  usage: "imdb <query>",
   cooldown: 5,
   run: async (client, message, args, color)  => {
     

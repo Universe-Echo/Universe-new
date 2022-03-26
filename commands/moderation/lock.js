@@ -6,6 +6,7 @@ module.exports = {
     userPermissions: ['MANAGE_CHANNEL'],
     botPermissions: ['MANAGE_CHANNEL'],
     description: 'Lock the specified channel',
+    usage: 'lock, lock <channel>',
     run: async (client, message, args) => {
        
     const role = message.guild.roles.cache.find( r => r.name === '@everyone')

@@ -4,13 +4,10 @@ module.exports = {
     name: 'pat',
     cooldown: 5,
     description: 'pat someone',
+    usage: 'pat <user>',
    run: async(client, message, args) => {
        
-      if (cooldown.has(message.author.id)) {
-        message.channel.send('Pls wait 10 secs before using that command....').then(msg=>msg.delete({timeout:"1000"/*Time until delete in milliseconds*/})
-       
-        )}
-    else {
+     
       let url = 'https://g.tenor.com/v1/search?q=anime_pat&key=EURH7SHHRLJW&limit=8'
         
       let response = await fetch(url);
@@ -37,13 +34,5 @@ message.channel.send(json.results[index].url)
   catch (e) {
       return message.channel.send(`there was an error:\n${e.message}`)
 }
-    }
-      cooldown.add(message.author.id);
-        setTimeout(() => {
-            cooldown.delete(message.author.id)
-        }, 10000);
-
-     
-      }
-    }
-  
+}
+}

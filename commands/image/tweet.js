@@ -7,7 +7,8 @@ module.exports = {
     guildOnly: true,
     group:'fun',
     description: 'get a fake tweet',
-    clientPermissions: [ 'ATTACH_FILES' ],
+    botPermissions: [ 'ATTACH_FILES' ],
+    usage: 'tweet <text>',
     examples: [
       'comment I never thought this would be the effect.'
     ],

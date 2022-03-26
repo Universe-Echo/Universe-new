@@ -4,6 +4,7 @@ module.exports = {
     name: 'ping',
     cooldown: 10,
     description: "Shows bot's latency",
+    usage: 'ping',
   run: (client, message) => {
         var states = "🟢 Excellent";
         var states2 = "🟢 Excellent";

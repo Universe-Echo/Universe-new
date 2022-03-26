@@ -20,14 +20,17 @@ client.prefix = async function(message) {
   }
   return custom;
 }
+
+
 client.on("messageCreate", async (message) => {
 
   const p = await client.prefix(message)
+  
   //console.log(p)
   const prefixMention = new RegExp(`^<@!?${client.user.id}> `);
  
   const prefix = message.content.match(prefixMention) ? message.content.match(prefixMention)[0] : p;
-  
+  module.exports = prefix
   
     if (
         message.author.bot ||

@@ -7,7 +7,7 @@ module.exports = {
     aliases: ['urb'],
     cooldown: 5,
     description: 'search something from urban dictionary!',
-    usage: '',
+    usage: 'urban <query>',
     category: 'fun',
     /** 
      * @param {Client} client 

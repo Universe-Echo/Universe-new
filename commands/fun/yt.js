@@ -4,11 +4,11 @@ const fetch = require('node-superfetch')
 
 
 module.exports = {
-    name : 'ytstats',
-    aliases: ['yt', 'ytinfo'], 
+    name : 'youtube-channel',
+    aliases: ['yt-stats', 'ytinfo', 'yt-channel'], 
     timeout: 5,
     description: "get information of a specific yt channel.",
-    usage: "<channel name>",
+    usage: "youtube-channel <channel-name>",
     run: async(client, message, args) => { 
 
     let name = args.slice(0).join(" ").replace(/ -/g, " ") // it gonna replace " " by -

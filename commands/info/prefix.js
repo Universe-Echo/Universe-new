@@ -20,7 +20,7 @@ client.prefix = async function(message) {
   }
 module.exports = {
   name: "prefix",
-  
+  usage: 'prefix',
   cooldown: 10,
   description: 'Check the custom prefix in the server',
   /**

@@ -9,13 +9,14 @@ module.exports = {
   group: 'fun',
   cooldown: 5,
   description: 'Find a specific pokemon using the pokédex',
-  clientPermissions: [ 'EMBED_LINKS' ],
+  botPermissions: [ 'EMBED_LINKS' ],
   examples: [
     'pokemon',
     'pokedex pikachu',
     'pokémon clefairy',
     'pokédex jigglypuff'
   ],
+  usage: 'pokemon <name>',
   run: async (client, message, args) => {
 
     const query = args.join(' ') || 'Pikachu';

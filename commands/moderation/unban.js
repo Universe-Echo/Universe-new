@@ -6,6 +6,7 @@ module.exports = {
     userPermissions: ['BAN_MEMBERS'],
     botPermissions: ['BAN_MEMBERS'],
     description: 'Unban a user',
+    usage: 'unban <user>',
     run: async (client, message, args) => {
 
        

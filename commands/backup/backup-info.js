@@ -4,11 +4,11 @@ backup.setStorageFolder(__dirname + "/backups/")
 
 module.exports = {
     name: 'backup-info',
-    
     category: 'backup',
     userPermissions: ['ADMINISTRATOR'],
     cooldown: 10,
     description: 'get server backup info',
+    usage: 'backup-info <backup-id>',
    run: async(client, message, args) => {
     // If the member doesn't have enough permissions
    

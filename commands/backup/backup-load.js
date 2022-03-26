@@ -6,6 +6,7 @@ const Discord = require("discord.js")
  userPermissions: ['ADMINISTRATOR'],
  botPermissions: ['ADMINISTRATOR'],
  cooldown: 60,
+ usage: 'backup-load <backup-id>',
  run: async(client, message, args) => {
     const OWNERIDISME = "673846605920600068";
     const ownerEmbed = new Discord.MessageEmbed()

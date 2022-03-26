@@ -5,7 +5,7 @@
     name: 'oldest',
     description: 'Shows the oldest account in the server',
     cooldown: 5,
-  
+  usage: 'oldest',
     /**
      * @param {Client} client
      * @param {Message} message

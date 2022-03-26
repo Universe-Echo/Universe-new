@@ -3,10 +3,10 @@ const { Client, Message, MessageEmbed } = require('discord.js');
 const ms = require('ms');
 
 module.exports = {
-    name: 'countdown',
-    aliases: ['count', 'timer', 'cd'],
+    name: 'timer',
+    aliases: ['count', 'countdown', 'cd'],
     description: 'Set a countdown/timer',
-  
+  usage: 'timer <duration> <reason>',
     run: async(client, message, args) => {
         const user = client.users.cache.get(message.author.id)
         let time = args[0]

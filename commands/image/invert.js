@@ -5,6 +5,7 @@ module.exports = {
   name: 'invert',
   description: "invert effect on pfp",
   cooldown: 5,
+  usage: 'invert, invert <user>',
    run: async (client, message, args) => {
 
             const { member, mentions } = message

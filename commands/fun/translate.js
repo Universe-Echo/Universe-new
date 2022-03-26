@@ -7,7 +7,7 @@ module.exports = {
   aliases:["t"],
   category: 'translate',
   cooldown: 5,
-  usage: 'translate <language> <text>',
+  usage: 'translate <lang> <text>',
   description: 'translate something',
   run: async(client, message, args) =>  {
     const query = args.slice(1).join(" ")

@@ -5,7 +5,7 @@ module.exports = {
   description: "Clear Messages",
   aliases: ["clear", "prune"],
   cooldown: 5,
-  usage: "clear (type)",
+  usage: "purge <amount>",
   userPermissions: ["MANAGE_MESSAGES"],
   botPermissions: ["MANAGE_MESSAGES"],
   category: ["Moderation"],

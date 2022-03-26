@@ -6,7 +6,7 @@ module.exports = {
     name: 'highfive',
     cooldown: 5,
     description: 'give a highfive',
-    
+    usage: 'highfive <user>',
     run: async(client, message, args) => {
 
       //  const gifs = ["https://tenor.com/view/hug-anime-gif-15793126",

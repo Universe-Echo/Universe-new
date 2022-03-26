@@ -4,6 +4,7 @@ module.exports = {
     name : 'reset-prefix',
     description: 'Reset custom prefix',
     userPermissions: ['ADMINISTRATOR'],
+    usage: 'reset-prefix',
     /**
      * @param {Message} message
      */

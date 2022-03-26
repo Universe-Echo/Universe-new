@@ -6,6 +6,7 @@ module.exports = {
     description: "Message leaderboard",
     userPermissions: "ADMINISTRATOR",
 cooldown: 120,
+usage: 'msglb',
     run: async (client, message, args) => {
       
         // just remove this line ^^^^^ if you dont want it to be owner only.

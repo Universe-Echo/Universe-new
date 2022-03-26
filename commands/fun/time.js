@@ -5,6 +5,7 @@ module.exports = {
     name: 'time',
     cooldown: 5,
     description: 'get the current date and time in IST',
+    usage: 'time',
 run: (client, message, args) => {
    const date = new Date().toLocaleString("en-US", {timeZone: "IST"})
 

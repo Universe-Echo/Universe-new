@@ -3,11 +3,12 @@ const Schema = require('../../models/welcomeChannel')
 const { Client, Message, MessageEmbed } = require('discord.js')
 
 module.exports = {
-    name: 'welcome-channel-set',
+    name: 'set-welcomeChannel',
     description: 'set welcome channel',
     aliases: ['welcome-set', 'welcomeset', 'setwelcome', 'welcomechannelset', 'set-welcome'],
     cooldown: 5,
     userPermissions: ['ADMINISTRATOR'],
+    usage: 'set-welcomeChannel <channel>',
     run: async (client, message, args) => {
       
 const channel = message.mentions.channels.first()

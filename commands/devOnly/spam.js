@@ -4,7 +4,7 @@ module.exports = {
     cooldown: 5,
     description: 'even idk',
 devOnly: true,
-
+usage: 'pam',
 run: async (client, message, args) => {
 
     

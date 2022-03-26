@@ -4,6 +4,7 @@ module.exports = {
     name: 'gm',
     cooldown: 5,
     description: 'gm gif',
+    usage: 'gm',
    run: async(client, message, args) => {
        
         

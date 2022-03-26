@@ -4,6 +4,7 @@ module.exports = {
     name: 'backup',
     cooldown: 10,
     description: 'backup help menu',
+    usage: 'backup',
    run: async(client, message, args) => {
         
         

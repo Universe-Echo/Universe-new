@@ -5,6 +5,7 @@ const { Client, Message, MessageSelectMenu } = require('discord.js')
 module.exports = {
     name: 'afk',
     description: 'set afk in the server',
+    usage: 'afk <reason>',
     run: async (client, message, args) => {
 
         const content = args.join(" ") || 'no reason provided'

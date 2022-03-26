@@ -1,11 +1,12 @@
 
 const { MessageFlags } = require('discord.js')
 const fetch = require('node-fetch')
-const cooldown = new Set()
+
 module.exports = {
     name: 'hug',
     cooldown: 5,
     description: 'hug someone',
+    usage: 'hug <user>',
     run: async(client, message, args) => {
 
       //  const gifs = ["https://tenor.com/view/hug-anime-gif-15793126",
@@ -14,11 +15,8 @@ module.exports = {
       //               "https://tenor.com/view/hug-anime-gif-19674705"]
 
       //  const randomMessage = gifs[Math.floor(Math.random() * gifs.length)];
-      if (cooldown.has(message.author.id)) {
-        message.channel.send('**Pls wait 10 secs before using that command....**').then(msg=>msg.delete({timeout:"1000"/*Time until delete in milliseconds*/})
-       
-        )}
-    else {
+     
+    
       let url = 'https://g.tenor.com/v1/search?q=anime_hug&key=EURH7SHHRLJW&limit=8'
       
       let response = await fetch(url);
@@ -49,13 +47,8 @@ module.exports = {
         catch (e) {
             return message.channel.send(`there was an error:\n${e.message}`)
       }
-      cooldown.add(message.author.id);
-        setTimeout(() => {
-            cooldown.delete(message.author.id)
-        }, 10000);
-    }
+     
     
-
 
       }
     }

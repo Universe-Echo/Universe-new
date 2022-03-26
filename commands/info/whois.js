@@ -14,6 +14,7 @@ module.exports = {
    aliases: ['userinfo', 'ui', 'ws'],
    cooldown: 5,
    description: 'get info of a user',
+   usage: 'whois <user>',
      run: async (client, message, args) => {
        
       

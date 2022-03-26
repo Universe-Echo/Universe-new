@@ -6,6 +6,7 @@ module.exports = {
     userPermissions: ['MANAGE_ROLES'],
     botPermissions: ['MANAGE_ROLES'],
     description: 'add role to a member',
+    usage: 'role <user> <role>',
     run: async (client, message, args) => {
         
         const syntaxErr = new MessageEmbed()
