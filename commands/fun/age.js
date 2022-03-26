@@ -21,7 +21,7 @@ module.exports = {
         var ageInYears =  Math.floor(ageInDays / 365 );
         var age =  ageInDays / 365 ;
         var age2 = Math.round(ageInDays)
-        console.log( 'Whole years : ' + ageInYears + '\nDays : ' + ageInDays  );
+      //  console.log( 'Whole years : ' + ageInYears + '\nDays : ' + ageInDays  );
 const birthEmbed = new MessageEmbed()
 .setThumbnail(client.user.displayAvatarURL())
 .setTitle('Age')
