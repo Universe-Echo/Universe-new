@@ -1,6 +1,23 @@
 const { Client, message, MessageActionRow, MessageButton, ButtonInteraction, MessageEmbed, Message, Discord, MessageSelectMenu, Interaction } = require('discord.js');
-
-
+const prefixSchema = require('../../models/prefix');
+const prefix = require('../../models/prefix');
+const client = require('../../index')
+client.prefix = async function(message) {
+    let custom;
+  
+    const data = await prefix.findOne({ Guild : message.guildId })
+        .catch(err => console.log(err))
+    
+    if(data) {
+        custom = data.Prefix;
+    } if(!data) {
+        const prefix = ">"
+            
+        
+        custom = prefix
+    }
+    return custom;
+  }
 module.exports = {
   name: "help",
   
@@ -23,6 +40,8 @@ module.exports = {
         moderation: '🔨',
         utility: '⚡'
     }
+    const commands = client.commands.filter(x => x.showHelp !== false);
+    const p = await client.prefix(message)
 const directories = [...new Set(client.commands.map(cmd => cmd.directory))]
 
 const formatString = (str) => `${str[0].toUpperCase()}${str.slice(1).toLowerCase()}`;
@@ -90,7 +109,7 @@ const collector = message.channel.createMessageComponentCollector(
             );
 
             const categoryEmbed = new MessageEmbed()
-            .setTitle(`${directory} commands`)
+            .setTitle(`${directory} commands,  Total Commands - ${commands.size},  Prefix: **${p}**`)
             .setDescription('Here is the list of commands')
             .addFields(
                 category.commands.map((cmd) => {
