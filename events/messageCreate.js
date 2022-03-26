@@ -1,12 +1,32 @@
 const client = require("../index");
 const cooldowns = new Map()
 const { Discord, Collection, MessageEmbed, Embeds } = require("discord.js");
+const prefixSchema = require('../models/prefix');
+const prefix = require('../models/prefix');
 
+client.prefix = async function(message) {
+  let custom;
 
+  const data = await prefix.findOne({ Guild : message.guildId })
+      .catch(err => console.log(err))
+  
+  if(data) {
+      custom = data.Prefix;
+  } if(!data) {
+      const prefix = ">"
+          
+      
+      custom = prefix
+  }
+  return custom;
+}
 client.on("messageCreate", async (message) => {
+
+  const p = await client.prefix(message)
+  //console.log(p)
   const prefixMention = new RegExp(`^<@!?${client.user.id}> `);
  
-  const prefix = message.content.match(prefixMention) ? message.content.match(prefixMention)[0] : client.config.prefix;
+  const prefix = message.content.match(prefixMention) ? message.content.match(prefixMention)[0] : p;
   
   
     if (
