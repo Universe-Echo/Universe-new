@@ -12,9 +12,10 @@ module.exports = {
     cooldown: 5,
   description: "get info of the bot",
   usage: "[command]",
+  devOnly: true,
   run: async (client, message, args) => {
   
-    if (message.author.id !== '673846605920600068') return message.channel.send('**This command can be only used by my owner**')
+ 
 
   let cpuLol;
   cpuStat.usagePercent(function(err, percent, seconds) {
