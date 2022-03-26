@@ -6,13 +6,13 @@ module.exports = {
     aliases: ['av', 'icon', 'pfp'],
     description: 'get avatar of user',
     usage: 'avatar, avatar <user>',
-    run: (client, message, args) => {
+    run: async(client, message, args) => {
         const member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.member;
        
      const avatar =   new MessageEmbed()
             .setTitle(`${member.user.tag}'s avatar`)
             .setImage(member.user.displayAvatarURL({ dynamic: true, size: 512 }))
-            .setColor('BLACK')
+            .setColor('')
             .setTimestamp()
             message.channel.send({embeds: [avatar]});
     }

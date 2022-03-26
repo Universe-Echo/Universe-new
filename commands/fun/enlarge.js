@@ -13,7 +13,7 @@ module.exports = {
    * @param {Message} message
    * @param {String[]} args
    */
-  run: (client, message, args) => {
+  run: async(client, message, args) => {
     if(!args.length) return message.channel.send(`**Please supply an emoji**`)
     const emoji = args[0]
     const parsedEmoji = Util.parseEmoji(emoji)

@@ -18,13 +18,11 @@ module.exports = {
         .setThumbnail(message.author.displayAvatarURL({dynamic: true}))
         .addField('Server:', `${message.guild.name}`)
         .addField('Message:', `${args.join(" ")}`)
-      //  .setDescription(args.join(" "))
         .setTimestamp()
         .setColor("BLACK")
-
+        
       message.channel.send("Message sent!")
       
-
     owner.send({embeds: [dm]}).catch({ })
   },
 };

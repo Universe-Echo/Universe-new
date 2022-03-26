@@ -5,7 +5,7 @@ module.exports = {
     description: 'Emojify a specific text',
     usage: "emojify <text>",
     timeout: 5,
-    run: (client, message, args) => {
+    run: async(client, message, args) => {
 
         if(!args.length) return message.reply('Please specify a text to emojify.')
        
@@ -39,8 +39,5 @@ module.exports = {
         message.reply(text).catch(() => { message.channel.send('**Please provide a shorter text!**')})
     }
      
-    
-    
-
    
   }
