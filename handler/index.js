@@ -101,22 +101,22 @@ module.exports = async (client) => {
 	});
 
 	client.on("ready", async () => {
-		// await client.guilds.cache
-		 //.get("951757886692921344")
-		// .commands.set(arrayOfSlashCommands).then(() => {
+	//	 await client.guilds.cache
+	//	 .get("779213432389107742")
+	//	 .commands.set(arrayOfSlashCommands).then(() => {
 		//  console.log(
-		 //   chalk.cyan("[ INFORMATION ]") +
-		 //   chalk.white(" | ") +
-		  //  chalk.blue(`${new Date().toLocaleDateString()}`) +
-		 //    chalk.white(" | ") +
-		 //   chalk.cyan("Slash Commands") +
+		//    chalk.cyan("[ INFORMATION ]") +
+		//    chalk.white(" | ") +
+		//   chalk.blue(`${new Date().toLocaleDateString()}`) +
+		//     chalk.white(" | ") +
+		//    chalk.cyan("Slash Commands") +
 		//     chalk.white(": ") +
-		//    chalk.white(`Loaded to`) +
-		//    chalk.white(": ") +
-		//    chalk.greenBright(`${client.guilds.cache.get("951757886692921344").name}`)
-		//  )
+		 //   chalk.white(`Loaded to`) +
+		 //   chalk.white(": ") +
+		//    chalk.greenBright(`${client.guilds.cache.get("779213432389107742").name}`)
+		// )
 
-		// });
+	//	});
 
         await client.application.commands.set(arrayOfSlashCommands).then(() => {
 			console.log(

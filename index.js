@@ -18,4 +18,6 @@ process.on("unhandledRejection", console.error);
 process.on('uncaughtException', console.error)
 process.on('multipleResolves', console.error)
 
+
+//logging in
 client.login(process.env.TOKEN);
