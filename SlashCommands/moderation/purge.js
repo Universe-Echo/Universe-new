@@ -42,12 +42,12 @@ module.exports = {
             const deleteCount = `${userMessageMap.map(([user, messages]) => `**${user}**: ${messages}`).join('\n')}`
 
             const embed = new MessageEmbed()
-            .setColor('GREEN')
+            .setColor('DARKER_GREY')
             .setTitle(finalResult)
             .setDescription(deleteCount)
-            .setFooter({ text: 'thx carl-bot for idea <3' })
+            .setFooter({ text: 'this embed will be deleted in 5s' })
 
-            await interaction.followUp({ embeds: [embed] }).then(async (msg) => setTimeout(() => msg.delete(), 10000))
+            await interaction.followUp({ embeds: [embed] }).then(async (msg) => setTimeout(() => msg.delete(), 5000))
         } catch (err) {
             if (String(err).includes('Unknown Message')) return console.log('[ERROR!] Unknown Message');
         }
