@@ -1,5 +1,5 @@
 
-const { interaction, MessageEmbed } = require('discord.js')
+const { Client, CommandInteraction, MessageEmbed } = require("discord.js");
 module.exports = {
 	name: "say",
 	description: "Say Command",
@@ -39,9 +39,9 @@ module.exports = {
 			const embed = new MessageEmbed()
 				.setDescription(`${message}`)
 				.setColor("RANDOM");
-			return interaction.reply({ embeds: [embed], ephemeral: ephermal });
+			return interaction.followUp({ embeds: [embed], ephemeral: ephermal });
 		} else {
-			interaction.reply({ content: `${message}`, ephemeral: ephermal });
+			interaction.followUp({ content: `${message}`, ephemeral: ephermal });
 		}
 	},
 }
