@@ -8,6 +8,7 @@ const backup = require("discord-backup")
 module.exports = {
     name: 'backup',
     description: 'Server Backup!',
+    userPermissions: ['ADMINISTRATOR'],
     options: [{
             name: 'create',
             type: 'SUB_COMMAND',
@@ -119,7 +120,7 @@ module.exports = {
                     backup.create(interaction.guild, {
                         jsonBeautify: true,
                         saveImages: "base64",
-                        maxMessagesPerChannel: 5,
+                        maxMessagesPerChannel: 0,
                     }).then((backupData) => {
                         let guildicon = interaction.guild.iconURL({
                             dynamic: true

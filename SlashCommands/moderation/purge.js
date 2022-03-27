@@ -9,7 +9,7 @@ const purger = new purge({
 module.exports = {
     name: "purge",
     description: 'Purge messages',
-
+userPermissions: ['MANAGE_MESSAGES'],
     options: [
         {
             name: "messages",
