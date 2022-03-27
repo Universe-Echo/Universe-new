@@ -38,7 +38,7 @@ module.exports = {
 
             const userMessageMap = Object.entries(results);
 
-            const finalResult = `${deletedMessages.size} message${deletedMessages.size > 1 ? 's' : ''} were removed!`;
+            const finalResult = `${deletedMessages.size} message${deletedMessages.size > 1 ? 's' : ''} were deleted`;
             const deleteCount = `${userMessageMap.map(([user, messages]) => `**${user}**: ${messages}`).join('\n')}`
 
             const embed = new MessageEmbed()
