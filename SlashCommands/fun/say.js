@@ -1,4 +1,4 @@
-const { MessageEmbed } = require("discord.js");
+
 const { interaction, MessageEmbed } = require('discord.js')
 module.exports = {
 	name: "say",
