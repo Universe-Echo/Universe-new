@@ -10,6 +10,8 @@ module.exports = {
 
 
   run: async(client, message, args) => {
+    const p = await client.prefix(message);
+  
   const syntaxErr = new discord.MessageEmbed()
   .setAuthor(client.user.username, client.user.displayAvatarURL({ size: 1024, dynamic: true }))
   .setTitle('Syntax Error!')
