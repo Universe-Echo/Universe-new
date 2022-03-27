@@ -21,7 +21,7 @@ client.on("interactionCreate", async (interaction) => {
         }
         interaction.member = interaction.guild.members.cache.get(interaction.user.id);
 
-        if (cmd.devOnly == true && !client.config.developerIDs.includes(interaction.user.id)) return interaction.reply({
+        if (cmd.devOnly == true && !client.config.developerIDs.includes(interaction.user.id)) return interaction.followUp({
             embeds: [new MessageEmbed({
               color: "RED",
               title: "You are not the developer.",
@@ -30,7 +30,7 @@ client.on("interactionCreate", async (interaction) => {
             })]
           })
             
-          if (!interaction.memberPermissions.has(cmd.userPermissions || [])) return interaction.reply({
+          if (!interaction.memberPermissions.has(cmd.userPermissions || [])) return interaction.followUp({
             embeds: [new MessageEmbed({
               color: "RED",
               title: "You are missing some permissions.",
@@ -39,7 +39,7 @@ client.on("interactionCreate", async (interaction) => {
             })]
           })
         
-          if (!interaction.guild.me.permissions.has(cmd.botPermissions || [])) return interaction.reply({
+          if (!interaction.guild.me.permissions.has(cmd.botPermissions || [])) return interaction.followUp({
             embeds: [new MessageEmbed({
               color: "RED",
               title: "I am missing some permissions.",
