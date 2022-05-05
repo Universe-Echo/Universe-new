@@ -1,5 +1,4 @@
 
-
 module.exports = {
     name: 'gn',
     cooldown: 5,
