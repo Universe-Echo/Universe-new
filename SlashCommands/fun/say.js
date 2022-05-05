@@ -24,12 +24,12 @@ module.exports = {
 		},
 	],
 	type: "CHAT_INPUT",
-   /**
-     *
-     * @param {Client} client
-     * @param {CommandInteraction} interaction
-     * @param {String[]} args
-     */
+	/**
+	  *
+	  * @param {Client} client
+	  * @param {CommandInteraction} interaction
+	  * @param {String[]} args
+	  */
 	run: async (client, interaction, args) => {
 		const message = interaction.options.getString("message");
 		const embeded = interaction.options.getBoolean("embeded");

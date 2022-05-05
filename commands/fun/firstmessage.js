@@ -19,17 +19,19 @@ module.exports = {
     const msg = fetchMessages.first();
 
     message.reply(
-      {embeds: [new MessageEmbed()
-        .setAuthor(message.guild.name)
-        .setTitle(`First Messsage in ${message.guild.name}`)
-        .setURL(msg.url)
-        .setThumbnail(msg.author.displayAvatarURL({ dynamic: true }))
-        .setDescription("Content: " + msg.content)
-        .addField("Author", msg.author.tag, true)
-        .addField('Message ID', msg.id, true)
-        .addField('Created At', msg.createdAt.toLocaleDateString(), true)
-        .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true }))]}
-        
+      {
+        embeds: [new MessageEmbed()
+          .setAuthor(message.guild.name)
+          .setTitle(`First Messsage in ${message.guild.name}`)
+          .setURL(msg.url)
+          .setThumbnail(msg.author.displayAvatarURL({ dynamic: true }))
+          .setDescription("Content: " + msg.content)
+          .addField("Author", msg.author.tag, true)
+          .addField('Message ID', msg.id, true)
+          .addField('Created At', msg.createdAt.toLocaleDateString(), true)
+          .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true }))]
+      }
+
     );
   },
 };

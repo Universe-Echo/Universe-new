@@ -84,7 +84,7 @@ module.exports = {
                 `\`|\` Cleared  Messages \`${m.size}|${amount}\` of messages`
               );
             const peo = await message.channel.send({ embeds: [dou] });
-            setTimeout(() => peo.delete().catch(() => {}), 5000);
+            setTimeout(() => peo.delete().catch(() => { }), 5000);
           });
         } catch (e) {
           message.channel.send(`${e}`);
@@ -139,7 +139,7 @@ module.exports = {
                     `\`|\` Cleared \`${m.size}|${amount}\` Bots messages`
                   );
                 const y = await message.channel.send({ embeds: [embed] });
-                setTimeout(() => y.delete().catch(() => {}), 5000);
+                setTimeout(() => y.delete().catch(() => { }), 5000);
               });
             break;
           } catch (e) {
@@ -163,13 +163,13 @@ module.exports = {
                     `\`|\` Cleared \`${m.size}|${amount}\` Users messages`
                   );
                 const y = await message.channel.send({ embeds: [embed] });
-                setTimeout(() => y.delete().catch(() => {}), 5000);
+                setTimeout(() => y.delete().catch(() => { }), 5000);
               });
             break;
           } catch (e) {
             message.channel.send(`${e}`
-             
-     );
+
+            );
           }
         }
         case "-embeds": {
@@ -190,7 +190,7 @@ module.exports = {
                     `\`|\` Cleared \`${m.size}|${amount}\` Embeds messages`
                   );
                 const y = await message.channel.send({ embeds: [embed] });
-                setTimeout(() => y.delete().catch(() => {}), 5000);
+                setTimeout(() => y.delete().catch(() => { }), 5000);
               });
             break;
           } catch (e) {
@@ -215,7 +215,7 @@ module.exports = {
                     `\`|\` Cleared \`${m.size}|${amount}\` files`
                   );
                 const y = await message.channel.send({ embeds: [embed] });
-                setTimeout(() => y.delete().catch(() => {}), 5000);
+                setTimeout(() => y.delete().catch(() => { }), 5000);
               });
             break;
           } catch (e) {
@@ -247,7 +247,7 @@ module.exports = {
                     `\`|\` Cleared \`${m.size}|${amount}\` mention messages`
                   );
                 const y = await message.channel.send({ embeds: [embed] });
-                setTimeout(() => y.delete().catch(() => {}), 5000);
+                setTimeout(() => y.delete().catch(() => { }), 5000);
               });
             break;
           } catch (e) {
@@ -279,14 +279,13 @@ module.exports = {
                 embed = new MessageEmbed()
                   .setColor("#81BABA")
                   .setDescription(
-                    `\`|\` Cleared \`${
-                      m.size
+                    `\`|\` Cleared \`${m.size
                     }|${amount}\` messages matching with \`${args
                       .slice(2)
                       .join(" ")}\``
                   );
                 const y = await message.channel.send({ embeds: [embed] });
-                setTimeout(() => y.delete().catch(() => {}), 5000);
+                setTimeout(() => y.delete().catch(() => { }), 5000);
               });
             break;
           } catch (e) {
@@ -312,7 +311,7 @@ module.exports = {
                     `\`|\` Cleared \`${m.size}|${amount}\` text messages`
                   );
                 const y = await message.channel.send({ embeds: [embed] });
-                setTimeout(() => y.delete().catch(() => {}), 5000);
+                setTimeout(() => y.delete().catch(() => { }), 5000);
               });
             break;
           } catch (e) {
@@ -337,7 +336,7 @@ module.exports = {
                     `\`|\` Cleared \`${m.size}|${amount}\` Pins`
                   );
                 const y = await message.channel.send({ embeds: [embed] });
-                setTimeout(() => y.delete().catch(() => {}), 5000);
+                setTimeout(() => y.delete().catch(() => { }), 5000);
               });
             break;
           } catch (e) {
@@ -369,12 +368,11 @@ module.exports = {
                 embed = new MessageEmbed()
                   .setColor("#81BABA")
                   .setDescription(
-                    `\`|\` Cleared \`${
-                      m.size
+                    `\`|\` Cleared \`${m.size
                     }|${amount}\` Starts with \`${args.slice(2).join(" ")}\``
                   );
                 const y = await message.channel.send({ embeds: [embed] });
-                setTimeout(() => y.delete().catch(() => {}), 5000);
+                setTimeout(() => y.delete().catch(() => { }), 5000);
               });
             break;
           } catch (e) {

@@ -6,7 +6,7 @@ module.exports = {
     cooldown: 5,
     description: 'get info of a role',
     usage: 'roleinfo <role>',
-run: async (client, message, args) => {
+    run: async (client, message, args) => {
 
         const role = message.mentions.roles.first() || message.guild.roles.cache.get(args[0]);
 
@@ -49,41 +49,41 @@ run: async (client, message, args) => {
             false: 'No'
         }
 
-const syntaxErr = new MessageEmbed()
-.setAuthor(client.user.username, client.user.displayAvatarURL({ size: 1024, dynamic: true }))
-.setTitle('Syntax Error!')
-.addField('Uses:', '>roleinfo <role>')
-.addField('Example:', '>roleinfo @admin')
-        if(!role)
-        return message.reply({embeds: [syntaxErr]})
+        const syntaxErr = new MessageEmbed()
+            .setAuthor(client.user.username, client.user.displayAvatarURL({ size: 1024, dynamic: true }))
+            .setTitle('Syntax Error!')
+            .addField('Uses:', '>roleinfo <role>')
+            .addField('Example:', '>roleinfo @admin')
+        if (!role)
+            return message.reply({ embeds: [syntaxErr] })
 
         const rolePermissions = role.permissions.toArray();
-       
-       /** const finalPermissions = [];
-        for (const permission in permissions) {
-            if (rolePermissions.includes(permission)) finalPermissions.push(`✔️ ${permissions[permission]}`);
-            else finalPermissions.push(`❌ ${permissions[permission]}`);
-        }
-        **/
-        
-        const position = `${message.guild.roles.cache.size - role.position}/${message.guild.roles.cache.size}`;
-        
-        const embed = new MessageEmbed()
-        
-        .setTitle(`Role Info Of - ${role.name} `)
-        .setThumbnail(message.guild.iconURL({dynamic: true, size: 1024}))
-        .addField('Name', `${role}`, true)
-        .addField('ID', ` \`\`\`\ ${role.id} \`\`\`\ `)
-        .addField('Position', ` \`\`\`\ ${position} \`\`\`\ `, true)
-        .addField('Mentionable', ` \`\`\`\ ${yesno[role.mentionable]} \`\`\`\ ` , true)
-        .addField('Bot Role', ` \`\`\`\ ${yesno[role.managed]} \`\`\`\  `, true)
-        .addField('Visible', ` \`\`\`\ ${yesno[role.hoist]} \`\`\`\ `, true)
-        .addField('Color', ` \`\`\`\ ${role.hexColor.toUpperCase()} \`\`\`\ `, true)
-        .addField('Creation Date', ` \`\`\`\ ${moment(role.createdAt).format('DD/MMM/YYYY')} \`\`\`\ `, true)
-       // .addField('Permissions', `\`\`\`diff\n${finalPermissions.join('\n')}\`\`\``)
-       .addField('Permissions', `\`\`\`diff\n${rolePermissions.join(' | ')}\`\`\``)
-        message.channel.send({embeds: [embed]})
 
-        
+        /** const finalPermissions = [];
+         for (const permission in permissions) {
+             if (rolePermissions.includes(permission)) finalPermissions.push(`✔️ ${permissions[permission]}`);
+             else finalPermissions.push(`❌ ${permissions[permission]}`);
+         }
+         **/
+
+        const position = `${message.guild.roles.cache.size - role.position}/${message.guild.roles.cache.size}`;
+
+        const embed = new MessageEmbed()
+
+            .setTitle(`Role Info Of - ${role.name} `)
+            .setThumbnail(message.guild.iconURL({ dynamic: true, size: 1024 }))
+            .addField('Name', `${role}`, true)
+            .addField('ID', ` \`\`\`\ ${role.id} \`\`\`\ `)
+            .addField('Position', ` \`\`\`\ ${position} \`\`\`\ `, true)
+            .addField('Mentionable', ` \`\`\`\ ${yesno[role.mentionable]} \`\`\`\ `, true)
+            .addField('Bot Role', ` \`\`\`\ ${yesno[role.managed]} \`\`\`\  `, true)
+            .addField('Visible', ` \`\`\`\ ${yesno[role.hoist]} \`\`\`\ `, true)
+            .addField('Color', ` \`\`\`\ ${role.hexColor.toUpperCase()} \`\`\`\ `, true)
+            .addField('Creation Date', ` \`\`\`\ ${moment(role.createdAt).format('DD/MMM/YYYY')} \`\`\`\ `, true)
+            // .addField('Permissions', `\`\`\`diff\n${finalPermissions.join('\n')}\`\`\``)
+            .addField('Permissions', `\`\`\`diff\n${rolePermissions.join(' | ')}\`\`\``)
+        message.channel.send({ embeds: [embed] })
+
+
     }
 }

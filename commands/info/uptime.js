@@ -6,7 +6,7 @@ const { MessageEmbed } = require('discord.js')
 
 
 module.exports = {
-    name:'uptime',
+    name: 'uptime',
     cooldown: 5,
     description: "get bot's uptime",
     usage: 'uptime',
@@ -22,10 +22,10 @@ module.exports = {
         let uptime = `${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds`;
 
         const embed = new MessageEmbed()
-    .setTitle('UPTIME STATS')
-    .setColor('RANDOM')
-    .setDescription(`\`\`\`prolog\n${uptime}\`\`\``)
+            .setTitle('UPTIME STATS')
+            .setColor('RANDOM')
+            .setDescription(`\`\`\`prolog\n${uptime}\`\`\``)
 
-    message.reply({embeds: [embed]})
+        message.reply({ embeds: [embed] })
     }
 }

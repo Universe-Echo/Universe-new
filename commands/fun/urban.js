@@ -14,43 +14,43 @@ module.exports = {
      * @param {Message} message 
      * @param {String[]} args 
      */
-   run: async (client, message, args, err, color) => {
+    run: async (client, message, args, err, color) => {
 
-        if(!args.length) {
+        if (!args.length) {
 
             const word = await urban.random()
 
             message.reply({
                 embeds: [
                     new MessageEmbed()
-                    .setColor(color)
-                    .setTimestamp()
-                    .setTitle(`"${word.word}"`)
-                    .setURL(`${word.urbanURL}`)
-                    .setDescription(`\`\`\`${word.definition}\`\`\``)
-                    .addField(`Example`, `*${word.example}*`)
+                        .setColor(color)
+                        .setTimestamp()
+                        .setTitle(`"${word.word}"`)
+                        .setURL(`${word.urbanURL}`)
+                        .setDescription(`\`\`\`${word.definition}\`\`\``)
+                        .addField(`Example`, `*${word.example}*`)
                     //.setFooter(`👍 ${word.thumbsUp} | 👎 ${word.thumbsDown} | ✍ ${word.author}`)
                 ]
             })
-            
+
         } else {
-           try {
-            const word = await  urban(`${args.join(" ")}`)
-            message.reply({
-                embeds: [
-                    new MessageEmbed()
-                    .setColor(color)
-                    .setTimestamp()
-                    .setTitle(`"${word.word}"`)
-                    .setURL(`${word.urbanURL}`)
-                    .setDescription(`\`\`\`${word.definition}\`\`\``)
-                    .addField(`Example`, `*${word.example}*`)
-                  //  .setFooter(`👍 ${word.thumbsUp} | 👎 ${word.thumbsDown} | ✍ ${word.author}`)
-                ]
-            })
-           } catch (error) {
-               message.channel.send('**No results from the urban dictionary.. sry**')
-           }
+            try {
+                const word = await urban(`${args.join(" ")}`)
+                message.reply({
+                    embeds: [
+                        new MessageEmbed()
+                            .setColor(color)
+                            .setTimestamp()
+                            .setTitle(`"${word.word}"`)
+                            .setURL(`${word.urbanURL}`)
+                            .setDescription(`\`\`\`${word.definition}\`\`\``)
+                            .addField(`Example`, `*${word.example}*`)
+                        //  .setFooter(`👍 ${word.thumbsUp} | 👎 ${word.thumbsDown} | ✍ ${word.author}`)
+                    ]
+                })
+            } catch (error) {
+                message.channel.send('**No results from the urban dictionary.. sry**')
+            }
 
         }
 

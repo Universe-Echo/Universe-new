@@ -10,16 +10,16 @@ module.exports = {
     userPermissions: ['ADMINISTRATOR'],
     usage: 'check-welcomeChannel',
     run: async (client, message, args) => {
-     
 
 
-        Schema.findOne({ Guild: message.guild.id}, async(err, data) => {
-     
-if(!data) return message.reply('**Welcome channel is not set yet**!')
 
-const channel = client.channels.cache.get(data.Channel);
+        Schema.findOne({ Guild: message.guild.id }, async (err, data) => {
 
-message.reply(`**Welcome channel => ${channel}**`)
+            if (!data) return message.reply('**Welcome channel is not set yet**!')
+
+            const channel = client.channels.cache.get(data.Channel);
+
+            message.reply(`**Welcome channel => ${channel}**`)
 
 
         })

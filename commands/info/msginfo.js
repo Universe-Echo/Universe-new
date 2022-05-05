@@ -9,11 +9,11 @@ module.exports = {
 
     run: async (client, message, args) => {
 
-        
 
-        if(!args[0]) return message.reply('Provide a message ID!')
 
-        if(isNaN(args[0])) return message.reply("That's not a valid message ID! `Eg- 1234567890`");
+        if (!args[0]) return message.reply('Provide a message ID!')
+
+        if (isNaN(args[0])) return message.reply("That's not a valid message ID! `Eg- 1234567890`");
 
         await message.channel.messages.fetch(args[0]).catch(err => {
 
@@ -35,8 +35,8 @@ module.exports = {
             .setFooter(`ID: ${message1.id}| `)
             .addField('Jump', `[Click Here to Jump](${message1.url})`);
 
-        message.reply({embeds: [embed]});
-    
-        
+        message.reply({ embeds: [embed] });
+
+
     }
 };

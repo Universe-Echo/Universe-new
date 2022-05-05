@@ -5,12 +5,12 @@ module.exports = {
     cooldown: 5,
     description: 'gm gif',
     usage: 'gm',
-   run: async(client, message, args) => {
-       
-        
-            message.channel.send('https://tenor.com/view/cat-peek-a-boo-kitty-white-cat-cute-cat-gif-16415828')
-        }
-       
+    run: async (client, message, args) => {
 
-    
+
+        message.channel.send('https://tenor.com/view/cat-peek-a-boo-kitty-white-cat-cute-cat-gif-16415828')
+    }
+
+
+
 }

@@ -12,10 +12,10 @@ module.exports = {
   description: "Ascii Art!",
   usage: "ascii <text>",
   run: async (client, message, args) => {
-   
 
- 
-    
+
+
+
     let Content = args.join(" ");
 
     if (!Content) return message.channel.send(`**Please Give Me Text!**`);
@@ -23,18 +23,19 @@ module.exports = {
     let Result = await figletAsync(Content);
 
     let embed = new MessageEmbed()
-     
 
-    
+
+
       .setDescription("```" + Result + "```")
       .setTimestamp();
 
     if (Content.length > 20)
       return message.channel.send(`**Please Make Shorter! | Limit : 20**`);
 
-    message.channel.send({embeds: [embed]});
+    message.channel.send({ embeds: [embed] });
 
-   
+
 
     //End
-  }}
+  }
+}

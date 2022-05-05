@@ -22,8 +22,8 @@ module.exports = {
      * @param {Interaction} interaction
      * @param {String[]} args
      */
-     run: async (client, interaction, args) => {
-         try{
+    run: async (client, interaction, args) => {
+        try {
             await interaction.deleteReply()
             const amount = interaction.options.getNumber('amount')
             const fetch = await interaction.channel.messages.fetch({ limit: amount });
@@ -42,10 +42,10 @@ module.exports = {
             const deleteCount = `${userMessageMap.map(([user, messages]) => `**${user}**: ${messages}`).join('\n')}`
 
             const embed = new MessageEmbed()
-            .setColor('DARKER_GREY')
-            .setTitle(finalResult)
-            .setDescription(deleteCount)
-            .setFooter({ text: 'this embed will be deleted in 5s' })
+                .setColor('DARKER_GREY')
+                .setTitle(finalResult)
+                .setDescription(deleteCount)
+                .setFooter({ text: 'this embed will be deleted in 5s' })
 
             await interaction.followUp({ embeds: [embed] }).then(async (msg) => setTimeout(() => msg.delete(), 5000))
         } catch (err) {

@@ -13,8 +13,8 @@ module.exports = async (client) => {
 	const commandFiles = await globPromise(`${__dirname}/../commands/**/*.js`);
 	console.log(
 		chalk.white.bold("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫") +
-			chalk.blue.bold("Commands") +
-			chalk.white.bold("┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+		chalk.blue.bold("Commands") +s,
+		chalk.white.bold("┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
 	);
 	commandFiles.map((value) => {
 		const file = require(value);
@@ -26,26 +26,26 @@ module.exports = async (client) => {
 			client.commands.set(file.name, properties);
 			console.log(
 				chalk.cyan("[ INFORMATION ]") +
-					chalk.white.bold(" | ") +
-					chalk.blue(`${new Date().toLocaleDateString()}`) +
-					chalk.white.bold(" | ") +
-					chalk.cyan("Command Load Status") +
-					chalk.white.bold(" | ") +
-					chalk.blue(file.name) +
-					chalk.white(": ") +
-					chalk.greenBright(`Success`)
+				chalk.white.bold(" | ") +
+				chalk.blue(`${new Date().toLocaleDateString()}`) +
+				chalk.white.bold(" | ") +
+				chalk.cyan("Command Load Status") +
+				chalk.white.bold(" | ") +
+				chalk.blue(file.name) +
+				chalk.white(": ") +
+				chalk.greenBright(`Success`)
 			);
 		} else {
 			console.log(
 				chalk.cyan("[ INFORMATION ]") +
-					chalk.white.bold(" | ") +
-					chalk.blue(`${new Date().toLocaleDateString()}`) +
-					chalk.white.bold(" | ") +
-					chalk.cyan("Command Load Status") +
-					chalk.white.bold(" | ") +
-					chalk.blue(file.name || "MISSING") +
-					chalk.white(": ") +
-					chalk.redBright(`Failed`)
+				chalk.white.bold(" | ") +
+				chalk.blue(`${new Date().toLocaleDateString()}`) +
+				chalk.white.bold(" | ") +
+				chalk.cyan("Command Load Status") +
+				chalk.white.bold(" | ") +
+				chalk.blue(file.name || "MISSING") +
+				chalk.white(": ") +
+				chalk.redBright(`Failed`)
 			);
 		}
 		//if (file.aliases && Array.isArray(file.aliases))
@@ -54,8 +54,8 @@ module.exports = async (client) => {
 
 	console.log(
 		chalk.white.bold("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫") +
-			chalk.blue.bold("Slash Commands") +
-			chalk.white.bold("┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+		chalk.blue.bold("Slash Commands") +
+		chalk.white.bold("┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
 	);
 
 	// Events
@@ -72,26 +72,26 @@ module.exports = async (client) => {
 		if (file.name) {
 			console.log(
 				chalk.cyan("[ INFORMATION ]") +
-					chalk.white.bold(" | ") +
-					chalk.blue(`${new Date().toLocaleDateString()}`) +
-					chalk.white.bold(" | ") +
-					chalk.cyan("Slash Command Load Status") +
-					chalk.white.bold(" | ") +
-					chalk.blue(file.name) +
-					chalk.white(": ") +
-					chalk.greenBright(`Success`)
+				chalk.white.bold(" | ") +
+				chalk.blue(`${new Date().toLocaleDateString()}`) +
+				chalk.white.bold(" | ") +
+				chalk.cyan("Slash Command Load Status") +
+				chalk.white.bold(" | ") +
+				chalk.blue(file.name) +
+				chalk.white(": ") +
+				chalk.greenBright(`Success`)
 			);
 		} else if (!file?.name) {
 			console.log(
 				chalk.cyan("[ INFORMATION ]") +
-					chalk.white.bold(" | ") +
-					chalk.blue(`${new Date().toLocaleDateString()}`) +
-					chalk.white.bold(" | ") +
-					chalk.cyan("Slash Command Load Status") +
-					chalk.white.bold(" | ") +
-					chalk.blue(file.name || "MISSING") +
-					chalk.white(": ") +
-					chalk.redBright(`Failed`)
+				chalk.white.bold(" | ") +
+				chalk.blue(`${new Date().toLocaleDateString()}`) +
+				chalk.white.bold(" | ") +
+				chalk.cyan("Slash Command Load Status") +
+				chalk.white.bold(" | ") +
+				chalk.blue(file.name || "MISSING") +
+				chalk.white(": ") +
+				chalk.redBright(`Failed`)
 			);
 		}
 		client.slashCommands.set(file.name, file);
@@ -101,9 +101,9 @@ module.exports = async (client) => {
 	});
 
 	client.on("ready", async () => {
-	//	 await client.guilds.cache
-	//	 .get("779213432389107742")
-	//	 .commands.set(arrayOfSlashCommands).then(() => {
+		//	 await client.guilds.cache
+		//	 .get("779213432389107742")
+		//	 .commands.set(arrayOfSlashCommands).then(() => {
 		//  console.log(
 		//    chalk.cyan("[ INFORMATION ]") +
 		//    chalk.white(" | ") +
@@ -111,29 +111,29 @@ module.exports = async (client) => {
 		//     chalk.white(" | ") +
 		//    chalk.cyan("Slash Commands") +
 		//     chalk.white(": ") +
-		 //   chalk.white(`Loaded to`) +
-		 //   chalk.white(": ") +
+		//   chalk.white(`Loaded to`) +
+		//   chalk.white(": ") +
 		//    chalk.greenBright(`${client.guilds.cache.get("779213432389107742").name}`)
 		// )
 
-	//	});
+		//	});
 
-        await client.application.commands.set(arrayOfSlashCommands).then(() => {
+		await client.application.commands.set(arrayOfSlashCommands).then(() => {
 			console.log(
 				chalk.cyan("[ INFORMATION ]") +
-					chalk.white.bold(" | ") +
-					chalk.blue(`${new Date().toLocaleDateString()}`) +
-					chalk.white.bold(" | ") +
-					chalk.cyan("Slash Commands") +
-					chalk.white(": ") +
-					chalk.greenBright(`Loaded as Multi Guild`)
+				chalk.white.bold(" | ") +
+				chalk.blue(`${new Date().toLocaleDateString()}`) +
+				chalk.white.bold(" | ") +
+				chalk.cyan("Slash Commands") +
+				chalk.white(": ") +
+				chalk.greenBright(`Loaded as Multi Guild`)
 			);
 		});
 	});
 	console.log(
 		chalk.white.bold("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫") +
-			chalk.blue.bold("Client Status") +
-			chalk.white.bold("┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+		chalk.blue.bold("Client Status") +
+		chalk.white.bold("┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
 	);
 
 	if (!process.env.MONGOOSE) return;
@@ -142,36 +142,36 @@ module.exports = async (client) => {
 	mongoose.connection.on("connected", () =>
 		console.log(
 			chalk.cyan("[ INFORMATION ]") +
-				chalk.white.bold(" | ") +
-				chalk.blue(`${new Date().toLocaleDateString()}`) +
-				chalk.white.bold(" | ") +
-				chalk.cyan("Mongo DB Connection") +
-				chalk.white(": ") +
-				chalk.greenBright(`Connected`)
+			chalk.white.bold(" | ") +
+			chalk.blue(`${new Date().toLocaleDateString()}`) +
+			chalk.white.bold(" | ") +
+			chalk.cyan("Mongo DB Connection") +
+			chalk.white(": ") +
+			chalk.greenBright(`Connected`)
 		)
 	);
 	mongoose.connection.on("disconnected", () =>
 		console.log(
 			chalk.cyan("[ INFORMATION ]") +
-				chalk.white.bold(" | ") +
-				chalk.blue(`${new Date().toLocaleDateString()}`) +
-				chalk.white.bold(" | ") +
-				chalk.cyan("Mongo DB Connection") +
-				chalk.white(": ") +
-				chalk.greenBright(`Disconnected`)
+			chalk.white.bold(" | ") +
+			chalk.blue(`${new Date().toLocaleDateString()}`) +
+			chalk.white.bold(" | ") +
+			chalk.cyan("Mongo DB Connection") +
+			chalk.white(": ") +
+			chalk.greenBright(`Disconnected`)
 		)
 	);
 	mongoose.connection.on("error", (error) =>
 		console.log(
 			chalk.cyan("[ INFORMATION ]") +
-				chalk.white.bold(" | ") +
-				chalk.blue(`${new Date().toLocaleDateString()}`) +
-				chalk.white.bold(" | ") +
-				chalk.cyan("Mongo DB Connection") +
-				chalk.white(": ") +
-				chalk.redBright(`Error`) +
-				"\n" +
-				chalk.white(`${error}`)
+			chalk.white.bold(" | ") +
+			chalk.blue(`${new Date().toLocaleDateString()}`) +
+			chalk.white.bold(" | ") +
+			chalk.cyan("Mongo DB Connection") +
+			chalk.white(": ") +
+			chalk.redBright(`Error`) +
+			"\n" +
+			chalk.white(`${error}`)
 		)
 	);
 };

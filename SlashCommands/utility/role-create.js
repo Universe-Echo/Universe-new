@@ -25,36 +25,36 @@ module.exports = {
      * @param {CommandInteraction} interaction 
      * @param {String[]} args 
      */
-    run: async(client, interaction, args) => {
+    run: async (client, interaction, args) => {
         const color = interaction.options.getString("role-color");
         const name = interaction.options.getString("role-name");
         const regex = !/[^a-zA-Z0-9]+/g.test(name);
-        if(regex === false) {
-            return interaction.followUp({ 
-                content: "`The characters of your role is invalid. Only letters and numbers are allowed.`" 
+        if (regex === false) {
+            return interaction.followUp({
+                content: "`The characters of your role is invalid. Only letters and numbers are allowed.`"
             });
         }
-        if(name.length > 100) {
+        if (name.length > 100) {
             return interaction.followUp({
-                 content: "`Role names aern't suppose to exceed 100 characters`" 
-                });
+                content: "`Role names aern't suppose to exceed 100 characters`"
+            });
         }
-         interaction.guild.roles.create({
+        interaction.guild.roles.create({
             name: name,
             color: toHex(color),
             reason: `Role created by ${interaction.user}`,
         });
         const embed = new MessageEmbed()
-        .setTitle("New Role Created!")
-        .setDescription(`
+            .setTitle("New Role Created!")
+            .setDescription(`
         \`Role Name:\` ${name}
         \`Role Color:\` ${color}
         \`Role Creator:\` ${interaction.user}`)
-        .setColor("BLURPLE")
-        .setFooter({ text: "Universe" })
-        .setTimestamp()
-        interaction.followUp({ 
-            embeds: [embed] 
+            .setColor("BLURPLE")
+            .setFooter({ text: "Universe" })
+            .setTimestamp()
+        interaction.followUp({
+            embeds: [embed]
         });
     },
 };

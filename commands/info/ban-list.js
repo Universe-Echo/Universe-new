@@ -9,10 +9,10 @@ module.exports = {
     cooldown: 10,
     userPermissions: ['BAN_MEMBERS'],
     botPermissions: ['ADMINISTRATOR'],
-usage: 'list-bans',
+    usage: 'list-bans',
 
-run: async(client, message, args) => {
-        
+    run: async (client, message, args) => {
+
 
         const fetchBans = message.guild.bans.fetch();
         if (!fetchBans) {
@@ -25,17 +25,17 @@ run: async(client, message, args) => {
 
             const bannedMembers = (await fetchBans)
 
-            .map((member) => ` User Tag: - \`${member.user.tag}\``)
-            .join(" ")
+                .map((member) => ` User Tag: - \`${member.user.tag}\``)
+                .join(" ")
             const bans = new Discord.MessageEmbed()
-            .setTitle('Bans')
-            .setDescription(bannedMembers)
+                .setTitle('Bans')
+                .setDescription(bannedMembers)
 
             message.channel.send(bannedMembers)
 
 
-    
 
-}
-}
+
+        }
+    }
 }

@@ -5,17 +5,17 @@ module.exports = {
     name: "msglb",
     description: "Message leaderboard",
     userPermissions: "ADMINISTRATOR",
-cooldown: 120,
-usage: 'msglb',
+    cooldown: 120,
+    usage: 'msglb',
     run: async (client, message, args) => {
-      
+
         // just remove this line ^^^^^ if you dont want it to be owner only.
 
         const Fetching = new Discord.MessageEmbed()
             .setColor('#a8f1ff')
             .setDescription(`**Fetching the past messages**`)
             .setFooter('This can take more than 60 seconds')
-        const m = await message.channel.send({embeds: [Fetching]})
+        const m = await message.channel.send({ embeds: [Fetching] })
 
         const mLimit = args[1]
         async function fetchMore(channel, limit = 5000) {
@@ -92,7 +92,7 @@ usage: 'msglb',
                     .setTitle(`**Leaderboard for __${message.channel.name}__**`)
                     .setColor('#a8f1ff')
                     .setDescription(
-`
+                        `
 │**${Object.keys(finalthingyig)[0]}** - \`${Object.values(finalthingyig)[0]}\`
 │**${Object.keys(finalthingyig)[1]}** - \`${Object.values(finalthingyig)[1]}\`
 │**${Object.keys(finalthingyig)[2]}** - \`${Object.values(finalthingyig)[2]}\`
@@ -104,14 +104,14 @@ usage: 'msglb',
 │**${Object.keys(finalthingyig)[8]}** - \`${Object.values(finalthingyig)[8]}\`
 │**${Object.keys(finalthingyig)[9]}** - \`${Object.values(finalthingyig)[9]}\`
         `)
-                message.reply({embeds: [embed]})
+                message.reply({ embeds: [embed] })
                 m.delete()
             } catch (e) {
                 const err = new Discord.MessageEmbed()
-                .setAuthor('ERROR')
-                .setTitle('Something went wrong!')
-                .setColor('#ff4a4a')
-                .setDescription(`\`\`\`js\n${error.message}\n\`\`\``)
+                    .setAuthor('ERROR')
+                    .setTitle('Something went wrong!')
+                    .setColor('#ff4a4a')
+                    .setDescription(`\`\`\`js\n${error.message}\n\`\`\``)
 
                 message.reply({ embeds: [err] })
                 console.log(e)

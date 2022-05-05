@@ -10,24 +10,24 @@ module.exports = {
     userPermissions: ['ADMINISTRATOR'],
     usage: 'set-welcomeChannel <channel>',
     run: async (client, message, args) => {
-      
-const channel = message.mentions.channels.first()
 
-if(!channel) return message.channel.send('**Please provide a channel!**')
+        const channel = message.mentions.channels.first()
+
+        if (!channel) return message.channel.send('**Please provide a channel!**')
 
 
-        Schema.findOne({ Guild: message.guild.id}, async(err, data) => {
-            if(data) {
+        Schema.findOne({ Guild: message.guild.id }, async (err, data) => {
+            if (data) {
                 data.Channel = channel.id;
                 data.save();
             } else {
-               new Schema({
-                   Guild: message.guild.id,
-                   Channel: channel.id
-               }).save();
+                new Schema({
+                    Guild: message.guild.id,
+                    Channel: channel.id
+                }).save();
 
             }
-message.reply(`**${channel} is now set as the welcome channel!**`)
+            message.reply(`**${channel} is now set as the welcome channel!**`)
 
 
 

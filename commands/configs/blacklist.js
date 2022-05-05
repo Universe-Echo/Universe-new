@@ -8,53 +8,53 @@ module.exports = {
     name: 'blacklist',
     description: 'add words to blacklist',
     aliases: ['bl'],
-userPermissions: ['ADMINISTRATOR'],
-usage: `blacklist add/remove/list`,
-    run: async(client, message, args) => {
-       
+    userPermissions: ['ADMINISTRATOR'],
+    usage: `blacklist add/remove/list`,
+    run: async (client, message, args) => {
+
 
         const query = args[0]?.toLowerCase();
         const syntax = new MessageEmbed()
-        .setTitle('Wrong Syntax!')
-        .setThumbnail(client.user.displayAvatarURL())
+            .setTitle('Wrong Syntax!')
+            .setThumbnail(client.user.displayAvatarURL())
 
-        .setAuthor(client.user.username, client.user.displayAvatarURL({ size: 1024, dynamic: true }))
-        .setDescription('Usage:-\nblacklist add <word>\nblacklist remove <word>\nblacklist list')
-        .addField('Ex:-', `blacklist add hello, blacklist remove hello`)
-        if(!query) return message.reply({embeds: [syntax]})
-const guild = { Guild: message.guild.id}
-        if(query === 'add') {
-const word = args[1]?.toLowerCase();
-if(!word) return message.channel.send('**Please provide a word to blacklist!**')
-
-Schema.findOne(guild, async(err, data) => {
-    if(data) {
-        if(data.Words.includes(word)) return message.reply('**That word is already there in the database!**')
-data.Words.push(word)
-data.save()
-blacklistedwords.get(message.guild.id).push(word)
-
-    }
-     else {
-         new Schema({
-             Guild: message.guild.id,
-             Words: word
-         }).save();
-
-         blacklistedwords.set(message.guild.id, [ word ])
-     }
-
-     message.reply(`**${word} is now blacklisted!**`)
-});
-        } else if(query === 'remove') {
-           
+            .setAuthor(client.user.username, client.user.displayAvatarURL({ size: 1024, dynamic: true }))
+            .setDescription('Usage:-\nblacklist add <word>\nblacklist remove <word>\nblacklist list')
+            .addField('Ex:-', `blacklist add hello, blacklist remove hello`)
+        if (!query) return message.reply({ embeds: [syntax] })
+        const guild = { Guild: message.guild.id }
+        if (query === 'add') {
             const word = args[1]?.toLowerCase();
-            if(!word) return message.channel.send('**Please provide a word to blacklist!**')
-            
-            Schema.findOne(guild, async(err, data) => {
-                if(!data) return message.channel.send('**The guild has no saved data!**')
+            if (!word) return message.channel.send('**Please provide a word to blacklist!**')
 
-                if(!data.Words.includes(word)) return message.channel.send("**That word doesnt exist in the database!**")
+            Schema.findOne(guild, async (err, data) => {
+                if (data) {
+                    if (data.Words.includes(word)) return message.reply('**That word is already there in the database!**')
+                    data.Words.push(word)
+                    data.save()
+                    blacklistedwords.get(message.guild.id).push(word)
+
+                }
+                else {
+                    new Schema({
+                        Guild: message.guild.id,
+                        Words: word
+                    }).save();
+
+                    blacklistedwords.set(message.guild.id, [word])
+                }
+
+                message.reply(`**${word} is now blacklisted!**`)
+            });
+        } else if (query === 'remove') {
+
+            const word = args[1]?.toLowerCase();
+            if (!word) return message.channel.send('**Please provide a word to blacklist!**')
+
+            Schema.findOne(guild, async (err, data) => {
+                if (!data) return message.channel.send('**The guild has no saved data!**')
+
+                if (!data.Words.includes(word)) return message.channel.send("**That word doesnt exist in the database!**")
 
                 const filtered = data.Words.filter((target) => target !== word);
 
@@ -63,34 +63,34 @@ blacklistedwords.get(message.guild.id).push(word)
                     Words: filtered,
 
                 }).then(message.channel.send('**Word removed!**'))
-            blacklistedwords.get(message.guild.id).filter((target) => target !== word)
-            blacklistedwords.set(message.guild.id, filtered)
+                blacklistedwords.get(message.guild.id).filter((target) => target !== word)
+                blacklistedwords.set(message.guild.id, filtered)
             });
 
-            
-        } else if(query === 'list') {
-            Schema.findOne(guild, async(err, data) => {
-                if(!data) return message.reply('**No data found!**')
+
+        } else if (query === 'list') {
+            Schema.findOne(guild, async (err, data) => {
+                if (!data) return message.reply('**No data found!**')
 
                 const displayEmbed = new MessageEmbed()
 
-                .setTitle('Blacklisted words')
+                    .setTitle('Blacklisted words')
 
-                .setDescription(data.Words.join(', '))
+                    .setDescription(data.Words.join(', '))
 
-                message.channel.send({embeds: [displayEmbed]})
+                message.channel.send({ embeds: [displayEmbed] })
             })
-        } else if(query === 'collection') {
+        } else if (query === 'collection') {
             const getCollection = blacklistedwords.get(message.guild.id);
             const collectionEmbed = new MessageEmbed()
-            .setTitle(`Blacklisted words in ${message.guild.name}`)
-            .setDescription(`${getCollection}`)
-            if(getCollection) return message.channel.send({embeds: [collectionEmbed]})
+                .setTitle(`Blacklisted words in ${message.guild.name}`)
+                .setDescription(`${getCollection}`)
+            if (getCollection) return message.channel.send({ embeds: [collectionEmbed] })
             message.channel.send('**NO data**')
 
 
         } else return message.channel.send('**That query doesnt exist!**')
-        
 
-    } 
+
+    }
 }

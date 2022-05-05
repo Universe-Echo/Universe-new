@@ -2,41 +2,41 @@ const { Client, Message, MessageEmbed } = require("discord.js");
 const prefixSchema = require('../../models/prefix');
 const prefix = require('../../models/prefix');
 const client = require('../../index')
-client.prefix = async function(message) {
+client.prefix = async function (message) {
     let custom;
-  
-    const data = await prefix.findOne({ Guild : message.guildId })
+
+    const data = await prefix.findOne({ Guild: message.guildId })
         .catch(err => console.log(err))
-    
-    if(data) {
+
+    if (data) {
         custom = data.Prefix;
-    } if(!data) {
+    } if (!data) {
         const prefix = ">"
-            
-        
+
+
         custom = prefix
     }
     return custom;
-  }
+}
 module.exports = {
-  name: "prefix",
-  usage: 'prefix',
-  cooldown: 10,
-  description: 'Check the custom prefix in the server',
-  /**
-   * @param {Client} client
-   * @param {Message} message
-   * @param {String[]} args
-   */
-  run: async (client, message, args) => {
-    
-    const p = await client.prefix(message)
-const prefixEmbed = new MessageEmbed()
-.setTitle('Prefix!')
-.setThumbnail(client.user.displayAvatarURL())
-.addField('**The prefix is set to:**', `\`${p}\``)
-.setFooter(`${p}set-prefix <prefix>  ||  ${p}reset-prefix `)
+    name: "prefix",
+    usage: 'prefix',
+    cooldown: 10,
+    description: 'Check the custom prefix in the server',
+    /**
+     * @param {Client} client
+     * @param {Message} message
+     * @param {String[]} args
+     */
+    run: async (client, message, args) => {
 
-message.reply({embeds: [prefixEmbed]})
+        const p = await client.prefix(message)
+        const prefixEmbed = new MessageEmbed()
+            .setTitle('Prefix!')
+            .setThumbnail(client.user.displayAvatarURL())
+            .addField('**The prefix is set to:**', `\`${p}\``)
+            .setFooter(`${p}set-prefix <prefix>  ||  ${p}reset-prefix `)
+
+        message.reply({ embeds: [prefixEmbed] })
     },
 };

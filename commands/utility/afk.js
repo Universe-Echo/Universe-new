@@ -9,18 +9,18 @@ module.exports = {
     run: async (client, message, args) => {
 
         const content = args.join(" ") || 'no reason provided'
-     
-    
+
+
         await db.set(`afk - ${message.author.id}+${message.guild.id}`, content)
         const embed = new MessageEmbed()
-        .addField('You have been set to afk!', `**Reason:** ${content}`)
-      
-        .setAuthor(
-            message.author.tag,
-            message.author.displayAvatarURL({ dynamic: true})
+            .addField('You have been set to afk!', `**Reason:** ${content}`)
+
+            .setAuthor(
+                message.author.tag,
+                message.author.displayAvatarURL({ dynamic: true })
 
 
-        )
+            )
         message.channel.send(` ${message.author} **Your afk is set to:** \`${content}\` `)
         message.member.setNickname(`[AFK] ${message.author.username}`).catch(() => { })
     }

@@ -9,21 +9,21 @@ module.exports = {
     userPermissions: ['BAN_MEMBERS'],
     description: 'warn a member',
     usage: 'warn <user> <reason>',
-   run: async (client, message, args) => {
+    run: async (client, message, args) => {
 
 
         const user = message.mentions.members.first() || message.guild.members.cache.get(args[0])
         if (user === message.member) return message.channel.send('**You wanna warn yourself nice :)**');
-        if(!user) return message.channel.send('**Please provide a user!**')
-const reason = args.slice(1).join(" ") || 'No reason'
-        db.findOne({ guildid: message.guild.id, user: user.user.id}, async(err, data) => {
-            if(err) throw err;
-            if(!data) {
+        if (!user) return message.channel.send('**Please provide a user!**')
+        const reason = args.slice(1).join(" ") || 'No reason'
+        db.findOne({ guildid: message.guild.id, user: user.user.id }, async (err, data) => {
+            if (err) throw err;
+            if (!data) {
                 data = new db({
-                    guildid: message.guild.id, 
+                    guildid: message.guild.id,
                     user: user.user.id,
 
-                    content : {
+                    content: {
                         moderator: message.author.id,
                         reason: reason
                     }
@@ -35,23 +35,23 @@ const reason = args.slice(1).join(" ") || 'No reason'
                     moderator: message.author.id,
                     reason: reason
                 }
-                     
+
                 data.content.push(obj)
             }
             data.save()
         })
         const userEmbed = new MessageEmbed()
-        .addField(`**You were warned in ${message.guild.name}**`, `**Reason: \`${reason}\`**`)
-        .setColor('BLURPLE')
-        user.send({embeds: [userEmbed]}).catch(() => { })
+            .addField(`**You were warned in ${message.guild.name}**`, `**Reason: \`${reason}\`**`)
+            .setColor('BLURPLE')
+        user.send({ embeds: [userEmbed] }).catch(() => { })
         const newEmbed = new MessageEmbed()
-        .setTitle('Warned!')
-        .addField(`User`, `<a:arrow_arrow:940504275606470707> \`${user.user.tag}\``)
-        .addField(`Reason`, `<a:arrow_arrow:940504275606470707> \`${reason}\``)
-        .setThumbnail(user.user.displayAvatarURL({dynamic: true}))
+            .setTitle('Warned!')
+            .addField(`User`, `<a:arrow_arrow:940504275606470707> \`${user.user.tag}\``)
+            .addField(`Reason`, `<a:arrow_arrow:940504275606470707> \`${reason}\``)
+            .setThumbnail(user.user.displayAvatarURL({ dynamic: true }))
 
-       // .setDescription(`Warned ${user} for ${reason}`)
-        .setColor('RED')
-        message.channel.send({embeds: [newEmbed]})
+            // .setDescription(`Warned ${user} for ${reason}`)
+            .setColor('RED')
+        message.channel.send({ embeds: [newEmbed] })
     }
 }

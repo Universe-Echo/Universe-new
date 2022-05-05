@@ -5,11 +5,11 @@ const fetch = require('node-fetch');
 
 module.exports = {
   name: 'pokemon',
-  aliases: [ 'pokedex', 'pokémon', 'pokédex' ],
+  aliases: ['pokedex', 'pokémon', 'pokédex'],
   group: 'fun',
   cooldown: 5,
   description: 'Find a specific pokemon using the pokédex',
-  botPermissions: [ 'EMBED_LINKS' ],
+  botPermissions: ['EMBED_LINKS'],
   examples: [
     'pokemon',
     'pokedex pikachu',
@@ -21,30 +21,30 @@ module.exports = {
 
     const query = args.join(' ') || 'Pikachu';
     const embed = new MessageEmbed()
-    .setColor('YELLOW')
-    .setFooter(`Pokédex - The Pokémon Company\©️ | \©️${new Date().getFullYear()} `);
+      .setColor('YELLOW')
+      .setFooter(`Pokédex - The Pokémon Company\©️ | \©️${new Date().getFullYear()} `);
     embed.setDescription(`Searching pokédex for **${query}**`)
-    .setThumbnail('https://i.imgur.com/u6ROwvK.gif')
-    const prompt = await message.channel.send({embeds: [embed]});
+      .setThumbnail('https://i.imgur.com/u6ROwvK.gif')
+    const prompt = await message.channel.send({ embeds: [embed] });
 
     const data = await fetch(`https://some-random-api.ml/pokedex?pokemon=${encodeURI(query)}`)
-    .then(res => res.json())
-    .catch(()=>null);
+      .then(res => res.json())
+      .catch(() => null);
 
     embed.setColor('RED')
-    .setThumbnail(null)
-    .setAuthor('Pokédex Unavailable', 'https://cdn.discordapp.com/emojis/767062250279927818.png?v=1')
-    .setDescription('Pokedex provider responded with error 5xx. Please try again later.')
+      .setThumbnail(null)
+      .setAuthor('Pokédex Unavailable', 'https://cdn.discordapp.com/emojis/767062250279927818.png?v=1')
+      .setDescription('Pokedex provider responded with error 5xx. Please try again later.')
 
-    if (!data){
-      return await prompt.edit({embeds: [embed]}).catch(() => null) || message.channel.send({embeds: [embed]});
+    if (!data) {
+      return await prompt.edit({ embeds: [embed] }).catch(() => null) || message.channel.send({ embeds: [embed] });
     };
 
     embed.setAuthor('Pokémon entry coudn\'t be found', 'https://cdn.discordapp.com/emojis/767062250279927818.png?v=1')
-    .setDescription(`**${message.author.tag}**, I can't seem to find **${query}** from the Pokédex!`)
+      .setDescription(`**${message.author.tag}**, I can't seem to find **${query}** from the Pokédex!`)
 
-    if (data.error){
-      return await prompt.edit({embeds: [embed]}).catch(() => null) || message.channel.send({embeds: [embed]});
+    if (data.error) {
+      return await prompt.edit({ embeds: [embed] }).catch(() => null) || message.channel.send({ embeds: [embed] });
     };
 
     data.sprites = data.sprites || {};
@@ -52,43 +52,43 @@ module.exports = {
     data.family.evolutionLine = data.family.evolutionLine || [];
 
     embed.setColor('GREY')
-    .setDescription('')
-    .setThumbnail(data.sprites.animated || data.sprites.normal || null)
-    .setAuthor(`Pokédex entry #${data.id} ${data.name.toUpperCase()}`,'https://i.imgur.com/uljbfGR.png', 'https://pokemon.com/us')
-    .addFields([
-      { name: 'Info', value: data.description || '???' },
-      { name: 'Type', value: data.type.join('\n') || '???', inline: true },
-      { name: 'Abilities', value: data.abilities.join('\n') || '???', inline: true },
-      {
-        name: 'Build', inline: true,
-        value: [
-          `Height: **${data.height || '???'}**`,
-          `Weight: **${data.weight || '???'}**`,
-      //    `Gender: **${text.joinArray(data.gender)}**`
-        ].join('\n')
-      },
-      { name: 'Egg Groups', value: data.egg_groups.join('\n') || '???', inline: true },
-      {
-        name: 'Stats', inline: true,
-        value: [
-           `HP: **${data.stats.hp || '???'}**`,
-           `ATK: **${data.stats.attack || '???'}**`,
-           `DEF: **${data.stats.defense || '???'}**`
-        ].join('\n')
-      },
-      {
-        name: 'SP.Stats', inline: true,
-        value: [
-          `SP.ATK: **${data.stats.sp_atk || '???'}**`,
-          `SP.DEF: **${data.stats.sp_def || '???'}**`,
-          `SPEED: **${data.stats.speed || '???'}**`
-        ].join('\n')
-      },
-      { name: 'Generation', value: data.generation || '???', inline: true },
-    //  { name: 'Evolution Stage', value: text.ordinalize(data.family.evolutionStage || '???'), inline: true },
-      { name: 'Evolution Line', value: data.family.evolutionLine.join(' \\👉 ') || '???', inline: true }
-    ]);
+      .setDescription('')
+      .setThumbnail(data.sprites.animated || data.sprites.normal || null)
+      .setAuthor(`Pokédex entry #${data.id} ${data.name.toUpperCase()}`, 'https://i.imgur.com/uljbfGR.png', 'https://pokemon.com/us')
+      .addFields([
+        { name: 'Info', value: data.description || '???' },
+        { name: 'Type', value: data.type.join('\n') || '???', inline: true },
+        { name: 'Abilities', value: data.abilities.join('\n') || '???', inline: true },
+        {
+          name: 'Build', inline: true,
+          value: [
+            `Height: **${data.height || '???'}**`,
+            `Weight: **${data.weight || '???'}**`,
+            //    `Gender: **${text.joinArray(data.gender)}**`
+          ].join('\n')
+        },
+        { name: 'Egg Groups', value: data.egg_groups.join('\n') || '???', inline: true },
+        {
+          name: 'Stats', inline: true,
+          value: [
+            `HP: **${data.stats.hp || '???'}**`,
+            `ATK: **${data.stats.attack || '???'}**`,
+            `DEF: **${data.stats.defense || '???'}**`
+          ].join('\n')
+        },
+        {
+          name: 'SP.Stats', inline: true,
+          value: [
+            `SP.ATK: **${data.stats.sp_atk || '???'}**`,
+            `SP.DEF: **${data.stats.sp_def || '???'}**`,
+            `SPEED: **${data.stats.speed || '???'}**`
+          ].join('\n')
+        },
+        { name: 'Generation', value: data.generation || '???', inline: true },
+        //  { name: 'Evolution Stage', value: text.ordinalize(data.family.evolutionStage || '???'), inline: true },
+        { name: 'Evolution Line', value: data.family.evolutionLine.join(' \\👉 ') || '???', inline: true }
+      ]);
 
-    return await prompt.edit({embeds: [embed]}).catch(() => null) || message.channel.send({embeds: [embed]});
+    return await prompt.edit({ embeds: [embed] }).catch(() => null) || message.channel.send({ embeds: [embed] });
   }
 };
