@@ -2,6 +2,7 @@ const client = require('../index')
 const { MessageEmbed } = require('discord.js')
 const logSchema = require('../models/logs')
 client.on("messageDelete", async (message) => {
+    if (message.author.bot) return;
     const data = await logSchema.findOne({ Guild: message.guild.id });
     if (!data) return;
 
