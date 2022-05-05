@@ -13,7 +13,7 @@ module.exports = async (client) => {
 	const commandFiles = await globPromise(`${__dirname}/../commands/**/*.js`);
 	console.log(
 		chalk.white.bold("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫") +
-		chalk.blue.bold("Commands") +s,
+		chalk.blue.bold("Commands") ,
 		chalk.white.bold("┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
 	);
 	commandFiles.map((value) => {
