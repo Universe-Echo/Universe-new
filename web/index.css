@@ -1,0 +1,237 @@
+/* @font-face {
+    font-family: Inter;
+    src: url(../fonts/Inter-SemiBold.woff2);
+}
+
+@font-face {
+    font-family: Grotesk;
+    src: url(../fonts/founders-grotesk-bold.woff2) format('woff2');
+}
+ */
+
+* {
+	font-family: Inter, system-ui;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+:root {
+    --primary: cyan;
+    --dark: #232323;
+    --pure: #fff;
+    --smoke: whitesmoke;
+    --dark-gray: #999;
+}
+
+.nav-container-custom {
+    width: 1152px;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.nav-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+}
+
+
+.nav-wrapper ul.nav-list {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    font-family: monospace;
+}
+
+.nav-wrapper ul.nav-list li {
+    margin-left: 30px;
+    padding: 20px 0;
+    position: relative;
+    font-family: 'Hi';
+    font-size: 30px;
+}
+
+.nav-wrapper ul.nav-list li a {
+    color: var(--pure);
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all .5s ease-in-out;
+}
+
+.nav-wrapper ul.nav-list li a:hover,
+.nav-wrapper ul.nav-list li.active a {
+    color: var(--primary);
+}
+
+
+
+
+@keyframes moveUp {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(20px);
+    }
+}
+
+.hamburger {
+    display: none;
+}
+
+.mobile .hamburger {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    cursor: pointer;
+}
+
+.mobile .hamburger span {
+    background: var(--pure);
+    width: 28px;
+    height: 2px;
+    margin-bottom: 8px;
+}
+
+.mobile ul.nav-list {
+    background: black;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* height: 100%; */
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .3s ease-in-out;
+    z-index: 1;
+}
+
+.hamburger,
+.brand {
+    z-index: 9999;
+}
+
+.mobile ul.nav-list.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.mobile .hamburger span {
+    transform-origin: left;
+    transition: all .3s ease-in-out;
+}
+
+.mobile ul.nav-list li a {
+    font-size: 18px;
+}
+
+
+.mobile ul.nav-list li {
+    margin-left: 0;
+    text-align: center;
+}
+
+
+body {
+    background: rgb(0, 0, 0);
+    
+}
+
+
+
+
+#background-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+
+  .heading {
+    margin-left: 34px;
+    padding-left: 14px;
+    /* border-left: 2px solid white; */
+    z-index: 1;
+ 
+    background: -webkit-linear-gradient(rgb(124, 155, 255), rgb(89, 226, 250));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: 0.3s;
+    opacity: 0.8;
+    
+}
+
+
+.heading1 {
+    display: flex;
+    justify-content: center;
+    /* border: dotted white; */
+    margin: 0%;
+    margin-top: 15%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.heading:hover {
+    background: -webkit-linear-gradient(rgb(124, 155, 255), rgb(89, 226, 250));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    opacity: 1
+}
+
+.hero-button {
+    padding: 0 25px 0 25px;
+    border-radius: 5px;
+    height: 50px;
+    min-width: 150px;
+    line-height: 38px;
+    color: #000;
+    /* margin-top: ; */
+    background-color: #fff;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.6rem;
+    border-radius: 5px;
+    transition: background-color 1s ease-in-out, border 1.5s ease-in-out, color 1s ease-in-out;
+    border: 2px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+}
+.hero-button:hover {
+	color: white;
+	background-color: rgb(173, 86, 255);
+	border: 2px solid white;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+}
+
+.invitebtn {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    /* border: dotted white; */
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+}

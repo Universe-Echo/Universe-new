@@ -22,6 +22,8 @@
         "discord-purger": "^1.0.2",
         "discord.js": "^13.6.0",
         "dotenv": "^16.0.0",
+        "ejs": "^3.1.7",
+        "express": "^4.18.1",
         "figlet": "^1.5.2",
         "glob": "^7.2.0",
         "imdb-api": "^4.4.1",
