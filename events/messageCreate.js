@@ -55,7 +55,7 @@ client.on("messageCreate", async (message) => {
     .split(/ +/g);
 
     const user_id = '6275595f155457c1c0997771' 
-    Schema.findByIdAndUpdate(user_id, {$set:{ Guilds: client.guilds.cache.size, Users: client.guilds.cache.size, Channels: client.channels.cache.size}},{new:true}).then((docs)=>{
+    Schema.findByIdAndUpdate(user_id, {$set:{ Guilds: client.guilds.cache.size, Users: client.users.cache.size, Channels: client.channels.cache.size}},{new:true}).then((docs)=>{
       if(docs) {
         console.log({success:true,data:docs});
       } else {
