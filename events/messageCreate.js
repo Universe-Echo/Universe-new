@@ -3,6 +3,8 @@ const cooldowns = new Map()
 const { Discord, Collection, MessageEmbed, Embeds } = require("discord.js");
 const prefixSchema = require('../models/prefix');
 const prefix = require('../models/prefix');
+const { botdata } = require('../utility')
+const Schema = require('../models/web');
 
 client.prefix = async function (message) {
   let custom;
@@ -23,7 +25,15 @@ client.prefix = async function (message) {
 
 
 client.on("messageCreate", async (message) => {
+  const clientInfo = {
+    guilds: client.guilds.cache.size,
+    users: client.users.cache.size,
+    channels: client.channels.cache.size,
 
+  }
+
+
+ 
   const p = await client.prefix(message)
 
   //console.log(p)
@@ -44,6 +54,16 @@ client.on("messageCreate", async (message) => {
     .trim()
     .split(/ +/g);
 
+    const user_id = '6275595f155457c1c0997771' 
+    Schema.findByIdAndUpdate(user_id, {$set:{ Guilds: client.guilds.cache.size, Users: client.guilds.cache.size, Channels: client.channels.cache.size}},{new:true}).then((docs)=>{
+      if(docs) {
+        console.log({success:true,data:docs});
+      } else {
+        console.log({success:false,data:"no such data"});
+      }
+   }).catch((err)=>{
+       console.log(err);
+   })
   const command = client.commands.get(cmd.toLowerCase()) || client.commands.find(c => c.aliases?.includes(cmd.toLowerCase()));
 
   if (!command) return;
@@ -128,6 +148,7 @@ client.on("messageCreate", async (message) => {
   }
 
 
+  
 
   await command.run(client, message, args);
 });

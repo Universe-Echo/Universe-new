@@ -2,6 +2,8 @@ const client = require("../index");
 const chalk = require('chalk')
 const path = require('path')
 const { getCommand } = require('../utility')
+const Schema = require('../models/onstatus')
+
 client.on("ready", () => {
   //console.log(`${client.user.tag} is up and ready to go!`)
 
@@ -13,20 +15,15 @@ client.on("ready", () => {
   })
 
 
-  const clientInfo = {
-    guilds: client.guilds.cache.size,
-    users: client.users.cache.size,
-    channels: client.channels.cache.size,
-
-  }
+ 
 
   // express setup
   const express = require('express')
 
   const app = express();
 
-  const port = 3000 || 30001
-  
+  const port = 5000 || 5001
+
   app.set('view engine', "ejs")
 
   app.get('/', (req, res) => {
@@ -34,8 +31,8 @@ client.on("ready", () => {
   })
 
   app.get('/docs', (req, res) => {
-const commands = getCommand();
-
+    const commands = getCommand();
+    const botdata = botdata();
 
 
     res.status(200).render('commands', { commands })
@@ -47,4 +44,16 @@ const commands = getCommand();
 
 
   app.listen(port)
-});
+
+  //mongodb status upload
+  const user_id = '62760710764a55dc108fa4a1' 
+  Schema.findByIdAndUpdate(user_id, {$set:{ Status: 'on'}},{new:true}).then((docs)=>{
+    if(docs) {
+      console.log({success:true,data:docs});
+    } else {
+      console.log({success:false,data:"no such data"});
+    }
+ }).catch((err)=>{
+     console.log(err);
+ })
+})

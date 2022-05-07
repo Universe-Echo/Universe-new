@@ -1,5 +1,5 @@
 const { readdirSync } = require('fs')
-
+const Schema = require('../models/botdata')
 
 function getCommand() {
     let categories = [];
@@ -32,12 +32,21 @@ function getCommand() {
         }
 
         categories.push(data);
-
-
-
+   
     })
 
     return categories;
+  
 }
 
-module.exports = { getCommand }
+function botdata() {
+    Schema.collection.save(
+        botdata,
+        {
+            Array: categories
+        }
+    )
+      console.log('botdata saved')  
+      
+}
+module.exports = { getCommand, botdata }
