@@ -45,15 +45,8 @@ client.on("ready", () => {
 
   app.listen(port)
 
+ 
+
   //mongodb status upload
-  const user_id = '62760710764a55dc108fa4a1' 
-  Schema.findByIdAndUpdate(user_id, {$set:{ Status: 'on'}},{new:true}).then((docs)=>{
-    if(docs) {
-      console.log({success:true,data:docs});
-    } else {
-      console.log({success:false,data:"no such data"});
-    }
- }).catch((err)=>{
-     console.log(err);
- })
+  
 })
