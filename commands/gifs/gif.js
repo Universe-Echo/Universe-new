@@ -5,7 +5,7 @@ const fetch = require('node-fetch');
 module.exports = {
   name: 'gif',
   aliases: ['g', 'gifs'],
-  cooldown: 15,
+  cooldown: 5,
   description: 'get a gif',
   usage: 'gif <query>',
   run: async (client, message, args) => {
