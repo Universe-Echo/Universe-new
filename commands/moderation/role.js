@@ -16,7 +16,23 @@ module.exports = {
             .addField('Example:', '>role @EcHO @admin')
         const roleTarget = message.mentions.members.first() || await message.guild.members.fetch(args[0]);
         if (!roleTarget) return message.reply({ embeds: [syntaxErr] })
+
+
         const role1 = message.mentions.roles.first() || await message.guild.roles.fetch(args[1]);
+
+        const roleEmbed1 = new MessageEmbed()
+        .setDescription(`Removed ${role1} from ${roleTarget.user.username}`)
+        .setFooter(`Requested By: ${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true }))
+    
+
+        if (roleTarget.roles.cache.find(role => role.id === `${role1.id}`)) {
+            await roleTarget.roles.remove(role1).catch(() => { })
+            message.channel.send({ embeds: [roleEmbed1] })
+
+            return;
+        }
+
+
         if (!role1) return message.reply({ embeds: [syntaxErr] })
         await roleTarget.roles.add(role1).catch(() => { })
 
