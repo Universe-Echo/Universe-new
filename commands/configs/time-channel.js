@@ -16,7 +16,7 @@ module.exports = {
      */
     run: async (client, message, args) => {
         let TIMEZONE = "Asia/Calcutta"; // Example: EST - Read more: [ https://en.wikipedia.org/wiki/List_of_tz_database_time_zones# ]
-        let FORMAT = "ddd, h:mm:ss a"; // Example: EST - Read more: [ https://momentjs.com/docs/#/displaying/format/ ]
+        let FORMAT = "h:mm:ss a"; // Example: EST - Read more: [ https://momentjs.com/docs/#/displaying/format/ ]
         let CHANNEL_ID = "975285698854809630"; // Example: 823605956348608512
         let UPDATE_INTERVAL = "600000"; // is in ms!!!
 
