@@ -20,7 +20,7 @@ module.exports = {
         
 
         let TIMEZONE = "Asia/Calcutta"; // Example: EST - Read more: [ https://en.wikipedia.org/wiki/List_of_tz_database_time_zones# ]
-        let FORMAT = "h:mm:ss"; // Example: EST - Read more: [ https://momentjs.com/docs/#/displaying/format/ ]
+        let FORMAT = "ddd, hA"; // Example: EST - Read more: [ https://momentjs.com/docs/#/displaying/format/ ]
         let CHANNEL_ID = "975313178131054603"; // Example: 823605956348608512
         let UPDATE_INTERVAL = "6000"; // is in ms!!!
   
@@ -29,14 +29,14 @@ module.exports = {
   //define clockChannel
   const clockChannel = client.channels.cache.get(data.Channel);
   //initial update
-  clockChannel.edit({ name: `Time - ${timeNow}` }, 'Clock update')
+  clockChannel.edit({ name: `Day/time - ${timeNow}` }, 'Clock update')
     .catch(console.error);
   //set the interval
   setInterval(() => {
     const timeNowUpdate = moment().tz(TIMEZONE).format(FORMAT);
-    clockChannel.edit({ name: `Time - ${timeNowUpdate}` }, 'Clock update')
+    clockChannel.edit({ name: `Day/Time - ${timeNowUpdate}` }, 'Clock update')
       .catch(console.error);
-  }, 600000);
+  }, 3600000);
   //tells if it is ready
 	console.log("updated")
 
