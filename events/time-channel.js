@@ -7,7 +7,7 @@ const moment = require('moment');
 const tz = require('moment-timezone');
 client.on("ready", () => {
  
-    Schema.findOne({ Guild: message.guild.id }, async (e, data) => {
+    Schema.findOne({ Guild: client.guilds.cache.get('779213432389107742') }, async (e, data) => {
         if (!data) return
   
   
