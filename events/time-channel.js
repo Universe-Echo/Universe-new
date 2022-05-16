@@ -3,7 +3,8 @@ const chalk = require('chalk')
 const path = require('path')
 const { getCommand } = require('../utility')
 const Schema = require('../models/time-channel')
-
+const moment = require('moment');
+const tz = require('moment-timezone');
 client.on("ready", () => {
  
     Schema.findOne({ Guild: message.guild.id }, async (e, data) => {
