@@ -2,9 +2,9 @@ const { MessageEmbed, Permissions } = require('discord.js');
 const Schema = require('../../models/logs');
 
 module.exports = {
-  name: 'set-messageLogs',
+  name: 'messageLogs',
   description: 'set message logs',
-  aliases: ['setlog', 'setlogs', 'logsset', 'log-set', 'logs-set', 'set-log'],
+  aliases: ['setlog', 'setlogs', 'logsset', 'log-set', 'logs-set', 'set-log', 'set-messagelogs'],
   cooldown: 5,
   usage: 'set-messageLogs <channel>',
   userPermissions: ['ADMINISTRATOR'],

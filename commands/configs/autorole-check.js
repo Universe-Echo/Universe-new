@@ -4,6 +4,7 @@ module.exports = {
     name: 'autorole-check',
     cooldown: 5,
     description: 'check autorole of the server',
+    aliases: ['check-autorole'],
     userPermissions: ['MANAGE_ROLES'],
     botPermissions: ['ADMINISTRATOR'],
     usage: 'autorole-check',

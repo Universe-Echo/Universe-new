@@ -4,7 +4,7 @@ const { Client, Message, MessageEmbed } = require('discord.js')
 
 module.exports = {
     name: 'set-time',
-    description: 'set time channel',
+    description: 'set a voice channel for time display',
     aliases: ['time-set', 'timeset', 'settime', 'timechannelset', 'set-time'],
     cooldown: 5,
     userPermissions: ['ADMINISTRATOR'],

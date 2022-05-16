@@ -3,6 +3,7 @@ const { Message } = require('discord.js')
 module.exports = {
     name: 'reset-prefix',
     description: 'Reset custom prefix',
+    aliases: ['prefix-reset'],
     userPermissions: ['ADMINISTRATOR'],
     usage: 'reset-prefix',
     /**

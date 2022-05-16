@@ -5,7 +5,7 @@ const { Client, Message, MessageEmbed } = require('discord.js')
 module.exports = {
     name: 'check-welcomeChannel',
     description: 'check welcome channel',
-    aliases: ['checkchannel', 'welcome-channel', 'welcomechannel', 'welcome-channel-check'],
+    aliases: ['checkchannel', 'welcome-channel', 'welcomechannel', 'welcome-channel-check', 'welcome-channel-check'],
     cooldown: 5,
     userPermissions: ['ADMINISTRATOR'],
     usage: 'check-welcomeChannel',
