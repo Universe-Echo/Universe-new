@@ -82,6 +82,7 @@ module.exports = {
                                 value: cmd.directory.toLocaleLowerCase(),
                                 description: `Commands from ${cmd.directory} category`,
                                 emoji: emojis[cmd.directory.toLocaleLowerCase()] || null,
+                                
                             }
                         })
                     )
