@@ -1,15 +1,21 @@
-const { moment } = require('moment')
+const  moment  = require('moment')
 const { MessageEmbed } = require('discord.js')
 module.exports = {
   name: 'age',
   cooldown: 5,
   description: 'get your age in years and days',
-  usage: 'age mm/dd/yy',
+  usage: 'age dd/mm/yyyy',
   run: (client, message, args) => {
     //  const args = message.content.split(' ').slice(1);
 
-    birtht = args.join(" ");
-    if (!birtht) return message.reply('Please provide a date of birth... **ex: 12/10/2005(mm/dd/yy) btw mere owner ka DOB hai :)**')
+    birth1 = args.join(" ");
+    if (!birth1) return message.reply('Please provide a date of birth... **ex: 10/12/2005(dd/mm/yyyy) btw mere owner ka DOB hai :)**')
+    var mydate = moment(`${birth1}`, 'DD/MM/YYYY'); 
+
+    //format that date into a different format
+   const  birtht = moment(mydate).format("MM/DD/YYYY");
+
+   
     var birth = new Date(birtht);
     var check = new Date();
 
@@ -24,7 +30,7 @@ module.exports = {
     //  console.log( 'Whole years : ' + ageInYears + '\nDays : ' + ageInDays  );
     const birthEmbed = new MessageEmbed()
       .setThumbnail(client.user.displayAvatarURL())
-      .setTitle('Age')
+      .setTitle('Age -')
       .addField('In years:', `${ageInYears}`)
       .addField('In days:', `${age2}`)
     message.reply({ embeds: [birthEmbed] })
