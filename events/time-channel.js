@@ -19,7 +19,7 @@ client.on("ready", () => {
   
         const timeNow = moment().tz(TIMEZONE).format(FORMAT);
         //define clockChannel
-        const clockChannel = client.channels.cache.get(data.Channel);
+        const clockChannel = client.channels.cache.get(data.Channel)
         //initial update
         clockChannel.edit({ name: `Day/time - ${timeNow}` }, 'Clock update')
           .catch(console.error);
