@@ -1,6 +1,6 @@
 const client = require('../index');
 
-client.on('interactionCreate', interaction => {
+client.on('interactionCreate', async (interaction) => {
     await interaction.deferReply({ ephemeral: false }).catch(() => {});
 	if (!interaction.isModalSubmit()) return;
     interaction.deferReply({ ephemeral: true });
