@@ -101,34 +101,34 @@ module.exports = async (client) => {
 	});
 
 	client.on("ready", async () => {
-			 await client.guilds.cache
-			 .get("779213432389107742")
-			 .commands.set(arrayOfSlashCommands).then(() => {
-		 console.log(
-		   chalk.cyan("[ INFORMATION ]") +
-		   chalk.white(" | ") +
-		  chalk.blue(`${new Date().toLocaleDateString()}`) +
-		    chalk.white(" | ") +
-		   chalk.cyan("Slash Commands") +
-		    chalk.white(": ") +
-		  chalk.white(`Loaded to`) +
-		  chalk.white(": ") +
-		   chalk.greenBright(`${client.guilds.cache.get("779213432389107742").name}`)
-		)
+		// 	 await client.guilds.cache
+		// 	 .get("779213432389107742")
+		// 	 .commands.set(arrayOfSlashCommands).then(() => {
+		//  console.log(
+		//    chalk.cyan("[ INFORMATION ]") +
+		//    chalk.white(" | ") +
+		//   chalk.blue(`${new Date().toLocaleDateString()}`) +
+		//     chalk.white(" | ") +
+		//    chalk.cyan("Slash Commands") +
+		//     chalk.white(": ") +
+		//   chalk.white(`Loaded to`) +
+		//   chalk.white(": ") +
+		//    chalk.greenBright(`${client.guilds.cache.get("779213432389107742").name}`)
+		// )
 
-			});
+		// 	});
 
-		// await client.application.commands.set(arrayOfSlashCommands).then(() => {
-		// 	console.log(
-		// 		chalk.cyan("[ INFORMATION ]") +
-		// 		chalk.white.bold(" | ") +
-		// 		chalk.blue(`${new Date().toLocaleDateString()}`) +
-		// 		chalk.white.bold(" | ") +
-		// 		chalk.cyan("Slash Commands") +
-		// 		chalk.white(": ") +
-		// 		chalk.greenBright(`Loaded as Multi Guild`)
-			// );
-		// });
+		await client.application.commands.set(arrayOfSlashCommands).then(() => {
+			console.log(
+				chalk.cyan("[ INFORMATION ]") +
+				chalk.white.bold(" | ") +
+				chalk.blue(`${new Date().toLocaleDateString()}`) +
+				chalk.white.bold(" | ") +
+				chalk.cyan("Slash Commands") +
+				chalk.white(": ") +
+				chalk.greenBright(`Loaded as Multi Guild`)
+			);
+		});
 	});
 	console.log(
 		chalk.white.bold("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫") +
