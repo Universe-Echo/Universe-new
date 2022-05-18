@@ -1,11 +1,7 @@
-
-
 module.exports = {
   name: 'pixelate',
-
   cooldown: 5,
-  guildOnly: true,
-  group: 'fun',
+  aliases: ['pixel'],
   description: 'pixel effect on pfp',
   botPermissions: ['ATTACH_FILES'],
   usage: 'pixelate, pixelate <user>',
