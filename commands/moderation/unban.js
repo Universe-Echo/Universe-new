@@ -58,7 +58,7 @@ module.exports = {
       if (id === 'yes') {
 
         message.guild.members.unban(bannedMember.user.id, reason).catch(() => {
-          message.channe.send('there was an error!'
+          message.channel.send('there was an error!'
           )
         })
 
