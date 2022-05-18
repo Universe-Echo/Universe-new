@@ -69,7 +69,7 @@ module.exports = {
             acknowledgements.push = 'Server Owner';
         }
 
-    let status = member.presence?.activities[0].state
+    let status = member.presence?.activities[0].state || 'none'
     if (status === undefined) {
         status = 'none'
     }
