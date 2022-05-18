@@ -26,7 +26,9 @@ module.exports = {
 
 
         const roles = member.roles.cache.sort((a, b) => b.position - a.position).map(role => role.toString());
-
+        
+     
+          
         if (member.permissions.has("KICK_MEMBERS")) {
             permissions.push("Kick Members");
         }
@@ -72,7 +74,7 @@ module.exports = {
         }
 
 
-  
+     
 
     let status = member.presence?.activities[0].state
     if (status === undefined) {
@@ -85,6 +87,11 @@ else if (status === null) {
         `https://japi.rest/discord/v1/user/${member.id}`
       );
       const data = await response.json();
+
+
+      const badges = data.data.public_flags_array.join(', ') || "No Badges";
+
+
         const embed = new MessageEmbed()
             .setDescription(`<@${member.user.id}>`)
             .setAuthor(`${member.user.tag}`, member.user.displayAvatarURL())
@@ -99,6 +106,12 @@ else if (status === null) {
             .addField(`__Status__`, `${status}`)
             .addField('__User Bio__', `${data.data.bio || "No bio is set or unable to fetch "}`)
             .addField(`__Roles [${roles.length}]__`, roles.length < 15 ? roles.join(' ') : roles.length > 15 ? `${roles.slice(0, 15).join(' ')}\n+${roles.length - 15} roles...` : 'None')
+            .addField('__Highest Role__', `${
+                member.roles.highest.id === message.guild.id
+                  ? "No Highest Role."
+                  : member.roles.highest
+                }`)
+            .addField('__Badges__', `${badges}`)    
             .addField("\n__Permissions:__ ", `${permissions.join(` | `)}`);
         message.channel.send({ embeds: [embed] });
 
