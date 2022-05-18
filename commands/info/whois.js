@@ -21,13 +21,7 @@ module.exports = {
         var permissions = [];
         var acknowledgements = [];
         const member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.member;
-        let activities = [];
-        member?.presence?.activities.forEach(a => {
-            if (a.id !== 'custom') {
-                if (a.name === 'Spotify') activities.push(`**•** Listening to **${a.details}** by **${a.state}**`);
-                else activities.push(`**•** ${capitalizeFirstLetter(a.type)} **${a.name}**`);
-            }
-        })
+     
         //    const status = `${statuses[member.presence?.status]} ${member.presence?.status}`
 
 
@@ -77,10 +71,18 @@ module.exports = {
             acknowledgements.push = 'Server Owner';
         }
 
-        let memberPermissons = `${member.permissions.toArray().map(p => `\`${p}\``).join(", ")}`;
-        //  const rolePermissions = role.permissions.toArray();
-        // if (activities === 0) activities = 'no activity'
-        // const playing = member.presence.activities[0] ? member.presence.activities[0].state : `User isn't have a custom status!`
+
+  
+
+    let status = member.presence?.activities[0].state
+    if (status === undefined) {
+        status = 'none'
+    }
+
+    const response = await fetch(
+        `https://japi.rest/discord/v1/user/${member.id}`
+      );
+      const data = await response.json();
         const embed = new MessageEmbed()
             .setDescription(`<@${member.user.id}>`)
             .setAuthor(`${member.user.tag}`, member.user.displayAvatarURL())
@@ -90,18 +92,14 @@ module.exports = {
             .setTimestamp()
             .addField('__Joined at:__ ', ` \`\`\`\ ${moment(member.joinedAt).format("dddd, MMMM Do YYYY, HH:mm:ss")} \`\`\`\ `)
             .addField('__Created On:__', ` \`\`\`\ ${member.user.createdAt.toLocaleString()} \`\`\`\ `)
-            //   .addField(`Status -`, `${status}`)
-            //   .addField("__Status__", ` \`\`\`\ ${playing} \`\`\`\ `, true)
             .addField("__Nickname__", ` \`\`\`\ ${member.nickname !== null ? `${member.nickname}` : 'None'} \`\`\`\ `)
             .addField(`__Bot__`, ` \`\`\`\ ${member.user.bot ? "Yes" : "No"}\`\`\`\ `)
-            //   .addField('__Activity__', `${activities.length > 0 ? `\n\n${activities.join('\n')}\n` : ``}`)
+            .addField(`__Status__`, `${status}`)
+            .addField('__User About__', `${data.data.bio || "```No Bio Set.```"}`)
             .addField(`__Roles [${roles.length}]__`, roles.length < 15 ? roles.join(' ') : roles.length > 15 ? `${roles.slice(0, 15).join(' ')}\n+${roles.length - 15} roles...` : 'None')
-            //   .addField("\n__Acknowledgements:__ ", `${acknowledgements}`, true)
-            // .addField(`Permissions -`, `${memberPermissons}`)
-            //   .addField('Permissions', `\`\`\`diff\n${permissions.join(' | ')}\`\`\``)
-            // .addField("\n__Acknowledgements:__ ", `${acknowledgements}` || 'null', true)
             .addField("\n__Permissions:__ ", `${permissions.join(` | `)}`);
         message.channel.send({ embeds: [embed] });
 
     }
 }
+
