@@ -97,7 +97,7 @@ else if (status === null) {
             .addField("__Nickname__", ` \`\`\`\ ${member.nickname !== null ? `${member.nickname}` : 'None'} \`\`\`\ `)
             .addField(`__Bot__`, ` \`\`\`\ ${member.user.bot ? "Yes" : "No"}\`\`\`\ `)
             .addField(`__Status__`, `${status}`)
-            .addField('__User Bio__', `${data.data.bio || "```No bio is set or unable to fetch```"}`)
+            .addField('__User Bio__', `${data.data.bio || "No bio is set or unable to fetch "}`)
             .addField(`__Roles [${roles.length}]__`, roles.length < 15 ? roles.join(' ') : roles.length > 15 ? `${roles.slice(0, 15).join(' ')}\n+${roles.length - 15} roles...` : 'None')
             .addField("\n__Permissions:__ ", `${permissions.join(` | `)}`);
         message.channel.send({ embeds: [embed] });
