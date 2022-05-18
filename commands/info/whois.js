@@ -21,13 +21,9 @@ module.exports = {
         var permissions = [];
         var acknowledgements = [];
         const member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.member;
-     
-        //    const status = `${statuses[member.presence?.status]} ${member.presence?.status}`
-
 
         const roles = member.roles.cache.sort((a, b) => b.position - a.position).map(role => role.toString());
         
-     
           
         if (member.permissions.has("KICK_MEMBERS")) {
             permissions.push("Kick Members");
@@ -73,9 +69,6 @@ module.exports = {
             acknowledgements.push = 'Server Owner';
         }
 
-
-     
-
     let status = member.presence?.activities[0].state
     if (status === undefined) {
         status = 'none'
@@ -87,10 +80,7 @@ else if (status === null) {
         `https://japi.rest/discord/v1/user/${member.id}`
       );
       const data = await response.json();
-
-
-      const badges = data.data.public_flags_array.join(', ') || "No Badges";
-
+      const badges = data.data.public_flags_array.join(' | ') || "No Badges";
 
         const embed = new MessageEmbed()
             .setDescription(`<@${member.user.id}>`)
