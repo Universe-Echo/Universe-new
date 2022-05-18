@@ -19,7 +19,7 @@ client.on("ready", () => {
   let minutes = Math.floor(totalSeconds / 60);
   let seconds = Math.floor(totalSeconds % 60);
   
-  const arrayOfStatus = [`${servers} servers | >help`, `${users} users | >help`, `Up since: ${minutes}mins`]
+  const arrayOfStatus = [`${servers} servers | >help`, `${users} users | >help`, `By EcHO | >help`]
 
   setInterval(() => {
     client.user.setPresence({ activities: [{ name: arrayOfStatus[Math.floor(Math.random() * arrayOfStatus.length)] }], type: "WATCHING" }) //WATCHING, PLAYING, COMPETEING, LISTENING

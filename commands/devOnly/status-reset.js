@@ -25,7 +25,7 @@ let minutes = Math.floor(totalSeconds / 60);
 let seconds = Math.floor(totalSeconds % 60);
 let uptime = `${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds`;
 
-let statuses = [`${servers} servers | >help`, `${users} users | >help`, `Up since: ${minutes}mins` ]
+let statuses = [`${servers} servers | >help`, `${users} users | >help` `By EcHO | >help` ]
 
 // const status = Math.floor(Math.random() * statuses.length)
 
