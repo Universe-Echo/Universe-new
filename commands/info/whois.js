@@ -78,7 +78,9 @@ module.exports = {
     if (status === undefined) {
         status = 'none'
     }
-
+else if (status === null) {
+    status = 'none'
+}
     const response = await fetch(
         `https://japi.rest/discord/v1/user/${member.id}`
       );
