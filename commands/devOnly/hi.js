@@ -1,17 +1,27 @@
-const Discord = require('discord.js');
-const superagent = require('superagent')
+const client = require('nekos.life');
+const Discord = require('discord.js')
+const neko = new client();
+const {
+  MessageEmbed
+} = require('discord.js')
 
+var superagent = require('superagent');
 module.exports = {
-  name: 'hello1',
-  aliases: ['hi1'],
-  category: 'Nsfw 🔞',
-  utilisation: '{prefix}ppussy',
-  usage: 'hello1',
-  description: 'some random devOnly command',
+  name: "hi1",
+  category: "🔞 NSFW",
+  usage: "porn",
+  type: "real",
+  run: async (message) => {
 
-  run: async (client, message, args) => {
-    if (message.author.id !== '673846605920600068') return message.channel.send('**This command can be only used by my owner**')
+    
+  
 
-   message.channel.send('All systems ok!')
+    superagent.get('https://nekobot.xyz/api/image').query({
+      type: 'pgif'
+    }).end((err, response) => {
+      message.reply({
+        content: `${response.body.message}`
+      });
+    });
   }
-}
+};

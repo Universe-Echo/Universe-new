@@ -68,7 +68,8 @@ module.exports = {
 
 
         const embed = new MessageEmbed()
-            .setDescription("Please select a category in the dropdown menu below")
+            // .setTitle('Help is here!')
+            .setDescription("Please select a category in the dropdown menu below <a:stars:940837753556459541>")
 
         const components = (state) => [
             new MessageActionRow()
@@ -112,7 +113,7 @@ module.exports = {
 
             const categoryEmbed = new MessageEmbed()
                 .setTitle(`${directory} commands,  Total Commands - ${commands.size},  Prefix: **${p}**`)
-                .setDescription('Here is the list of commands')
+                .setDescription('Here is the list of commands <a:stars2:940837669422895185>')
                 .addFields(
                     category.commands.map((cmd) => {
                         return {
