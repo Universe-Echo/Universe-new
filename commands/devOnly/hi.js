@@ -5,15 +5,21 @@ const {
   MessageEmbed
 } = require('discord.js')
 
-var superagent = require('superagent');
+
+
+var superagent = require('superagent'); 
+/**
+* @param {Client} client
+* @param {Message} message
+* @param {String[]} args
+*/
 module.exports = {
   name: "hi1",
   category: "🔞 NSFW",
   usage: "porn",
   type: "real",
-  run: async (message) => {
+  run: async (client, message, args) => {
 
-    
   
 
     superagent.get('https://nekobot.xyz/api/image').query({
@@ -24,4 +30,4 @@ module.exports = {
       });
     });
   }
-};
+}
