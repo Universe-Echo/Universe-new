@@ -1,12 +1,7 @@
 const { MessageEmbed } = require("discord.js");
 const moment = require('moment');
 
-const status = {
-    online: "Online",
-    idle: "Idle",
-    dnd: "Do Not Disturb",
-    offline: "Offline/Invisible"
-};
+
 const capitalizeFirstLetter = (string) => string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
 
 module.exports = {
@@ -68,14 +63,9 @@ module.exports = {
         if (member.user.id == message.guild.ownerID) {
             acknowledgements.push = 'Server Owner';
         }
+      
 
-    let status = member.presence?.activities[0].state || 'none'
-    if (status === undefined) {
-        status = 'none'
-    }
-else if (status === null) {
-    status = 'none'
-}
+
     const response = await fetch(
         `https://japi.rest/discord/v1/user/${member.id}`
       );
@@ -88,12 +78,12 @@ else if (status === null) {
             .setColor('RANDOM')
             .setFooter(`ID: ${message.author.id}`)
             .setThumbnail(member.user.displayAvatarURL())
-            .setTimestamp()
+            .setTimestamp()  
             .addField('__Joined at:__ ', ` \`\`\`\ ${moment(member.joinedAt).format("dddd, MMMM Do YYYY, HH:mm:ss")} \`\`\`\ `)
-            .addField('__Created On:__', ` \`\`\`\ ${member.user.createdAt.toLocaleString()} \`\`\`\ `)
+            // .addField('__Joined at:__ ', ` \`\`\`\ ${member.user.joinedAt.toLocaleString()} \`\`\`\ `)
+            .addField('__Created On:__', ` \`\`\`\ ${moment(member.createdAt).format("dddd, MMMM Do YYYY, HH:mm:ss")} \`\`\`\ `)
             .addField("__Nickname__", ` \`\`\`\ ${member.nickname !== null ? `${member.nickname}` : 'None'} \`\`\`\ `)
             .addField(`__Bot__`, ` \`\`\`\ ${member.user.bot ? "Yes" : "No"}\`\`\`\ `)
-            .addField(`__Status__`, `${status}`)
             .addField('__User Bio__', `${data.data.bio || "No bio is set or unable to fetch "}`)
             .addField(`__Roles [${roles.length}]__`, roles.length < 15 ? roles.join(' ') : roles.length > 15 ? `${roles.slice(0, 15).join(' ')}\n+${roles.length - 15} roles...` : 'None')
             .addField('__Highest Role__', `${
