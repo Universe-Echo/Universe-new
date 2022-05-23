@@ -4,7 +4,7 @@ const { MessageEmbed } = require("discord.js");
 const figlet = require("figlet");
 const { promisify } = require("util");
 const figletAsync = promisify(figlet);
-
+const ee = require('../../config/embed.json')
 module.exports = {
   name: "ascii",
 
@@ -27,8 +27,11 @@ module.exports = {
 
 
       .setDescription("```" + Result + "```")
-      .setTimestamp();
-
+      .setTimestamp()
+      .setFooter({
+        text: `${ee.footertext}`,
+        iconURL: `${ee.footericon}`
+      });
     if (Content.length > 20)
       return message.channel.send(`**Please Make Shorter! | Limit : 20**`);
 

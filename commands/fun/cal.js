@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const calculator = require('easy-calculation');
+const ee = require('../../config/embed.json')
 module.exports = {
     name: 'calc',
     aliases: ['cal', 'calculate', 'math', 'calculator'],
@@ -20,7 +21,10 @@ const calc = String(cal)
             .setAuthor(message.author.username, message.author.displayAvatarURL({ dynamic: true }))
             .setDescription(`${calc}`)
             .setColor('LIGHT_GREY')
-
+            .setFooter({
+                text: `${ee.footertext}`,
+                iconURL: `${ee.footericon}`
+              })
            message.reply({embeds: [calembed]})
     }
 }

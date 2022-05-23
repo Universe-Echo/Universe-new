@@ -2,6 +2,7 @@ const { Client, Message, MessageEmbed } = require("discord.js");
 const prefixSchema = require('../../models/prefix');
 const prefix = require('../../models/prefix');
 const client = require('../../index')
+const ee = require("../../config/embed.json")
 client.prefix = async function (message) {
     let custom;
 
@@ -35,8 +36,11 @@ module.exports = {
             .setTitle('Prefix!')
             .setThumbnail(client.user.displayAvatarURL())
             .addField('**The prefix is set to:**', `\`${p}\``)
-            .setFooter(`${p}set-prefix <prefix>  ||  ${p}reset-prefix `)
-
+            .setFooter(``)
+            .setFooter({
+                text: `${p}set-prefix <prefix>  ||  ${p}reset-prefix\n${ee.footertext}`,
+                iconURL: `${ee.footericon}`
+              })
         message.reply({ embeds: [prefixEmbed] })
     },
 };

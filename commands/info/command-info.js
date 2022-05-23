@@ -1,5 +1,5 @@
 const { MessageEmbed } = require('discord.js')
-
+const ee = require("../../config/embed.json")
 module.exports = {
 
     name: 'cmd-help',
@@ -26,6 +26,10 @@ module.exports = {
             .addField("Aliases:", ` \`\`\`\ ${cmd.aliases || "None"} \`\`\`\ `, true)
             .addField("Usage", `\`\`\`\ ${p}${cmd.usage || "None"} \`\`\`\ `)
             .addField("Permissions:", `**__User:__**\n\`${cmd.userPermissions || "None"}\`\n  **__bot__**\n\`${cmd.botPermissions || "None"}\``)
+            .setFooter({
+                text: `${ee.footertext}`,
+                iconURL: `${ee.footericon}`
+              })
         message.channel.send({ embeds: [cmdInfoEmbed] })
 
     }

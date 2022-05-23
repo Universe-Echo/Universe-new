@@ -1,5 +1,5 @@
 const { MessageEmbed } = require('discord.js')
-
+const ee = require('../../config/embed.json')
 module.exports = {
     name: '8ball',
     cooldown: 5,
@@ -38,7 +38,10 @@ module.exports = {
             .addField(`**${message.author.username}'s question**`, question)
             .addField('**the 8ball says**', replys[result])
             .setThumbnail(message.author.displayAvatarURL())
-
+            .setFooter({
+                text: `${ee.footertext}`,
+                iconURL: `${ee.footericon}`
+              })
         message.channel.send({ embeds: [embed] });
 
     }

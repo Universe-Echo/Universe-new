@@ -2,6 +2,7 @@ const { Client, message, MessageActionRow, MessageButton, ButtonInteraction, Mes
 const prefixSchema = require('../../models/prefix');
 const prefix = require('../../models/prefix');
 const client = require('../../index')
+const ee = require("../../config/embed.json")
 client.prefix = async function (message) {
     let custom;
 
@@ -124,7 +125,11 @@ module.exports = {
                         }
                     })
                 )
-                .setFooter('Do  >cmd-info <command-name>  for more info on the command')
+                .setFooter({
+                    text: `Do >cmd-info <name> for more info on command\n${ee.footertext}`,
+                    iconURL: `${ee.footericon}`
+                  })
+                
 
             interaction.update({ embeds: [categoryEmbed] })
         })

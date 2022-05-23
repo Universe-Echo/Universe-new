@@ -1,6 +1,6 @@
 const { Client, Message, MessageEmbed } = require('discord.js');
 const urban = require('relevant-urban');
-
+const ee = require("../../config/embed.json")
 
 module.exports = {
     name: 'urban',
@@ -29,7 +29,10 @@ module.exports = {
                         .setURL(`${word.urbanURL}`)
                         .setDescription(`\`\`\`${word.definition}\`\`\``)
                         .addField(`Example`, `*${word.example}*`)
-                    //.setFooter(`👍 ${word.thumbsUp} | 👎 ${word.thumbsDown} | ✍ ${word.author}`)
+                        .setFooter({
+                            text: `${ee.footertext}`,
+                            iconURL: `${ee.footericon}`
+                          })
                 ]
             })
 
@@ -45,7 +48,10 @@ module.exports = {
                             .setURL(`${word.urbanURL}`)
                             .setDescription(`\`\`\`${word.definition}\`\`\``)
                             .addField(`Example`, `*${word.example}*`)
-                        //  .setFooter(`👍 ${word.thumbsUp} | 👎 ${word.thumbsDown} | ✍ ${word.author}`)
+                            .setFooter({
+                                text: `${ee.footertext}`,
+                                iconURL: `${ee.footericon}`
+                              })
                     ]
                 })
             } catch (error) {

@@ -1,5 +1,5 @@
 const { MessageEmbed } = require('discord.js');
-
+const ee = require("../../config/embed.json")
 module.exports = {
   name: 'membercount',
   description: 'get member count',
@@ -11,6 +11,10 @@ module.exports = {
       .setTitle(`${message.guild.name}`)
       .setDescription(`**__Total members__ **: **${message.guild.memberCount}**`)
       .setColor("FF9700")
+      .setFooter({
+        text: `${ee.footertext}`,
+        iconURL: `${ee.footericon}`
+      })
     //  .setThumbnail(message.guild.iconURL({ size: 4096, dynamic: true }))
 
     //  .setTimestamp()

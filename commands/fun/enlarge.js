@@ -1,5 +1,5 @@
 const { Message, Client, MessageEmbed, Util } = require('discord.js');
-
+const ee = require('../../config/embed.json')
 module.exports = {
    name: 'emoji',
    aliases: ['enlarge'],
@@ -22,10 +22,13 @@ module.exports = {
          const exe = parsedEmoji.animated ? ".gif" : ".png"
          const url = `https://cdn.discordapp.com/emojis/${parsedEmoji.id + exe}`
          const embed = new MessageEmbed()
-            .setFooter(`Emoji: ${parsedEmoji.name}`)
+            
             .setImage(url)
             .setColor(client.color)
-
+            .setFooter({
+               text: `Emoji: ${parsedEmoji.name}\n${ee.footertext}`,
+               iconURL: `${ee.footericon}`
+             })
          message.channel.send({ embeds: [embed] })
 
 

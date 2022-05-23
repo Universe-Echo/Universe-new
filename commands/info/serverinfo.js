@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-
+const ee = require("../../config/embed.json")
 module.exports = {
   name: 'serverinfo',
   aliases: ['si', 's', 'server-info'],
@@ -47,7 +47,11 @@ module.exports = {
       .addField(`Vanity`, ` \`\`\`\css\n [${vanityInvite}] \`\`\`\ `)
       .addField(`Roles [${roles.length}]`, roles.length < 15 ? roles.join(' ') : roles.length > 15 ? `${roles.slice(0, 15).join(' ')}\n+${roles.length - 15} roles...` : 'None')
       .setTimestamp()
-      .setFooter(`Requested By: ${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true }))
+      // .setFooter(`Requested By: ${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true }))
+      .setFooter({
+        text: `ID: ${message.guild.id}\n${ee.footertext}`,
+        iconURL: `${ee.footericon}`
+      })
     //.setFooter(`Id - ${message.guild.id}`)
 
     message.channel.send({ embeds: [embed] })

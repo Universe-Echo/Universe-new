@@ -1,6 +1,7 @@
 const { MessageEmbed } = require('discord.js')
 const { formatDate } = require('../../function')
 const moment = require('moment');
+const ee = require("../../config/embed.json")
 module.exports = {
   name: 'oldest',
   description: 'Shows the oldest account in the server',
@@ -19,7 +20,10 @@ module.exports = {
       .setTitle(`Oldest member in ${message.guild.name}`)
       .setColor("RANDOM")
       .setDescription(`**${mem.user.tag}** is the oldest member in **${message.guild.name}**\n**Acount Creation Date:** ${formatDate(mem.user.createdAt)}\n**Join Date:** ${moment(mem.joinedAt).format("MMMM Do YYYY, HH:mm:ss")}`)
-
+      .setFooter({
+        text: `${ee.footertext}`,
+        iconURL: `${ee.footericon}`
+      })
     message.channel.send({ embeds: [embed] })
   }
 }

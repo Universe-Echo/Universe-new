@@ -1,7 +1,9 @@
 const { MessageEmbed } = require('discord.js')
 const prettyMs = require('pretty-ms')
+const ee = require("../../config/embed.json")
 module.exports = {
   name: 'fetch',
+  aliases: ['fetch-user', 'find-user', 'fetchuser', 'finduser'],
   cooldown: 5,
   description: 'Fetch a user using id',
   usage: 'fetch <user-id>',
@@ -37,8 +39,11 @@ module.exports = {
       .addField("[Joined Discord:]", `${prettyMs(message.createdTimestamp - user.createdTimestamp)} ago`)
       .setThumbnail(user.displayAvatarURL())
       .setColor("#36393e")
-      .setTimestamp();
-
+      .setTimestamp()
+      .setFooter({
+        text: `${ee.footertext}`,
+        iconURL: `${ee.footericon}`
+      })
     message.reply({ embeds: [uEmbed] });
   }
 }

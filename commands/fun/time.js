@@ -1,5 +1,5 @@
 const { MessageEmbed } = require('discord.js')
-
+const ee = require("../../config/embed.json")
 
 module.exports = {
     name: 'time',
@@ -14,6 +14,10 @@ module.exports = {
         //  const sec = date.getSeconds()
         const time = new MessageEmbed()
             .setDescription(`${date}`)
+            .setFooter({
+                text: `Time Zone - IST\n${ee.footertext}`,
+                iconURL: `${ee.footericon}`
+              })
         message.reply({ embeds: [time] })
     }
 }

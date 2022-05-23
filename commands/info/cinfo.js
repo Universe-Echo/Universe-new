@@ -1,9 +1,9 @@
 const { MessageEmbed } = require('discord.js');
 const { execute } = require('./whois');
-
+const ee = require("../../config/embed.json")
 module.exports = {
     name: "cinfo",
-    aliases: ['channelinfo', 'channel'],
+    aliases: ['channelinfo', 'channel', 'info-channel', 'channel-info'],
     cooldown: 5,
     description: "Shows information about mentioned channel",
     usage: 'cinfo <channel>',
@@ -26,6 +26,10 @@ module.exports = {
             .addField("**Channel Description**", ` \`\`\`\ ${channel.topic || "No Description"} \`\`\`\ `)
             .addField("**Channel Created At**", ` \`\`\`\ ${channel.createdAt} \`\`\`\ `)
             .setColor("RANDOM")
+            .setFooter({
+                text: `${ee.footertext}`,
+                iconURL: `${ee.footericon}`
+              })
         message.channel.send({ embeds: [channelembed] });
     }
 }

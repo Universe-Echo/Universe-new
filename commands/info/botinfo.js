@@ -5,13 +5,12 @@ const version = require("../../package.json").version;
 const { utc } = require("moment");
 const os = require("os");
 const ms = require("ms")
+const ee = require("../../config/embed.json")
 module.exports = {
   name: "botinfo",
-  aliases: ['bi', 'info'],
+  aliases: ['bi', 'info', 'infobot', 'bot-info', 'info-bot'],
   cooldown: 5,
   description: "Check the info of the bot",
-  category: "Information",
-  type: "CHAT_INPUT",
   usage: 'botinfo',
 
   run: async (client, message, args) => {
@@ -59,8 +58,11 @@ module.exports = {
         \u3000 Model: ${core.model}
         \u3000 Speed: ${core.speed}MHz`
       )
-      .addField('Developer:', '**EcHO#7298**')
-      .setTimestamp();
+      .setTimestamp()
+      .setFooter({
+        text: `Developer: EcHO#7067\n${ee.footertext}`,
+        iconURL: `${ee.footericon}`
+      })
     message.channel.send({ embeds: [embed] });
   },
 };

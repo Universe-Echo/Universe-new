@@ -1,5 +1,6 @@
 const  moment  = require('moment')
 const { MessageEmbed } = require('discord.js')
+const ee = require('../../config/embed.json')
 module.exports = {
   name: 'age',
   cooldown: 5,
@@ -30,9 +31,14 @@ module.exports = {
     //  console.log( 'Whole years : ' + ageInYears + '\nDays : ' + ageInDays  );
     const birthEmbed = new MessageEmbed()
       .setThumbnail(client.user.displayAvatarURL())
-      .setTitle('Age -')
-      .addField('In years:', `${ageInYears}`)
-      .addField('In days:', `${age2}`)
+      .setTitle('Age')
+      .setDescription(`**Your age is ${ageInYears} in years**\n**and ${age2} in days**`)
+      .setFooter({
+        text: `${ee.footertext}`,
+        iconURL: `${ee.footericon}`
+      })
+      // .addField('In years:', `${ageInYears}`)
+      // .addField('In days:', `${age2}`)
     message.reply({ embeds: [birthEmbed] })
 
   }

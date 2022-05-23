@@ -1,5 +1,5 @@
 const { MessageEmbed } = require('discord.js'); // npm i discord.js
-
+const ee = require("../../config/embed.json")
 module.exports = {
     name: 'messageinfo',
     aliases: ['msginfo'],
@@ -32,9 +32,11 @@ module.exports = {
             .setAuthor(message1.author.tag, message1.author.displayAvatarURL({ format: 'png', dynamic: true }))
             .setDescription(message1.content)
             .setTimestamp(message1.createdAt)
-            .setFooter(`ID: ${message1.id}| `)
-            .addField('Jump', `[Click Here to Jump](${message1.url})`);
-
+            .addField('Jump', `[Click Here to Jump](${message1.url})`)
+            .setFooter({
+                text: `ID: ${message1.id}\n${ee.footertext}`,
+                iconURL: `${ee.footericon}`
+              })
         message.reply({ embeds: [embed] });
 
 

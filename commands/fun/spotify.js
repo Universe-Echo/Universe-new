@@ -1,4 +1,5 @@
 const { MessageEmbed } = require('discord.js');
+const ee = require("../../config/embed.json")
 module.exports = {
   name: 'spotify',
   cooldown: 5,
@@ -28,6 +29,10 @@ module.exports = {
           .setTimestamp()
           .addField('Listen to Track', `${`\`\`\`css\n [ ${trackURL} ] \`\`\``}`, false)
           .setFooter(user.displayName, user.user.displayAvatarURL({ dynamic: true }))
+          .setFooter({
+            text: `${user.displayName}\n${ee.footertext}`,
+            iconURL: `${ee.footerav}`
+          })
         message.reply({ embeds: [embed] });
       }
     }

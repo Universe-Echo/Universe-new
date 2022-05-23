@@ -1,5 +1,6 @@
 
 const { MessageEmbed } = require('discord.js')
+const ee = require('../../config/embed.json')
 module.exports = {
     name: 'avatar',
     cooldown: 5,
@@ -12,8 +13,11 @@ module.exports = {
         const avatar = new MessageEmbed()
             .setTitle(`${member.user.tag}'s avatar`)
             .setImage(member.user.displayAvatarURL({ dynamic: true, size: 512 }))
-    
             .setTimestamp()
+            .setFooter({
+                text: `${ee.footertext}`,
+                iconURL: `${ee.footericon}`
+              })
         message.channel.send({ embeds: [avatar] });
     }
 }

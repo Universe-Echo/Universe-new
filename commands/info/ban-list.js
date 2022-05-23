@@ -1,10 +1,9 @@
 const Discord = require('discord.js');
 const { MessageEmbed } = require('discord.js');
-
+const ee = require("../../config/embed.json")
 module.exports = {
     name: 'list-bans',
-    aliases: ['bans'],
-    category: 'moderation',
+    aliases: ['bans', 'ban-list', 'bans-list', 'list-ban'],
     description: 'Check who is banned from the server',
     cooldown: 10,
     userPermissions: ['BAN_MEMBERS'],
@@ -19,7 +18,10 @@ module.exports = {
             const NoBannedUsersEmbed = new Discord.MessageEmbed()
                 .setColor('#3300EE')
                 .setDescription('This server does not have any banned members.')
-                .setFooter(client.user.username, client.user.displayAvatarURL())
+                .setFooter({
+                    text: `${ee.footertext}`,
+                    iconURL: `${ee.footericon}`
+                  })
             return message.channel.send(NoBannedUsersEmbed);
         } else {
 

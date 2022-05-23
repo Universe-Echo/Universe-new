@@ -1,9 +1,6 @@
-
 const moment = require("moment");
-
-
 const { MessageEmbed } = require('discord.js')
-
+const ee = require("../../config/embed.json")
 
 module.exports = {
     name: 'uptime',
@@ -25,7 +22,10 @@ module.exports = {
             .setTitle('UPTIME STATS')
             .setColor('RANDOM')
             .setDescription(`\`\`\`prolog\n${uptime}\`\`\``)
-
+            .setFooter({
+                text: `${ee.footertext}`,
+                iconURL: `${ee.footericon}`
+              })
         message.reply({ embeds: [embed] })
     }
 }

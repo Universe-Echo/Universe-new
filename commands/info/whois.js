@@ -1,6 +1,6 @@
 const { MessageEmbed } = require("discord.js");
 const moment = require('moment');
-
+const ee = require("../../config/embed.json")
 
 const capitalizeFirstLetter = (string) => string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
 
@@ -76,7 +76,7 @@ module.exports = {
             .setDescription(`<@${member.user.id}>`)
             .setAuthor(`${member.user.tag}`, member.user.displayAvatarURL())
             .setColor('RANDOM')
-            .setFooter(`ID: ${message.author.id}`)
+            // .setFooter(`ID: ${message.author.id}`)
             .setThumbnail(member.user.displayAvatarURL())
             .setTimestamp()  
             .addField('__Joined at:__ ', ` \`\`\`\ ${moment(member.joinedAt).format("dddd, MMMM Do YYYY, HH:mm:ss")} \`\`\`\ `)
@@ -92,7 +92,11 @@ module.exports = {
                   : member.roles.highest
                 }`)
             .addField('__Badges__', `${badges}`)    
-            .addField("\n__Permissions:__ ", `${permissions.join(` | `)}`);
+            .addField("\n__Permissions:__ ", `${permissions.join(` | `)}`)
+            .setFooter({
+                text: `ID: ${message.author.id}\n${ee.footertext}`,
+                iconURL: `${ee.footericon}`
+              })
         message.channel.send({ embeds: [embed] });
 
     }

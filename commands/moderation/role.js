@@ -1,8 +1,9 @@
 const { MessageEmbed } = require('discord.js')
-
+const ee = require("../../config/embed.json")
 module.exports = {
     name: 'role',
     cooldown: 5,
+    aliases: ['add-role', 'addrole'],
     userPermissions: ['MANAGE_ROLES'],
     botPermissions: ['MANAGE_ROLES'],
     description: 'add role to a member',
@@ -22,8 +23,11 @@ module.exports = {
 
         const roleEmbed1 = new MessageEmbed()
         .setDescription(`Removed ${role1} from ${roleTarget.user.username}`)
-        .setFooter(`Requested By: ${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true }))
-    
+        // .setFooter(`Requested By: ${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true }))
+        .setFooter({
+            text: `Requested By: ${message.author.tag}\n${ee.footertext}`,
+            iconURL: `${message.author.displayAvatarURL({dynamic: true})}`
+          })
 
         if (roleTarget.roles.cache.find(role => role.id === `${role1.id}`)) {
             await roleTarget.roles.remove(role1).catch(() => { })
@@ -39,6 +43,10 @@ module.exports = {
         const roleEmbed = new MessageEmbed()
             .setDescription(`Added ${role1} to ${roleTarget.user.username}`)
             .setFooter(`Requested By: ${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true }))
+            .setFooter({
+                text: `Requested By: ${message.author.tag}\n${ee.footertext}`,
+                iconURL: `${message.author.displayAvatarURL({dynamic: true})}`
+              })
         message.channel.send({ embeds: [roleEmbed] })
     }
 }

@@ -1,7 +1,7 @@
 const Discord = require('discord.js'); 
 const fetch = require('node-superfetch')
-//const config = require('../../config.json')
 
+const ee = require("../../config/embed.json")
 
 module.exports = {
     name : 'youtube-channel',
@@ -11,7 +11,7 @@ module.exports = {
     usage: "youtube-channel <channel-name>",
     run: async(client, message, args) => { 
 
-    let name = args.slice(0).join(" ").replace(/ -/g, " ") // it gonna replace " " by -
+    let name = args.slice(0).join(" ").replace(/ -/g, " ") 
     const syntaxErr = new Discord.MessageEmbed()
     .setAuthor(client.user.username, client.user.displayAvatarURL({ size: 1024, dynamic: true }))
     .setTitle('Syntax Error!')
@@ -43,7 +43,10 @@ module.exports = {
             .addField("Date Created", new Date(channel.body.items[0].snippet.publishedAt).toDateString())
             .addField("Country", data.body.items[0].snippet.country ? `${data.body.items[0].snippet.country}`  : "No Country Provided")
             .addField("Link", `[${channel.body.items[0].snippet.channelTitle}](https://www.youtube.com/channel/${channel.body.items[0].id.channelId})`)
-           
+            .setFooter({
+                text: `${ee.footertext}`,
+                iconURL: `${ee.footericon}`
+              })
             
              message.reply({embeds: [embed]});
         

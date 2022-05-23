@@ -1,5 +1,5 @@
 const { MessageEmbed, Client, Message, MessageSelectMenu } = require('discord.js')
-
+const ee = require("../../config/embed.json")
 
 module.exports = {
         name: 'nickname',
@@ -29,6 +29,10 @@ module.exports = {
                         member.setNickname(argument).catch(() => { message.channel.send('**Cannot change the nickname of user!**') })
                         const nickNameembed = new MessageEmbed()
                                 .setDescription(`Changed nickname of ${member} to ${argument}`)
+                                .setFooter({
+                                        text: `${ee.footertext}`,
+                                        iconURL: `${ee.footericon}`
+                                      })
                         message.channel.send({ embeds: [nickNameembed] })
                 } catch (err) {
 

@@ -1,5 +1,5 @@
 const { Client, Message, MessageEmbed } = require("discord.js");
-
+const ee = require("../../config/embed.json")
 module.exports = {
   name: "stats",
   cooldown: 10,
@@ -19,7 +19,10 @@ const embed = new MessageEmbed()
 .addField('Servers:', `${client.guilds.cache.size}`)
 .addField('Users:', `${client.users.cache.size}`)
 .addField('Channels:', `${client.channels.cache.size}`)
-
+.setFooter({
+  text: `${ee.footertext}`,
+  iconURL: `${ee.footericon}`
+})
 message.reply({embeds: [embed]})
 
 

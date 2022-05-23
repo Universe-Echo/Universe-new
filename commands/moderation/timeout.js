@@ -1,5 +1,6 @@
 const { Message, Client, MessageEmbed, MessageActionRow, MessageButton, MessageSelectMenu } = require("discord.js");
 const ms = require('ms')
+const ee = require("../../config/embed.json")
 module.exports = {
   name: "mute",
   aliases: ['to', 'timeout'],
@@ -98,6 +99,10 @@ module.exports = {
         .setDescription(`Timed out ${user} for ${time}`)
         .addField("Moderator :", `${aut}`)
         .addField("Reason :", `${reason}`)
+        .setFooter({
+          text: `${ee.footertext}`,
+          iconURL: `${ee.footericon}`
+        })
       message.channel.send({ embeds: [embed] })
     } catch (e) {
       message.channel.send({ content: `${e}` })

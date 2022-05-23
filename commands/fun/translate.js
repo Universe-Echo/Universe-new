@@ -1,7 +1,7 @@
 const { Client, Message, MessageEmbed } = require("discord.js");
 const Discord = require('discord.js')
 const translate = require("@iamtraction/google-translate");
-
+const ee = require("../../config/embed.json")
 module.exports = {
   name: "translate",
   aliases: ["t"],
@@ -21,9 +21,12 @@ module.exports = {
     const translated = await translate(query, { to: args[0] });
     const e = new Discord.MessageEmbed()
       .setColor("GREEN")
-
       .setDescription("**Content**: " + "`" + query + "`" + "\n**Translated**: " + "`" + `${translated.text}` + "`")
       .setTimestamp()
+      .setFooter({
+        text: `${ee.footertext}`,
+        iconURL: `${ee.footericon}`
+      })
     message.reply({ embeds: [e] });
   },
 };

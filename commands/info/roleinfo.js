@@ -2,7 +2,7 @@ const moment = require('moment');
 const { MessageEmbed } = require("discord.js")
 module.exports = {
     name: "roleinfo",
-    aliases: ["role-info"],
+    aliases: ["role-info", 'info-role', 'inforole'],
     cooldown: 5,
     description: 'get info of a role',
     usage: 'roleinfo <role>',
@@ -82,6 +82,10 @@ module.exports = {
             .addField('Creation Date', ` \`\`\`\ ${moment(role.createdAt).format('DD/MMM/YYYY')} \`\`\`\ `, true)
             // .addField('Permissions', `\`\`\`diff\n${finalPermissions.join('\n')}\`\`\``)
             .addField('Permissions', `\`\`\`diff\n${rolePermissions.join(' | ')}\`\`\``)
+            .setFooter({
+                text: `${ee.footertext}`,
+                iconURL: `${ee.footericon}`
+              })
         message.channel.send({ embeds: [embed] })
 
 

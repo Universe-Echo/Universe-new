@@ -1,5 +1,5 @@
 const { Client, Message, MessageEmbed } = require("discord.js");
-
+const ee = require('../../config/embed.json')
 module.exports = {
   name: "firstmessage",
   description: "get the first message in the channel",
@@ -29,7 +29,10 @@ module.exports = {
           .addField("Author", msg.author.tag, true)
           .addField('Message ID', msg.id, true)
           .addField('Created At', msg.createdAt.toLocaleDateString(), true)
-          .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true }))]
+          .setFooter({
+            text: `${ee.footertext}`,
+            iconURL: `${ee.footericon}`
+          })]
       }
 
     );

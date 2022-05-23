@@ -1,7 +1,7 @@
 const { Client, Message, MessageEmbed } = require('discord.js');
 
 const ms = require('ms');
-
+const ee = require("../../config/embed.json")
 module.exports = {
     name: 'timer',
     aliases: ['count', 'countdown', 'cd'],
@@ -29,6 +29,10 @@ module.exports = {
             .setColor("BLACK")
             .setDescription(`Time: \`${time}\`\nReason: \`${reason}\``)
             .setTimestamp()
+            .setFooter({
+                text: `${ee.footertext}`,
+                iconURL: `${ee.footericon}`
+              })
         message.channel.send({ embeds: [embed] })
 
         setTimeout(() => {
@@ -37,6 +41,10 @@ module.exports = {
                 .setColor("AQUA")
                 .setDescription(`Time: \`${time}\`\nReason: \`${reason}\`\nTimer was set in server: \`${message.guild.name}\``)
                 .setTimestamp()
+                .setFooter({
+                    text: `${ee.footertext}`,
+                    iconURL: `${ee.footericon}`
+                  })
             user.send({ embeds: [embed] })
         }, ms(time))
     }

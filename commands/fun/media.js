@@ -1,6 +1,6 @@
 const discord = require("discord.js");
 const imdb = require("imdb-api");
-
+const ee = require('../../config/embed.json')
 module.exports = {
   name: "imdb",
   description: "Get the information about a series or movie",
@@ -22,11 +22,13 @@ module.exports = {
       .setColor("RANDOM")
       .setThumbnail(movie.poster)
       .setDescription(movie.plot)
-      .setFooter(`Ratings: ${movie.rating}`)
       .addField("Country", movie.country, true)
       .addField("Languages", movie.languages, true)
-      .addField("Type", movie.type, true);
-
+      .addField("Type", movie.type, true)
+      .setFooter({
+        text: `Ratings: ${movie.rating}\n${ee.footertext}`,
+        iconURL: `${ee.footericon}`
+      })
 
     message.channel.send({ embeds: [embed] })
 

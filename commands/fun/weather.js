@@ -2,11 +2,11 @@ const weather = require('weather-js');
 const discord = require('discord.js')
 const axios = require('axios')
 const { MessageEmbed } = require('discord.js')
+const ee = require("../../config/embed.json")
 module.exports = {
   name: "weather",
   description: "Get the weather of anywhere",
   cooldown: 5,
-  category: "fun",
   usage: "weather <location>",
 /**
    * @param {Client} client
@@ -57,14 +57,17 @@ module.exports = {
       e.addField('Time of observation', `${info.current.last_updated}`)
 
       e.setThumbnail("https:" + info.current.condition.icon);
-
+      e.setFooter({
+        text: `${ee.footertext}`,
+        iconURL: `${ee.footericon}`
+      })
       message.reply({ embeds: [e] });
      
     } else {
       message.reply({ content: "Please provide a valid location!" });
     }
   
-    //LETS CHECK OUT PKG
+   
 
   }
 }

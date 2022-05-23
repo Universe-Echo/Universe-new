@@ -1,5 +1,5 @@
 const Discord = require('discord.js')
-
+const ee = require("../../config/embed.json")
 
 module.exports = {
     name: "msglb",
@@ -112,7 +112,10 @@ module.exports = {
                     .setTitle('Something went wrong!')
                     .setColor('#ff4a4a')
                     .setDescription(`\`\`\`js\n${error.message}\n\`\`\``)
-
+                    .setFooter({
+                        text: `${ee.footertext}`,
+                        iconURL: `${ee.footericon}`
+                      })
                 message.reply({ embeds: [err] })
                 console.log(e)
             }

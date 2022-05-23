@@ -1,5 +1,6 @@
 const { MessageEmbed } = require('discord.js')
 const mongoose = require('mongoose')
+const ee = require("../../config/embed.json")
 module.exports = {
   name: 'ping',
   cooldown: 10,
@@ -24,11 +25,14 @@ module.exports = {
     pingEmbed.setColor("#2F3136");
     pingEmbed.setDescription(`**Pong🏓!**
   📱${client.user.username} Ping `);
-    pingEmbed.addField("**Time Taken:**", `\`${msg + " ms 📶 | " + states}\``, true)
+   
     pingEmbed.addField("**WebSocket:**", `\`${api + " ms 📶 | " + states2}\``, true)
 
-    pingEmbed.setTimestamp();
-    pingEmbed.setFooter(`Requested by ${message.author.username} | `, `${message.author.displayAvatarURL()}`);
+    pingEmbed.setTimestamp()
+    pingEmbed.setFooter({
+      text: `Requested By: ${message.author.tag}\n${ee.footertext}`,
+      iconURL: `${message.author.displayAvatarURL({dynamic: true})}`
+    })
 
     message.channel.send({ embeds: [pingEmbed] });
   }

@@ -1,6 +1,6 @@
-
 const { Client, Message, MessageEmbed, Discord } = require("discord.js")
 const ytsearch = require("yt-search")
+const ee = require("../../config/embed.json")
 module.exports = {
     name: "youtube",
     description: "Search for a video on youtube!",
@@ -41,7 +41,10 @@ module.exports = {
                     { name: "Views", value: `${views}`, inline: true }
                 )
                 .setColor("DARK_BUT_NOT_BLACK")
-                .setFooter(`• Requested by ${message.author.tag}`, client.user.displayAvatarURL())
+                .setFooter({
+                    text: `${ee.footertext}`,
+                    iconURL: `${ee.footericon}`
+                  })
 
             msg.edit({ content: `• Query found!`, embeds: [embed] })
         })

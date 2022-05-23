@@ -1,7 +1,7 @@
 const db = require('../../models/warns')
 
 const { Message, MessageEmbed } = require('discord.js')
-
+const ee = require("../../config/embed.json")
 
 module.exports = {
     name: 'warns',
@@ -26,7 +26,10 @@ module.exports = {
                     .setTitle(`${user.user.tag}'s warns:`)
                     .setColor("BLUE")
                     .setThumbnail(user.user.displayAvatarURL({ dynamic: true }))
-
+                    .setFooter({
+                        text: `${ee.footertext}`,
+                        iconURL: `${ee.footericon}`
+                      })
                     .setDescription(`${lol}`)
                 message.channel.send({ embeds: [warnsEmbed] })
 
