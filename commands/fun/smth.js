@@ -4,25 +4,25 @@ const ee = require('../../config/embed.json')
 module.exports = {
     name: 'anna',
     aliases: ['dumbo'],
-/**
- * 
- * @param {Client} client 
- * @param {Message} message 
- * @param {String[]} args 
- */
+    /**
+     * 
+     * @param {Client} client 
+     * @param {Message} message 
+     * @param {String[]} args 
+     */
 
     run: async (client, message, args) => {
-       
+
         const embed = new MessageEmbed()
-        .setDescription('is ananya')
-.setFooter({
-    text: `${ee.footertext}`,
-    iconURL: `${ee.footerav}`
+            .setDescription('is ananya')
+            .setFooter({
+                text: `${ee.footertext}`,
+                iconURL: `${ee.footerav}`
 
-})
-.setColor(ee.color)
+            })
+            .setColor(ee.color)
 
-        message.channel.semd({embeds: [embed]})
+        message.channel.send({ embeds: [embed] })
 
     }
 }
