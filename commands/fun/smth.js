@@ -17,7 +17,7 @@ module.exports = {
             .setDescription('is ananya')
             .setFooter({
                 text: `${ee.footertext}`,
-                iconURL: `${ee.footerav}`
+                iconURL: `${ee.footericon}`
 
             })
             .setColor(ee.color)
