@@ -2,8 +2,9 @@ const { MessageEmbed } = require('discord.js')
 const ee = require('../../config/embed.json')
 
 module.exports = {
-    name: 'anna',
-    aliases: ['dumbo'],
+    name: 'dumbo',
+    aliases: ['anna'],
+    devOnly: true,
     /**
      * 
      * @param {Client} client 
