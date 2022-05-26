@@ -17,6 +17,7 @@ module.exports = {
 
         if (!query1) return message.reply('**whose bday do you want?**')
 
+        
         const query = query1.toLowerCase()
         try {
             if (query === 'piyush') {
