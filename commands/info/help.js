@@ -129,7 +129,7 @@ module.exports = {
                     text: `Do >cmd-info <name> for more info on command\n${ee.footertext}`,
                     iconURL: `${ee.footericon}`
                   })
-                
+                  .setColor(`${ee.color}`)
 
             interaction.update({ embeds: [categoryEmbed] })
         })

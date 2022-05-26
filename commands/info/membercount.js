@@ -10,7 +10,7 @@ module.exports = {
     let embed = new MessageEmbed()
       .setTitle(`${message.guild.name}`)
       .setDescription(`**__Total members__ **: **${message.guild.memberCount}**`)
-      .setColor("FF9700")
+      .setColor(`${ee.color}`)
       .setFooter({
         text: `${ee.footertext}`,
         iconURL: `${ee.footericon}`

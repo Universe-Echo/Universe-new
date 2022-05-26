@@ -24,7 +24,7 @@ module.exports = {
          const embed = new MessageEmbed()
             
             .setImage(url)
-            .setColor(client.color)
+            .setColor(`${ee.color}`)
             .setFooter({
                text: `Emoji: ${parsedEmoji.name}\n${ee.footertext}`,
                iconURL: `${ee.footericon}`

@@ -26,25 +26,27 @@ module.exports = {
 
         const embed = new MessageEmbed()
             .setAuthor(`${message.author.tag}`, message.author.displayAvatarURL())
-            .setColor("BLACK")
+            
             .setDescription(`Time: \`${time}\`\nReason: \`${reason}\``)
             .setTimestamp()
             .setFooter({
                 text: `${ee.footertext}`,
                 iconURL: `${ee.footericon}`
               })
+              .setColor(`${ee.color}`)
         message.channel.send({ embeds: [embed] })
 
         setTimeout(() => {
             const embed = new MessageEmbed()
                 .setAuthor(`${message.author.tag}`, message.author.displayAvatarURL())
-                .setColor("AQUA")
+                
                 .setDescription(`Time: \`${time}\`\nReason: \`${reason}\`\nTimer was set in server: \`${message.guild.name}\``)
                 .setTimestamp()
                 .setFooter({
                     text: `${ee.footertext}`,
                     iconURL: `${ee.footericon}`
                   })
+                  .setColor(`${ee.color}`)
             user.send({ embeds: [embed] })
         }, ms(time))
     }

@@ -28,7 +28,7 @@ module.exports = {
             text: `Requested By: ${message.author.tag}\n${ee.footertext}`,
             iconURL: `${message.author.displayAvatarURL({dynamic: true})}`
           })
-
+          .setColor(`${ee.color}`)
         if (roleTarget.roles.cache.find(role => role.id === `${role1.id}`)) {
             await roleTarget.roles.remove(role1).catch(() => { })
             message.channel.send({ embeds: [roleEmbed1] })
@@ -47,6 +47,7 @@ module.exports = {
                 text: `Requested By: ${message.author.tag}\n${ee.footertext}`,
                 iconURL: `${message.author.displayAvatarURL({dynamic: true})}`
               })
+              .setColor(`${ee.color}`)
         message.channel.send({ embeds: [roleEmbed] })
     }
 }

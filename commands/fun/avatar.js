@@ -18,6 +18,7 @@ module.exports = {
                 text: `${ee.footertext}`,
                 iconURL: `${ee.footericon}`
               })
+              .setColor(`${ee.color}`)
         message.channel.send({ embeds: [avatar] });
     }
 }

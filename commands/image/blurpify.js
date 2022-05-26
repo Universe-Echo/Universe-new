@@ -35,6 +35,7 @@ module.exports = {
         text: `${ee.footertext}`,
         iconURL: `${ee.footericon}`
     })
+    .setColor(`${ee.color}`)
     .setTimestamp()
       message.reply({
         embeds: [embed]

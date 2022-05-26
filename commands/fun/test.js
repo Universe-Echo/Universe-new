@@ -12,11 +12,11 @@ module.exports = {
    */
   run: async (client, message, args) => {
 
-const embed = new MessageEmbed()
-.setColor('#41454a')
-.setTitle('test!')
-.setDescription('smth smth mst stms')
-               
+    const embed = new MessageEmbed()
+    .setTitle(`fdf's bday!`)
+    .setDescription(`smthhhhh`)
+    .setImage('https://cdn.discordapp.com/attachments/849306112694943804/979091113673625690/bday1.png')
+   .setColor(`${ee.color}`)
 
 
 message.channel.send({embeds: [embed]})

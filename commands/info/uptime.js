@@ -20,7 +20,7 @@ module.exports = {
 
         const embed = new MessageEmbed()
             .setTitle('UPTIME STATS')
-            .setColor('RANDOM')
+            .setColor(`${ee.color}`)
             .setDescription(`\`\`\`prolog\n${uptime}\`\`\``)
             .setFooter({
                 text: `${ee.footertext}`,

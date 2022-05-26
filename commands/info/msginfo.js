@@ -26,7 +26,7 @@ module.exports = {
         const hasImage = message1.attachments.size && message1.attachments.first().width;
 
         const embed = new MessageEmbed()
-            .setColor(message1.member ? message1.member.displayHexColor : client.color)
+        .setColor(`${ee.color}`)
             .setThumbnail(message1.author.displayAvatarURL({ format: 'png', dynamic: true }))
             .setImage(hasImage ? message1.attachments.first().url : null)
             .setAuthor(message1.author.tag, message1.author.displayAvatarURL({ format: 'png', dynamic: true }))

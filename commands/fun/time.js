@@ -18,6 +18,7 @@ module.exports = {
                 text: `Time Zone - IST\n${ee.footertext}`,
                 iconURL: `${ee.footericon}`
               })
+              .setColor(`${ee.color}`)
         message.reply({ embeds: [time] })
     }
 }

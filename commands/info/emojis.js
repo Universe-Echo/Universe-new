@@ -30,7 +30,7 @@ module.exports = {
       .setDescription(
         `**Animated [${Animated}]**:\n${EmojisAnimated}\n\n\n**Standard [${EmojiCount}]**:\n${Emojis}\n\n\n**Over all emojis [${OverallEmojis}]**`
       )
-      .setColor(`RANDOM`)
+      .setColor(`${ee.color}`)
       .setFooter({
         text: `${ee.footertext}`,
         iconURL: `${ee.footericon}`

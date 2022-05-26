@@ -38,7 +38,7 @@ module.exports = {
       //    .addField("[Presence]:", `▫ Status: ${statuses[user.presence.status]}`)
       .addField("[Joined Discord:]", `${prettyMs(message.createdTimestamp - user.createdTimestamp)} ago`)
       .setThumbnail(user.displayAvatarURL())
-      .setColor("#36393e")
+      .setColor(`${ee.color}`)
       .setTimestamp()
       .setFooter({
         text: `${ee.footertext}`,

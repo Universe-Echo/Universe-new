@@ -21,7 +21,7 @@ module.exports = {
 
         const embed = new MessageEmbed()
           .setAuthor('Spotify Track Info', 'https://cdn.discordapp.com/emojis/408668371039682560.png')
-          .setColor("GREEN")
+          .setColor(`${ee.color}`)
           .setThumbnail(`https://i.scdn.co/image/${data.assets.largeImage.slice(8)}`)
           .addField('Song Name', `\`\`\`css\n [ ${data.details} ] \n\`\`\``, true)
           .addField('Album', `\`\`\`css\n [ ${data.assets.largeText} ]\n\`\`\``, true)

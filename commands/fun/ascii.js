@@ -31,7 +31,8 @@ module.exports = {
       .setFooter({
         text: `${ee.footertext}`,
         iconURL: `${ee.footericon}`
-      });
+      })
+      .setColor(`${ee.color}`)
     if (Content.length > 20)
       return message.channel.send(`**Please Make Shorter! | Limit : 20**`);
 

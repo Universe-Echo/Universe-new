@@ -1,5 +1,6 @@
 const moment = require('moment');
 const { MessageEmbed } = require("discord.js")
+const ee = require("../../config/embed.json")
 module.exports = {
     name: "roleinfo",
     aliases: ["role-info", 'info-role', 'inforole'],
@@ -86,6 +87,7 @@ module.exports = {
                 text: `${ee.footertext}`,
                 iconURL: `${ee.footericon}`
               })
+              .setColor(`${ee.color}`)
         message.channel.send({ embeds: [embed] })
 
 

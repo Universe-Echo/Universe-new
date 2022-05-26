@@ -37,6 +37,7 @@ module.exports = {
         text: `${ee.footertext}`,
         iconURL: `${ee.footericon}`
       })
+      .setColor(`${ee.color}`)
       // .addField('In years:', `${ageInYears}`)
       // .addField('In days:', `${age2}`)
     message.reply({ embeds: [birthEmbed] })

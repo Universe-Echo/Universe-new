@@ -75,7 +75,7 @@ module.exports = {
         const embed = new MessageEmbed()
             .setDescription(`<@${member.user.id}>`)
             .setAuthor(`${member.user.tag}`, member.user.displayAvatarURL())
-            .setColor('RANDOM')
+            .setColor(`${ee.color}`)
             // .setFooter(`ID: ${message.author.id}`)
             .setThumbnail(member.user.displayAvatarURL())
             .setTimestamp()  

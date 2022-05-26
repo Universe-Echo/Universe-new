@@ -20,7 +20,7 @@ module.exports = {
     if (!args[0]) return message.reply({ embeds: [syntaxErr] });
     const translated = await translate(query, { to: args[0] });
     const e = new Discord.MessageEmbed()
-      .setColor("GREEN")
+    .setColor(`${ee.color}`)
       .setDescription("**Content**: " + "`" + query + "`" + "\n**Translated**: " + "`" + `${translated.text}` + "`")
       .setTimestamp()
       .setFooter({

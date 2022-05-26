@@ -24,7 +24,7 @@ module.exports = {
                 const lol = data.content.map((w, i) => ` \n\`${i + 1}:-\`  **Moderator: \`${message.guild.members.cache.get(w.moderator).user.tag}\`  ||  Reason: \`${w.reason}\`**`)
                 const warnsEmbed = new MessageEmbed()
                     .setTitle(`${user.user.tag}'s warns:`)
-                    .setColor("BLUE")
+                    .setColor(`${ee.color}`)
                     .setThumbnail(user.user.displayAvatarURL({ dynamic: true }))
                     .setFooter({
                         text: `${ee.footertext}`,

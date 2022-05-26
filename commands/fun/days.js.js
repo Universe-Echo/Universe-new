@@ -37,6 +37,7 @@ module.exports = {
         text: `From:- ${days1}\n${ee.footertext}`,
         iconURL: `${ee.footericon}` 
       })
+      .setColor(`${ee.color}`)
     message.reply({ embeds: [daysEmbed] })
 
   }

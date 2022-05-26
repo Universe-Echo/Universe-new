@@ -19,7 +19,7 @@ module.exports = {
 
     let embed = new discord.MessageEmbed()
       .setTitle(movie.title)
-      .setColor("RANDOM")
+      .setColor(`${ee.color}`)
       .setThumbnail(movie.poster)
       .setDescription(movie.plot)
       .addField("Country", movie.country, true)

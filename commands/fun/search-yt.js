@@ -40,7 +40,7 @@ module.exports = {
                     { name: "Length", value: `${timestamp}`, inline: true },
                     { name: "Views", value: `${views}`, inline: true }
                 )
-                .setColor("DARK_BUT_NOT_BLACK")
+                .setColor(`${ee.color}`)
                 .setFooter({
                     text: `${ee.footertext}`,
                     iconURL: `${ee.footericon}`

@@ -22,7 +22,7 @@ module.exports = {
 
     let pingEmbed = new MessageEmbed()
     pingEmbed.setThumbnail(message.client.user.displayAvatarURL())
-    pingEmbed.setColor("#2F3136");
+    pingEmbed.setColor(`${ee.color}`)
     pingEmbed.setDescription(`**Pong🏓!**
   📱${client.user.username} Ping `);
    

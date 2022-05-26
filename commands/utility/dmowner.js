@@ -1,5 +1,5 @@
 const { Client, Message, MessageEmbed } = require("discord.js");
-
+const ee = require("../../config/embed.json")
 module.exports = {
   name: "dmowner",
   aliases: ['mailowner', 'mail-owner', 'dm-owner', 'report'],
@@ -19,7 +19,7 @@ module.exports = {
       .addField('Server:', `${message.guild.name}`)
       .addField('Message:', `${args.join(" ")}`)
       .setTimestamp()
-      .setColor("BLACK")
+      .setColor(`${ee.color}`)
 
     message.channel.send("Message sent!")
 

@@ -41,6 +41,7 @@ module.exports = {
                 text: `${p}set-prefix <prefix>  ||  ${p}reset-prefix\n${ee.footertext}`,
                 iconURL: `${ee.footericon}`
               })
+              .setColor(`${ee.color}`)
         message.reply({ embeds: [prefixEmbed] })
     },
 };

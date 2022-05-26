@@ -47,7 +47,7 @@ module.exports = {
         **❯Up Since**  ${uptime}
         \u200b`
       )
-      .setColor('GREEN')
+      .setColor(`${ee.color}`)
       .addField(
         "__System__",
 

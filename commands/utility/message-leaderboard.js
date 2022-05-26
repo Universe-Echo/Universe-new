@@ -110,7 +110,7 @@ module.exports = {
                 const err = new Discord.MessageEmbed()
                     .setAuthor('ERROR')
                     .setTitle('Something went wrong!')
-                    .setColor('#ff4a4a')
+                    .setColor(`${ee.color}`)
                     .setDescription(`\`\`\`js\n${error.message}\n\`\`\``)
                     .setFooter({
                         text: `${ee.footertext}`,

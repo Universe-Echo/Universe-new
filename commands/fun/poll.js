@@ -1,5 +1,5 @@
 const Discord = require('discord.js')
-
+const ee = require("../../config/embed.json")
 module.exports = {
     name: 'poll',
     cooldown: 5,
@@ -24,7 +24,7 @@ module.exports = {
             .setTitle('Poll')
             .addField('Author', `${message.author}`)
             .setDescription(` \`\`\`\ ${question} \`\`\`\ `)
-            .setColor('BLACK')
+            .setColor(`${ee.color}`)
 
         let msg = await pollchannel.send({ embeds: [embed] })
         await msg.react('👍')

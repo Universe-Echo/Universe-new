@@ -32,7 +32,9 @@ module.exports = {
           .setFooter({
             text: `${ee.footertext}`,
             iconURL: `${ee.footericon}`
-          })]
+          })
+          .setColor(`${ee.color}`)
+        ]
       }
 
     );

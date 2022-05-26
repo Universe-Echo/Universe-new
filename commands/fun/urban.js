@@ -8,13 +8,12 @@ module.exports = {
     cooldown: 5,
     description: 'search something from urban dictionary!',
     usage: 'urban <query>',
-    category: 'fun',
     /** 
      * @param {Client} client 
      * @param {Message} message 
      * @param {String[]} args 
      */
-    run: async (client, message, args, err, color) => {
+    run: async (client, message, args) => {
 
         if (!args.length) {
 
@@ -23,7 +22,7 @@ module.exports = {
             message.reply({
                 embeds: [
                     new MessageEmbed()
-                        .setColor(color)
+                    .setColor(`${ee.color}`)
                         .setTimestamp()
                         .setTitle(`"${word.word}"`)
                         .setURL(`${word.urbanURL}`)
@@ -42,7 +41,7 @@ module.exports = {
                 message.reply({
                     embeds: [
                         new MessageEmbed()
-                            .setColor(color)
+                        .setColor(`${ee.color}`)
                             .setTimestamp()
                             .setTitle(`"${word.word}"`)
                             .setURL(`${word.urbanURL}`)

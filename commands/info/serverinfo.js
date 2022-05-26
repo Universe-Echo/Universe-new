@@ -52,6 +52,7 @@ module.exports = {
         text: `ID: ${message.guild.id}\n${ee.footertext}`,
         iconURL: `${ee.footericon}`
       })
+      .setColor(`${ee.color}`)
     //.setFooter(`Id - ${message.guild.id}`)
 
     message.channel.send({ embeds: [embed] })

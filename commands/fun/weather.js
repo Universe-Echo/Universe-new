@@ -39,7 +39,7 @@ module.exports = {
     if (info.location) {
       const e = new MessageEmbed();
       e.setTitle(`${info.location.name}'s weather`);
-      e.setColor("BLUE");
+      e.setColor(`${ee.color}`)
      
      
       e.addField("Current temp", ` \`\`\` ${info.current.temp_c}°C \`\`\` ` );

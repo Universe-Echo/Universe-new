@@ -14,7 +14,6 @@ client.config = require("./config.json");
 // Initializing the project
 require("./handler")(client);
   
-
 //error handler 
 process.on("unhandledRejection", console.error);
 process.on('uncaughtException', console.error)

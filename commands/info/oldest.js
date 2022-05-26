@@ -18,7 +18,7 @@ module.exports = {
 
     const embed = new MessageEmbed()
       .setTitle(`Oldest member in ${message.guild.name}`)
-      .setColor("RANDOM")
+      .setColor(`${ee.color}`)
       .setDescription(`**${mem.user.tag}** is the oldest member in **${message.guild.name}**\n**Acount Creation Date:** ${formatDate(mem.user.createdAt)}\n**Join Date:** ${moment(mem.joinedAt).format("MMMM Do YYYY, HH:mm:ss")}`)
       .setFooter({
         text: `${ee.footertext}`,

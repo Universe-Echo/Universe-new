@@ -47,7 +47,7 @@ module.exports = {
                 text: `${ee.footertext}`,
                 iconURL: `${ee.footericon}`
               })
-            
+              .setColor(`${ee.color}`)
              message.reply({embeds: [embed]});
         
         } catch(err) {
