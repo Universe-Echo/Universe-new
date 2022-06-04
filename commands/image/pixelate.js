@@ -5,9 +5,7 @@ module.exports = {
   description: 'pixel effect on pfp',
   botPermissions: ['ATTACH_FILES'],
   usage: 'pixelate, pixelate <user>',
-  examples: [
-    'comment I never thought this would be the effect.'
-  ],
+ 
   run: async (client, message, args) => {
 
     const member = message.mentions.members.first() || message.member;
