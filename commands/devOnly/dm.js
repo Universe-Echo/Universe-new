@@ -2,7 +2,7 @@ const { Client, Message, MessageEmbed } = require("discord.js");
 
 module.exports = {
     name: "dm",
-    description: 'dm owner for suggestion or bug report',
+    description: 'dm people',
     cooldown: 10,
     usage: 'dm <message>',
     devOnly: true,
