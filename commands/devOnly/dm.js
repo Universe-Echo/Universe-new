@@ -19,7 +19,7 @@ module.exports = {
         if (!id) return message.reply('Pls provide a id')
 
 
-        const me = args.slice(1)
+        const me = args.slice(1).join(" ")
         if (!me) message.reply('Pls provide a message')
 
         try {
