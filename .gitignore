@@ -4,3 +4,5 @@ eval.js
 bin
 permissions.js
 template.js
+config.js
+.env

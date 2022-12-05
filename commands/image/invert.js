@@ -1,4 +1,4 @@
-const canva = require('canvacord');
+//const canva = require('canvacord');
 const Discord = require('discord.js')
 
 module.exports = {
