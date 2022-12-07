@@ -1,5 +1,5 @@
 const { Client, Message, MessageEmbed, Discord } = require("discord.js")
-const ytsearch = require("yt-search")
+
 const ee = require("../../config/embed.json")
 module.exports = {
     name: "youtube",
