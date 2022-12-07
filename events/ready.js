@@ -6,7 +6,9 @@ const Schema = require('../models/onstatus')
 
 client.on("ready", () => {
   //console.log(`${client.user.tag} is up and ready to go!`)
-
+  client.users.fetch('673846605920600068', false).then((user) => {
+    user.send('I am on my dear....');
+   });
 
   // //client activity
   const servers = client.guilds.cache.size;
