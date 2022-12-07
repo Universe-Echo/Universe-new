@@ -1,6 +1,5 @@
 
 const Discord = require('discord.js')
-const neko = new client();
 const {
   MessageEmbed
 } = require('discord.js')
