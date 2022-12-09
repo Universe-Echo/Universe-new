@@ -4,9 +4,4 @@ eval.js
 bin
 permissions.js
 template.js
-<<<<<<< HEAD
-config.json
-=======
-config.js
->>>>>>> 4fa7e6d467fa4aca88fd09acb33fa06fefc0163a
 .env
