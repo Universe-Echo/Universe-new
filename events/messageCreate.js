@@ -5,7 +5,7 @@ const prefixSchema = require('../models/prefix');
 const prefix = require('../models/prefix');
 const { botdata } = require('../utility')
 const Schema = require('../models/web');
-
+const config = require('../config.json')
 client.prefix = async function (message) {
   let custom;
 
@@ -69,7 +69,7 @@ client.on("messageCreate", async (message) => {
   if (!command) return;
 
   //owner check
-  if (command.devOnly == true && !client.config.developerIDs.includes(message.author.id)) return message.reply({
+  if (command.devOnly == true && !config.developerIDs.includes(message.author.id)) return message.reply({
     embeds: [new MessageEmbed({
 
       title: "You are not the developer.",

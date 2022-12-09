@@ -139,6 +139,7 @@ module.exports = async (client) => {
 	if (!process.env.MONGOOSE) return;
 
 	mongoose.connect(process.env.MONGOOSE);
+	
 	mongoose.connection.on("connected", () =>
 		console.log(
 			chalk.cyan("[ INFORMATION ]") +
