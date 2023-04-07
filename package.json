@@ -38,10 +38,11 @@
         "pretty-ms": "^7.0.1",
         "reconlx": "^2.5.2",
         "relevant-urban": "^2.0.0",
+        "semver": "^7.3.8",
+        "sshpk": "^1.17.0",
         "superagent": "^7.1.1",
         "tesseract.js": "^2.1.5",
         "weather-js": "^2.0.0"
-    
     },
     "devDependencies": {
         "nodemon": "^2.0.16"
